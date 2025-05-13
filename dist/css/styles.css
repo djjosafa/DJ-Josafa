@@ -10887,6 +10887,7 @@ p.lead {
   padding-right: 1rem;
 }
 #sideNav .navbar-nav .nav-item .nav-link {
+  font-family: 'Neptune', sans-serif;
   font-weight: 800;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
