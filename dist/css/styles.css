@@ -513,6 +513,7 @@ progress {
 .location-info {
   margin-top: 0.8rem;
   font-size: 0.9rem;
+  font-weight: 400;
 }
 .display-1 {
   font-size: calc(1.625rem + 4.5vw);
