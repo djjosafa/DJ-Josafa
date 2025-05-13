@@ -10887,6 +10887,7 @@ p.lead {
 #sideNav {
   padding-left: 1rem;
   padding-right: 1rem;
+  background-color: #c3c8ce; /* Nova cor de fundo do menu lateral */
 }
 #sideNav .navbar-nav .nav-item .nav-link {
   font-family: 'Neptune', sans-serif;
