@@ -512,7 +512,7 @@ progress {
 }
 .location-info {
   margin-top: 0.8rem;
-  font-size: inherit;
+  font-size: 0.9rem;
 }
 .display-1 {
   font-size: calc(1.625rem + 4.5vw);
