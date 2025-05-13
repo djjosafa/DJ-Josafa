@@ -507,6 +507,7 @@ progress {
   font-size: 1.25rem;
   font-weight: 300;
   font-family: 'Roboto', serif;
+  text-align: justify;
 }
 
 .display-1 {
