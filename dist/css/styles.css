@@ -10953,6 +10953,13 @@ p.lead {
   font-size: 1.5rem;
   margin-right: 1.5rem;
 }
+
+/* Ajustes no celular */
+@media (max-width: 768px) {
+    .social-icons i {
+        font-size: 1.2rem; /* Reduzir o tamanho no celular */
+         }
+}
 .social-icons .social-icon:last-child {
   margin-right: 0;
 }
