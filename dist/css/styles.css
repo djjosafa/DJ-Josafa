@@ -10941,30 +10941,49 @@ p.lead {
     display: block;
   }
 }
+/* Estilo geral para os ícones de redes sociais */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px; /* Ajuste opcional para dar espaço superior */
+}
+
 .social-icons .social-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 3.5rem;
-  width: 3.5rem;
-  background-color: #495057;
-  color: #fff;
-  border-radius: 100%;
-  font-size: 1.5rem;
-  margin-right: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.5rem;
+    width: 3.5rem;
+    background-color: #495057;
+    color: #7c7773;
+    border-radius: 50%; /* Corrigido para o círculo perfeito */
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 10px; /* Espaço entre os ícones */
 }
 
 /* Ajustes no celular */
 @media (max-width: 768px) {
-    .social-icons i {
-        font-size: 1.2rem; /* Reduzir o tamanho no celular */
-         }
+    .social-icons {
+        justify-content: space-around; /* Ajusta a distribuição dos ícones */
+    }
+
+    .social-icons .social-icon {
+        font-size: 1.2rem; /* Reduz o tamanho dos ícones no celular */
+        margin-right: 10px; /* Diminui o espaço entre os ícones no celular */
+        margin-bottom: 10px; /* Espaço entre os ícones */
+    }
 }
+
+/* Ajuste para o último ícone, evitando margem à direita */
 .social-icons .social-icon:last-child {
-  margin-right: 0;
+    margin-right: 0;
 }
+
+/* Estilo ao passar o mouse sobre o ícone */
 .social-icons .social-icon:hover {
-  background-color: #bd5d38;
+    background-color: #bd5d38;
 }
 
 .dev-icons {
