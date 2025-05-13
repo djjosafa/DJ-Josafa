@@ -29,30 +29,27 @@ h1, h2, h3, h4, h5, h6 {
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
-  --bs-blue: #0d6efd;
-  --bs-indigo: #6610f2;
-  --bs-purple: #6f42c1;
-  --bs-pink: #d63384;
-  --bs-red: #dc3545;
-  --bs-orange: #bd5d38;
-  --bs-yellow: #ffc107;
-  --bs-green: #198754;
-  --bs-teal: #20c997;
-  --bs-cyan: #0dcaf0;
-  --bs-black: #000;
-  --bs-white: #fff;
-  --bs-gray: #6c757d;
-  --bs-gray-dark: #343a40;
-  --bs-gray-100: #f8f9fa;
-  --bs-gray-200: #e9ecef;
-  --bs-gray-300: #dee2e6;
-  --bs-gray-400: #ced4da;
-  --bs-gray-500: #adb5bd;
-  --bs-gray-600: #6c757d;
-  --bs-gray-700: #495057;
-  --bs-gray-800: #343a40;
-  --bs-gray-900: #212529;
-  --bs-primary: #bd5d38;
+  --bs-green: #011c26;     /* Fundo verde */
+  --bs-light-gray: #c3c8ce; /* Cinza claro */
+  --bs-blue: #071330;      /* Fundo azul */
+  --bs-orange: #d87653;    /* Laranja */
+  --bs-dark-gray: #7c7773; /* Cinza escuro */
+  --bs-wine: #30101b;      /* Vinho */
+  --bs-white: #fff;        /* Branco */
+  --bs-black: #000; /* Preto */
+  --bs-white: #fff; /* Branco */
+  --bs-gray: #7c7773; /* Cinza escuro */
+  --bs-gray-dark: #343a40; 
+  --bs-gray-100: #f8f9fa; 
+  --bs-gray-200: #e9ecef; 
+  --bs-gray-300: #dee2e6; 
+  --bs-gray-400: #ced4da; 
+  --bs-gray-500: #adb5bd; 
+  --bs-gray-600: #6c757d; 
+  --bs-gray-700: #495057; 
+  --bs-gray-800: #343a40; 
+  --bs-gray-900: #212529; 
+  --bs-primary: #d87653; /* Laranja */
   --bs-secondary: #6c757d;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
@@ -75,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: Muli, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  --bs-body-font-family: Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
@@ -91,7 +88,7 @@ h1, h2, h3, h4, h5, h6 {
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #bd5d38;
+  --bs-link-color: #d87653; /* Laranja */
   --bs-link-hover-color: #974a2d;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
