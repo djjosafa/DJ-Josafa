@@ -78,12 +78,12 @@
   <section class="resume-section pt-3" id="videos">
     <div class="resume-section-content text-center">
 
-      <!-- Título Vídeos (Agora acima do filtro) -->
+      <!-- Título SETS -->
       <h2 style="color: #d87653; font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 3rem; margin-top: 0;">
         SETS
       </h2>
 
-      <!-- Escolha um estilo (Agora abaixo do título Vídeos) -->
+      <!-- Escolha uma plataforma -->
       <div class="mb-3">
         <!-- Subtítulo do filtro -->
       <p style="font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 22px; font-weight: bold; color: #c3c8ce; margin-bottom: 10px;">
@@ -91,13 +91,33 @@
       </p>
       <!-- Imagem à esquerda do filtro -->
       <div class="d-flex justify-content-center align-items-center mb-3">
-        <img src="assets/img/sccinzac.png" alt="Ícone" style="height: 60px; margin-right: 10px;">
+        <img src="assets/img/simbcirclar.png" alt="Ícone" style="height: 60px; margin-right: 10px;">
+        <!-- Filtro à direita da imagem -->
+          <select id="platformFilter" style="background-color: #c3c8ce; color: #30101b; font-family: 'Roboto', sans-serif; border: none; padding: 10px; border-radius: 5px; font-size: 16px;">
+          <option value="all">Todas</option>
+          <option value="mixcloud">Mixcloud</option>
+          <option value="soundcloud">Soundcloud</option>
+          <option value="youtube">Youtube</option>
+        </select>
+      </div>
+          <!-- Escolha um estilo (Agora abaixo do título Vídeos) -->
+      <div class="mb-3">
+        <!-- Subtítulo do filtro -->
+      <p style="font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 22px; font-weight: bold; color: #c3c8ce; margin-bottom: 10px;">
+        Selecione um estilo
+      </p>
+      <!-- Imagem à esquerda do filtro -->
+      <div class="d-flex justify-content-center align-items-center mb-3">
+        <img src="assets/img/djsfcirclar.png" alt="Ícone" style="height: 60px; margin-right: 10px;">
         <!-- Filtro à direita da imagem -->
           <select id="styleFilter" style="background-color: #c3c8ce; color: #30101b; font-family: 'Roboto', sans-serif; border: none; padding: 10px; border-radius: 5px; font-size: 16px;">
           <option value="all">Todos</option>
           <option value="rap">Rap</option>
-          <option value="skit">Skit Performance</option>
-          <option value="mpc">MPC</option>
+          <option value="house">House</option>
+          <option value="trap">Trap</option>
+          <option value="funk">Funk</option>
+          <option value="brasilidades">Brasilidades</option>
+          <option value="vinil">100% Vinil</option>
         </select>
       </div>
 
@@ -167,43 +187,51 @@
       }
     ];
 
-    const styleSelect = document.getElementById('styleFilter');
-    const carouselContainer = document.getElementById('carouselItems');
+const styleSelect = document.getElementById('styleFilter');
+const platformSelect = document.getElementById('platformFilter');
+const carouselContainer = document.getElementById('carouselItems');
 
-    styleSelect.addEventListener('change', renderVideos);
+styleSelect.addEventListener('change', renderVideos);
+platformSelect.addEventListener('change', renderVideos);
 
-    function renderVideos() {
-      const selectedStyle = styleSelect.value;
-      const filtered = videos.filter(video => selectedStyle === 'all' || video.style === selectedStyle);
+function renderVideos() {
+  const selectedStyle = styleSelect.value;
+  const selectedPlatform = platformSelect.value;
 
-      carouselContainer.innerHTML = '';
+  const filtered = videos.filter(video => {
+    const matchStyle = selectedStyle === 'all' || video.style === selectedStyle;
+    const matchPlatform = selectedPlatform === 'all' || video.platform === selectedPlatform;
+    return matchStyle && matchPlatform;
+  });
 
-      if (filtered.length === 0) {
-        carouselContainer.innerHTML = `<div class="carousel-item active"><p class="text-center">Nenhum vídeo encontrado.</p></div>`;
-        return;
-      }
+  carouselContainer.innerHTML = '';
 
-      filtered.forEach((video, index) => {
-        const active = index === 0 ? 'active' : '';
-        const embedUrl = `https://www.youtube.com/embed/${video.id}`;
+  if (filtered.length === 0) {
+    carouselContainer.innerHTML = `<div class="carousel-item active"><p class="text-center">Nenhum vídeo encontrado.</p></div>`;
+    return;
+  }
 
-const item = `
-  <div class="carousel-item ${active}">
-    <div class="ratio ratio-16x9">
-      <iframe src="${embedUrl}" title="${video.title}" allowfullscreen></iframe>
-    </div>
-    <div style="margin-top: 20px; color: #c3c8ce;">
-      <h5 style="color: #c3c8ce;">${video.title}</h5>
-      <p style="color: #c3c8ce;">${video.description}</p>
-    </div>
-  </div>
-`;
+  filtered.forEach((video, index) => {
+    const active = index === 0 ? 'active' : '';
+    const embedUrl = `https://www.youtube.com/embed/${video.id}`;
 
-        carouselContainer.innerHTML += item;
-      });
-    }
+    const item = `
+      <div class="carousel-item ${active}">
+        <div class="ratio ratio-16x9">
+          <iframe src="${embedUrl}" title="${video.title}" allowfullscreen></iframe>
+        </div>
+        <div style="margin-top: 20px; color: #c3c8ce;">
+          <h5 style="color: #c3c8ce;">${video.title}</h5>
+          <p style="color: #c3c8ce;">${video.description}</p>
+        </div>
+      </div>
+    `;
 
-    renderVideos();
+    carouselContainer.innerHTML += item;
+  });
+}
+
+renderVideos();
   </script>
 </body>
 </html>
