@@ -78,7 +78,23 @@
   <section class="resume-section pt-3" id="videos">
     <div class="resume-section-content text-center">
 
-      <!-- Imagem acima do título -->
+      <!-- Título Vídeos (Agora acima do filtro) -->
+      <h2 style="color: #d87653; font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 3rem; margin-top: 0;">
+        Vídeos
+      </h2>
+
+      <!-- Escolha um estilo (Agora abaixo do título Vídeos) -->
+      <div class="mb-3">
+        <label for="styleFilter" style="color: #c3c8ce; font-size: 1rem;">Escolha um estilo:</label>
+        <select id="styleFilter" style="background-color: #c3c8ce; color: #30101b; font-family: 'Roboto', sans-serif; border: none; padding: 10px; border-radius: 5px; font-size: 16px;">
+          <option value="all">Todos</option>
+          <option value="rap">Rap</option>
+          <option value="skit">Skit Performance</option>
+          <option value="mpc">MPC</option>
+        </select>
+      </div>
+
+      <!-- Imagem à esquerda do filtro -->
       <div class="d-flex justify-content-center align-items-center mb-3">
         <img src="assets/img/sccinzac.png" alt="Ícone" style="height: 60px; margin-right: 10px;">
         <!-- Filtro à direita da imagem -->
@@ -89,11 +105,6 @@
           <option value="mpc">MPC</option>
         </select>
       </div>
-
-      <!-- Título principal -->
-      <h2 style="color: #d87653; font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 3rem; margin-top: 0;">
-        Vídeos
-      </h2>
 
       <!-- Carrossel de vídeos -->
       <div id="videoCarousel" class="carousel slide w-100" data-bs-ride="carousel" data-bs-interval="15000" style="max-width: 90%; margin: 0 auto;">
