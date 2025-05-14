@@ -103,14 +103,14 @@
       <div style="margin-top: 40px;"></div>
 
 <!-- Carrossel de vídeos -->
-<div id="videoCarousel" class="carousel slide w-100" data-bs-ride="carousel" data-bs-interval="15000">
+<div id="videoCarousel" class="carousel slide w-100" data-bs-ride="carousel" data-bs-interval="15000" style="max-width: 80%; margin: 0 auto;">
   <div class="carousel-inner" id="carouselItems">
     <!-- Os vídeos são inseridos via JS -->
   </div>
 </div>
 
 <!-- Descrição do vídeo e setas de navegação abaixo -->
-<div class="d-flex justify-content-between align-items-center mt-3 mb-3 video-navigation" style="padding: 0 40px; position: relative;">
+<div class="d-flex justify-content-between align-items-center mt-3 mb-3 video-navigation" style="position: relative; width: 80%; margin: 0 auto;">
   <!-- Botão anterior à esquerda da descrição -->
   <button class="carousel-control-prev" type="button"
     data-bs-target="#videoCarousel" data-bs-slide="prev"
@@ -135,37 +135,29 @@
 <style>
   /* Ajuste para telas grandes (Desktop) */
   @media (min-width: 992px) {
+    body, html {
+      height: 100%; /* Define a altura total da página */
+      margin: 0; /* Remove margens externas */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden; /* Remove a rolagem da página */
+    }
+
+    .carousel-inner {
+      max-height: 500px; /* Ajuste a altura do carrossel */
+    }
+
     .video-navigation {
       justify-content: space-between;
+      padding: 0 20px;
       position: relative;
-      padding: 0 20px; /* Ajuste de padding para desktop */
+      top: 20px;
     }
-    
+
     #videoDescription {
       font-size: 1.2rem; /* Aumenta a fonte da descrição no desktop */
-      width: 70%; /* Ajusta a largura da descrição para maior espaço entre as setas */
-      text-align: center; /* Mantém o texto centralizado */
-    }
-    
-    .carousel-control-prev, .carousel-control-next {
-      width: 50px; /* Aumenta o tamanho dos botões no desktop */
-      height: 50px;
-      font-size: 28px; /* Aumenta o tamanho das setas */
-    }
-  }
-
-  /* Ajuste para telas menores (Mobile) */
-  @media (max-width: 991px) {
-    .video-navigation {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 0 10px; /* Ajuste de padding para mobile */
-    }
-
-    #videoDescription {
-      font-size: 1rem; /* Ajuste a fonte para tamanhos menores */
-      width: 100%; /* Descrição ocupa toda a largura */
+      width: 70%;
       text-align: center;
     }
 
@@ -173,6 +165,40 @@
       width: 40px;
       height: 40px;
       font-size: 24px;
+    }
+  }
+
+  /* Ajuste para telas menores (Mobile) */
+  @media (max-width: 991px) {
+    body, html {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: auto; /* Habilita rolagem no celular, se necessário */
+    }
+
+    .video-navigation {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+    }
+
+    #videoDescription {
+      font-size: 1rem;
+      width: 100%;
+      text-align: center;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+    }
+
+    #videoCarousel {
+      max-width: 100%;
     }
   }
 </style>
