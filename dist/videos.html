@@ -80,10 +80,10 @@
 
       <!-- Espaço otimizado no topo -->
       <div class="d-flex justify-content-center align-items-center mb-3">
-        <img src="assets/img/sccinzac.png" alt="Ícone" style="height: 60px; margin-right: 20px;">
         <p style="font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 22px; font-weight: bold; color: #c3c8ce; margin-bottom: 0;">
           Selecione um estilo
         </p>
+        <img src="assets/img/sccinzac.png" alt="Ícone" style="height: 60px; margin-left: 20px;">
       </div>
 
       <!-- Filtro -->
@@ -108,19 +108,19 @@
         <!-- Botão anterior à esquerda da descrição -->
         <button class="carousel-control-prev" type="button"
           data-bs-target="#videoCarousel" data-bs-slide="prev"
-          style="background-color: #d87653; border: none; border-radius: 50%; width: 40px; height: 40px; position: absolute; left: 0;">
+          style="background-color: #d87653; border: none; border-radius: 50%; width: 40px; height: 40px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);">
           <span style="color: #011c26; font-size: 24px;">‹</span>
         </button>
 
         <!-- Descrição do vídeo (centralizada entre as setas) -->
-        <p id="videoDescription" class="text-center" style="color: #c3c8ce; font-family: 'Roboto'; font-size: 1rem; flex-grow: 1;">
+        <p id="videoDescription" class="text-center" style="color: #c3c8ce; font-family: 'Roboto'; font-size: 1rem; flex-grow: 1; margin: 0;">
           <!-- Aqui vai a descrição dinâmica do vídeo -->
         </p>
 
         <!-- Botão próximo à direita da descrição -->
         <button class="carousel-control-next" type="button"
           data-bs-target="#videoCarousel" data-bs-slide="next"
-          style="background-color: #d87653; border: none; border-radius: 50%; width: 40px; height: 40px; position: absolute; right: 0;">
+          style="background-color: #d87653; border: none; border-radius: 50%; width: 40px; height: 40px; position: absolute; right: 0; top: 50%; transform: translateY(-50%);">
           <span style="color: #011c26; font-size: 24px;">›</span>
         </button>
       </div>
@@ -143,21 +143,25 @@
     }
 
     .carousel-inner {
-      max-height: 500px;
-      height: 500px; /* Altura fixa para o carrossel */
+      max-height: 700px; /* Ajuste a altura do carrossel */
+      height: 700px; /* Definindo uma altura fixa para o carrossel no desktop */
     }
 
     .video-navigation {
       justify-content: space-between;
       padding: 0 20px;
-      position: relative;
-      top: 20px;
+      position: absolute;
+      bottom: 0; /* Ajusta as setas para ficarem mais próximas da descrição */
+      left: 0;
+      right: 0;
+      margin-top: -20px; /* Ajuste para remover o espaço indesejado */
     }
 
     #videoDescription {
       font-size: 1.2rem;
       width: 70%;
       text-align: center;
+      margin: 0; /* Remove margens extras que estavam causando o espaço */
     }
 
     .carousel-control-prev, .carousel-control-next {
@@ -167,7 +171,7 @@
     }
 
     #videoCarousel {
-      width: 80%; /* A largura máxima do carrossel */
+      width: 90%; /* A largura máxima do carrossel */
       height: auto;
     }
 
@@ -194,7 +198,7 @@
     }
 
     #videoDescription {
-      font-size: 1rem;
+      font-size: 1.2rem;
       width: 100%;
       text-align: center;
     }
@@ -207,7 +211,7 @@
 
     #videoCarousel {
       width: 100%;
-      height: auto;
+      height: 80vh; /* Aumentei a altura do vídeo no celular */
     }
   }
 </style>
