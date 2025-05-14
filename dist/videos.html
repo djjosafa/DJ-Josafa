@@ -102,31 +102,32 @@
       <!-- Espaço após filtro -->
       <div style="margin-top: 40px;"></div>
 
-    <!-- Botões acima do carrossel -->
-<div class="d-flex justify-content-between align-items-center mb-3" style="padding: 0 40px;">
+<!-- Título do vídeo com setas ao lado -->
+<div class="d-flex justify-content-center align-items-center mt-4 mb-2" style="gap: 20px; flex-wrap: nowrap;">
+  <!-- Botão anterior -->
   <button class="carousel-control-prev" type="button"
     data-bs-target="#videoCarousel" data-bs-slide="prev"
-    style="background-color: #c3c8ce; border: none; border-radius: 50%; width: 50px; height: 50px;">
-    <span style="color: #011c26; font-size: 24px;">‹</span>
+    style="background-color: #c3c8ce; border: none; border-radius: 50%; width: 40px; height: 40px;">
+    <span style="color: #011c26; font-size: 20px;">‹</span>
   </button>
 
+  <!-- Título do vídeo -->
+  <h3 id="videoTitle" class="m-0 text-center" style="color: #c3c8ce; font-family: 'Neptune'; text-transform: uppercase; font-size: 1.5rem; flex-grow: 1;">
+    <!-- Título preenchido via JS -->
+  </h3>
+
+  <!-- Botão próximo -->
   <button class="carousel-control-next" type="button"
     data-bs-target="#videoCarousel" data-bs-slide="next"
-    style="background-color: #c3c8ce; border: none; border-radius: 50%; width: 50px; height: 50px;">
-    <span style="color: #011c26; font-size: 24px;">›</span>
+    style="background-color: #c3c8ce; border: none; border-radius: 50%; width: 40px; height: 40px;">
+    <span style="color: #011c26; font-size: 20px;">›</span>
   </button>
 </div>
 
-<!-- Carrossel de vídeos -->
-<div id="videoCarousel" class="carousel slide w-100" data-bs-ride="carousel" data-bs-interval="15000">
-  <div class="carousel-inner" id="carouselItems">
-    <!-- Os vídeos são inseridos via JS -->
-  </div>
-</div>
-
-</div> <!-- fecha resume-section-content -->
-</section>
-</div> <!-- fecha container-fluid -->
+<!-- Descrição do vídeo -->
+<p id="videoDescription" class="text-center mt-2" style="color: #c3c8ce; font-family: 'Roboto'; font-size: 1rem;">
+  <!-- Descrição preenchida via JS -->
+</p>
         
   <!-- Bootstrap core JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
