@@ -76,22 +76,22 @@
 <!-- Page Content -->
 <div class="container-fluid p-0" style="background-color: #011c26; font-family: 'Roboto', sans-serif;">
   <section class="resume-section pt-3" id="videos">
-    <div class="resume-section-content">
+    <div class="resume-section-content text-center">
 
-      <!-- Título com imagem -->
-      <div class="d-flex align-items-center mb-4" style="margin-top: 0;">
-        <img src="assets/img/sccinzac.png" alt="Ícone" style="height: 55px; margin-right: 15px;">
-        <h2 style="color: #d87653; font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 3rem; margin: 0;">
-          Vídeos
-        </h2>
-      </div>
+      <!-- Imagem acima do título -->
+      <img src="assets/img/sua-imagem.png" alt="Ícone" style="height: 60px; margin-bottom: 15px;">
+
+      <!-- Título principal -->
+      <h2 style="color: #d87653; font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 3rem; margin-top: 0;">
+        Vídeos
+      </h2>
 
       <!-- Subtítulo do filtro -->
       <p style="font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 22px; font-weight: bold; color: #c3c8ce; margin-bottom: 10px;">
         Selecione um estilo
       </p>
 
-      <!-- Filtro de estilo -->
+      <!-- Filtro -->
       <select id="styleFilter" style="background-color: #c3c8ce; color: #30101b; font-family: 'Roboto', sans-serif; border: none; padding: 10px; border-radius: 5px; font-size: 16px;">
         <option value="all">Todos</option>
         <option value="rap">Rap</option>
@@ -99,24 +99,36 @@
         <option value="mpc">MPC</option>
       </select>
 
-      <!-- Espaço reduzido abaixo do filtro -->
+      <!-- Espaço após filtro -->
       <div style="margin-top: 40px;"></div>
 
-      <!-- Carrossel de vídeos -->
-      <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="15000">
-        <div class="carousel-inner" id="carouselItems">
-          <!-- Os vídeos vão aqui por JS -->
-        </div>
+      <!-- Carrossel de vídeos com setas externas -->
+      <div class="d-flex align-items-center justify-content-center position-relative">
 
-        <!-- Controles laterais -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon rounded-circle" style="background-color: #c3c8ce; padding: 15px;">
-            <span style="color: #011c26; font-size: 24px;">‹</span>
+        <!-- Botão anterior -->
+        <button class="carousel-control-prev position-absolute start-0 translate-middle-y" type="button"
+          data-bs-target="#videoCarousel" data-bs-slide="prev"
+          style="left: -60px; top: 50%;">
+          <span class="rounded-circle d-flex align-items-center justify-content-center"
+            style="background-color: #c3c8ce; width: 50px; height: 50px;">
+            <span style="color: #011c26; font-size: 32px;">‹</span>
           </span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon rounded-circle" style="background-color: #c3c8ce; padding: 15px;">
-            <span style="color: #011c26; font-size: 24px;">›</span>
+
+        <!-- Carrossel -->
+        <div id="videoCarousel" class="carousel slide w-100" data-bs-ride="carousel" data-bs-interval="15000">
+          <div class="carousel-inner" id="carouselItems">
+            <!-- Os vídeos são inseridos via JS -->
+          </div>
+        </div>
+
+        <!-- Botão próximo -->
+        <button class="carousel-control-next position-absolute end-0 translate-middle-y" type="button"
+          data-bs-target="#videoCarousel" data-bs-slide="next"
+          style="right: -60px; top: 50%;">
+          <span class="rounded-circle d-flex align-items-center justify-content-center"
+            style="background-color: #c3c8ce; width: 50px; height: 50px;">
+            <span style="color: #011c26; font-size: 32px;">›</span>
           </span>
         </button>
       </div>
@@ -185,7 +197,7 @@ const item = `
     <div class="ratio ratio-16x9">
       <iframe src="${embedUrl}" title="${video.title}" allowfullscreen></iframe>
     </div>
-    <div style="margin-top: 10px; color: #c3c8ce;">
+    <div style="margin-top: 20px; color: #c3c8ce;">
       <h5 style="color: #c3c8ce;">${video.title}</h5>
       <p style="color: #c3c8ce;">${video.description}</p>
     </div>
