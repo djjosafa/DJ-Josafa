@@ -102,8 +102,15 @@
       <!-- Espaço após filtro -->
       <div style="margin-top: 40px;"></div>
 
-<!-- Título do vídeo com setas ao lado -->
-<div class="d-flex justify-content-center align-items-center mt-4 mb-2" style="gap: 20px; flex-wrap: nowrap;">
+<!-- Carrossel de vídeos -->
+<div id="videoCarousel" class="carousel slide w-100" data-bs-ride="carousel" data-bs-interval="15000">
+  <div class="carousel-inner" id="carouselItems">
+    <!-- Os vídeos são inseridos via JS -->
+  </div>
+</div>
+
+<!-- Título com setas ao lado -->
+<div class="d-flex justify-content-center align-items-center mt-4 mb-2 flex-nowrap" style="gap: 20px;">
   <!-- Botão anterior -->
   <button class="carousel-control-prev" type="button"
     data-bs-target="#videoCarousel" data-bs-slide="prev"
@@ -111,9 +118,11 @@
     <span style="color: #011c26; font-size: 20px;">‹</span>
   </button>
 
-  <!-- Título do vídeo -->
-  <h3 id="videoTitle" class="m-0 text-center" style="color: #c3c8ce; font-family: 'Neptune'; text-transform: uppercase; font-size: 1.5rem; flex-grow: 1;">
-    <!-- Título preenchido via JS -->
+  <!-- Título -->
+  <h3 id="videoTitle"
+    class="m-0 text-center"
+    style="color: #c3c8ce; font-family: 'Neptune'; text-transform: uppercase; font-size: 1.6rem; flex-grow: 1;">
+    <!-- Preenchido via JS -->
   </h3>
 
   <!-- Botão próximo -->
@@ -124,9 +133,11 @@
   </button>
 </div>
 
-<!-- Descrição do vídeo -->
-<p id="videoDescription" class="text-center mt-2" style="color: #c3c8ce; font-family: 'Roboto'; font-size: 1rem;">
-  <!-- Descrição preenchida via JS -->
+<!-- Descrição -->
+<p id="videoDescription"
+   class="text-center mt-2"
+   style="color: #c3c8ce; font-family: 'Roboto'; font-size: 1rem;">
+  <!-- Preenchido via JS -->
 </p>
         
   <!-- Bootstrap core JS -->
