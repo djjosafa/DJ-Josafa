@@ -103,14 +103,14 @@
       <div style="margin-top: 40px;"></div>
 
 <!-- Carrossel de vídeos -->
-<div id="videoCarousel" class="carousel slide w-100" data-bs-ride="carousel" data-bs-interval="15000" style="max-width: 80%; margin: 0 auto;">
+<div id="videoCarousel" class="carousel slide w-100" data-bs-ride="carousel" data-bs-interval="15000" style="max-width: 90%; margin: 0 auto;">
   <div class="carousel-inner" id="carouselItems">
     <!-- Os vídeos são inseridos via JS -->
   </div>
 </div>
 
 <!-- Descrição do vídeo e setas de navegação abaixo -->
-<div class="d-flex justify-content-between align-items-center mt-3 mb-3 video-navigation" style="position: relative; width: 80%; margin: 0 auto;">
+<div class="d-flex justify-content-between align-items-center mt-3 mb-3 video-navigation" style="position: relative; width: 90%; margin: 0 auto;">
   <!-- Botão anterior à esquerda da descrição -->
   <button class="carousel-control-prev" type="button"
     data-bs-target="#videoCarousel" data-bs-slide="prev"
@@ -166,6 +166,11 @@
       height: 40px;
       font-size: 24px;
     }
+
+    #videoCarousel {
+      width: 80%; /* A largura máxima do carrossel no desktop */
+      height: auto; /* Mantém a proporção do vídeo */
+    }
   }
 
   /* Ajuste para telas menores (Mobile) */
@@ -198,7 +203,8 @@
     }
 
     #videoCarousel {
-      max-width: 100%;
+      width: 100%; /* A largura do carrossel no celular */
+      height: auto; /* Mantém a proporção do vídeo */
     }
   }
 </style>
