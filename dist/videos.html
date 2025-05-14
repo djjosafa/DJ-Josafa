@@ -130,46 +130,6 @@
   </button>
 </div>
 
-/* Ajuste para telas menores (Mobile) */
-  @media (max-width: 991px) {
-    body, html {
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: auto;
-    }
-
-    .carousel-control-prev, .carousel-control-next {
-      display: block; /* Garante que as setas apareçam no celular */
-      width: 40px;
-      height: 40px;
-      font-size: 24px;
-      background-color: #d87653;
-      border-radius: 50%;
-      color: #011c26;
-    }
-
-    .video-navigation {
-      flex-direction: column; /* Faz a navegação se alinhar verticalmente */
-      align-items: center;
-      justify-content: center;
-      padding: 0 10px;
-      position: relative;
-    }
-    
-    #videoCarousel {
-      width: 100%; /* A largura do carrossel no celular */
-      height: 80vh; /* Ajusta a altura do vídeo no celular */
-      object-fit: cover;
-    }
-
-    #videoDescription {
-      font-size: 1rem;
-      width: 100%;
-      text-align: center;
-    }
-  }
 </style>
         
   <!-- Bootstrap core JS -->
