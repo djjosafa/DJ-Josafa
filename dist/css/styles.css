@@ -11022,17 +11022,18 @@ section.resume-section .resume-section-content {
 }
 /* Estilo para dropdowns no menu lateral */
 .navbar-nav .dropdown-menu {
-  background-color: #7c7773; /* mesmo fundo do menu principal */
+  background-color: #7c7773;
   border: none;
-  font-family: inherit; /* mesma fonte */
+  font-family: 'NEPTUNE', sans-serif;
+  text-transform: uppercase;
 }
-
 /* Estilo dos links dentro do submenu */
 .navbar-nav .dropdown-item {
-  color: #ffffff; /* mesma cor do menu */
+  color: #ffffff;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  font-family: inherit; /* garante que não mude a fonte */
+  font-family: 'NEPTUNE', sans-serif;
+  text-transform: uppercase;
 }
 
 /* Hover do item do submenu */
