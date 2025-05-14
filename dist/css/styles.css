@@ -11020,3 +11020,31 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
+/* Estilo para dropdowns no menu lateral */
+.navbar-nav .dropdown-menu {
+  background-color: #7c7773; /* mesmo fundo do menu principal */
+  border: none;
+  font-family: inherit; /* mesma fonte */
+}
+
+/* Estilo dos links dentro do submenu */
+.navbar-nav .dropdown-item {
+  color: #ffffff; /* mesma cor do menu */
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-family: inherit; /* garante que não mude a fonte */
+}
+
+/* Hover do item do submenu */
+.navbar-nav .dropdown-item:hover {
+  background-color: #bd5d38; /* cor de destaque */
+  color: white;
+}
+
+/* Corrige o comportamento do dropdown no celular */
+@media (max-width: 991.98px) {
+  .navbar-nav .dropdown-menu {
+    position: static;
+    float: none;
+  }
+}
