@@ -110,7 +110,7 @@
 </div>
 
 <!-- Descrição do vídeo e setas de navegação abaixo -->
-<div class="d-flex justify-content-between align-items-center mt-3 mb-3" style="padding: 0 40px; position: relative;">
+<div class="d-flex justify-content-between align-items-center mt-3 mb-3 video-navigation" style="padding: 0 40px; position: relative;">
   <!-- Botão anterior à esquerda da descrição -->
   <button class="carousel-control-prev" type="button"
     data-bs-target="#videoCarousel" data-bs-slide="prev"
@@ -130,6 +130,52 @@
     <span style="color: #011c26; font-size: 24px;">›</span>
   </button>
 </div>
+
+<!-- Media Queries para ajuste no layout em diferentes tamanhos de tela -->
+<style>
+  /* Ajuste para telas grandes (Desktop) */
+  @media (min-width: 992px) {
+    .video-navigation {
+      justify-content: space-between;
+      position: relative;
+      padding: 0 20px; /* Ajuste de padding para desktop */
+    }
+    
+    #videoDescription {
+      font-size: 1.2rem; /* Aumenta a fonte da descrição no desktop */
+      width: 70%; /* Ajusta a largura da descrição para maior espaço entre as setas */
+      text-align: center; /* Mantém o texto centralizado */
+    }
+    
+    .carousel-control-prev, .carousel-control-next {
+      width: 50px; /* Aumenta o tamanho dos botões no desktop */
+      height: 50px;
+      font-size: 28px; /* Aumenta o tamanho das setas */
+    }
+  }
+
+  /* Ajuste para telas menores (Mobile) */
+  @media (max-width: 991px) {
+    .video-navigation {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px; /* Ajuste de padding para mobile */
+    }
+
+    #videoDescription {
+      font-size: 1rem; /* Ajuste a fonte para tamanhos menores */
+      width: 100%; /* Descrição ocupa toda a largura */
+      text-align: center;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+    }
+  }
+</style>
         
   <!-- Bootstrap core JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
