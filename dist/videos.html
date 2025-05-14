@@ -108,106 +108,56 @@
         </div>
       </div>
 
-      <!-- Descrição do vídeo e setas de navegação abaixo -->
-      <div class="d-flex justify-content-between align-items-center mt-3 mb-3 video-navigation" style="position: relative; width: 90%; margin: 0 auto;">
-        <!-- Botão anterior à esquerda da descrição -->
-        <button class="carousel-control-prev" type="button"
-          data-bs-target="#videoCarousel" data-bs-slide="prev"
-          style="background-color: #d87653; border: none; border-radius: 50%; width: 40px; height: 40px; position: absolute; left: 0;">
-          <span style="color: #011c26; font-size: 24px;">‹</span>
-        </button>
+<!-- Descrição do vídeo e setas de navegação abaixo -->
+<div class="d-flex justify-content-between align-items-center mt-3 mb-3 video-navigation" style="position: relative; width: 90%; margin: 0 auto;">
+  <!-- Botão anterior à esquerda da descrição -->
+  <button class="carousel-control-prev" type="button"
+    data-bs-target="#videoCarousel" data-bs-slide="prev"
+    style="background-color: #d87653; border: none; border-radius: 50%; width: 40px; height: 40px; position: absolute; left: 0;">
+    <span style="color: #011c26; font-size: 24px;">‹</span>
+  </button>
 
-        <!-- Descrição do vídeo (centralizada entre as setas) -->
-        <p id="videoDescription" class="text-center" style="color: #c3c8ce; font-family: 'Roboto'; font-size: 1rem; flex-grow: 1;">
-          <!-- Aqui vai a descrição dinâmica do vídeo -->
-        </p>
+  <!-- Descrição do vídeo (centralizada entre as setas) -->
+  <p id="videoDescription" class="text-center" style="color: #c3c8ce; font-family: 'Roboto'; font-size: 1rem; flex-grow: 1;">
+    <!-- Aqui vai a descrição dinâmica do vídeo -->
+  </p>
 
-        <!-- Botão próximo à direita da descrição -->
-        <button class="carousel-control-next" type="button"
-          data-bs-target="#videoCarousel" data-bs-slide="next"
-          style="background-color: #d87653; border: none; border-radius: 50%; width: 40px; height: 40px; position: absolute; right: 0;">
-          <span style="color: #011c26; font-size: 24px;">›</span>
-        </button>
-      </div>
-
-    </div> <!-- fecha resume-section-content -->
-  </section>
-</div> <!-- fecha container-fluid -->
+  <!-- Botão próximo à direita da descrição -->
+  <button class="carousel-control-next" type="button"
+    data-bs-target="#videoCarousel" data-bs-slide="next"
+    style="background-color: #d87653; border: none; border-radius: 50%; width: 40px; height: 40px; position: absolute; right: 0;">
+    <span style="color: #011c26; font-size: 24px;">›</span>
+  </button>
+</div>
 
 <style>
-  /* Ajuste para telas grandes (Desktop) */
-  @media (min-width: 992px) {
-    body, html {
-      height: 100%; /* Define a altura total da página */
-      margin: 0; /* Remove margens externas */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden; /* Remove a rolagem da página */
-    }
-
-    .carousel-inner {
-      max-height: 700px; /* Ajuste a altura do carrossel */
-    }
-
-    .video-navigation {
-      justify-content: space-between;
-      padding: 0 20px;
-      position: relative;
-      top: 20px;
-    }
-
-    #videoDescription {
-      font-size: 1.2rem; /* Aumenta a fonte da descrição no desktop */
-      width: 70%;
-      text-align: center;
-    }
-
+  /* Ajuste para telas menores (Mobile) */
+  @media (max-width: 991px) {
     .carousel-control-prev, .carousel-control-next {
+      display: block; /* Garante que as setas apareçam no celular */
       width: 40px;
       height: 40px;
       font-size: 24px;
     }
 
-    #videoCarousel {
-      width: 90%; /* A largura máxima do carrossel no desktop */
-      height: auto; /* Mantém a proporção do vídeo */
-    }
-  }
-
-  /* Ajuste para telas menores (Mobile) */
-  @media (max-width: 991px) {
-    body, html {
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: auto; /* Habilita rolagem no celular, se necessário */
-    }
-
     .video-navigation {
-      flex-direction: column;
+      flex-direction: column; /* Faz a navegação se alinhar verticalmente */
       align-items: center;
       justify-content: center;
       padding: 0 10px;
+      position: relative;
+    }
+    
+    #videoCarousel {
+      width: 100%; /* A largura do carrossel no celular */
+      height: 80vh; /* Ajusta a altura do vídeo no celular */
+      object-fit: cover;
     }
 
     #videoDescription {
       font-size: 1rem;
       width: 100%;
       text-align: center;
-    }
-
-    .carousel-control-prev, .carousel-control-next {
-      width: 40px;
-      height: 40px;
-      font-size: 24px;
-    }
-
-    #videoCarousel {
-      width: 100%; /* A largura do carrossel no celular */
-      height: 80vh; /* Ajusta a altura do vídeo no celular */
-      object-fit: cover;
     }
   }
 </style>
