@@ -96,7 +96,7 @@
           <select id="platformFilter" style="background-color: #c3c8ce; color: #30101b; font-family: 'Roboto', sans-serif; border: none; padding: 10px; border-radius: 5px; font-size: 16px;">
           <option value="all">Todas</option>
           <option value="spotify">Spotify</option>
-          <option value="applemusic">Apple Music</option>
+          <option value="soundcloud">Soundcloud</option>
           <option value="youtube">Youtube</option>
         </select>
       </div>
@@ -104,7 +104,7 @@
       <div class="mb-3">
         <!-- Subtítulo do filtro -->
       <p style="font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 22px; font-weight: bold; color: #c3c8ce; margin-bottom: 10px;">
-        Selecione um estilo
+        Selecione um modelo
       </p>
       <!-- Imagem à esquerda do filtro -->
       <div class="d-flex justify-content-center align-items-center mb-3">
@@ -112,13 +112,10 @@
         <!-- Filtro à direita da imagem -->
           <select id="styleFilter" style="background-color: #c3c8ce; color: #30101b; font-family: 'Roboto', sans-serif; border: none; padding: 10px; border-radius: 5px; font-size: 16px;">
           <option value="all">Todos</option>
-          <option value="tematica">Temáticas</option>
-          <option value="livros">Livros</option>
-          <option value="trap">Trap</option>
-          <option value="funk">Funk</option>
-          <option value="brasilidades">Brasilidades</option>
-          <option value="Rap">Rap</option>
-          <option value="participacoes">Autorais/Feats</option>
+          <option value="scratch">Scratches</option>
+          <option value="albuns">Albuns</option>
+          <option value="remix">Remix (VINYLA BEAST)</option>
+          <option value="single">Single</option>
         </select>
       </div>
 
@@ -159,32 +156,60 @@
   <script>
     const videos = [
 {
-  style: 'livros',
+  style: 'scratch',
   platform: 'spotify',
-  url: 'https://open.spotify.com/playlist/3o4FBrbPUu8SzUEGVAbmM2?si=0OEUU7_ESEGtK2IPk0Kv9Q',
-  title: 'Espírito da Intimidade',
-  description: 'A intimidade, em termos gerais, é uma canção do espírito, que convida duas pessoas a compartilharem seu espírito. É uma canção que ninguém pode resistir. - Sobonfu Somé..Playlist de RnB para coisas leves e momentos íntimos, criada após a leitura do Livro da Sobonfu Somé'
+  url: 'https://open.spotify.com/playlist/4b2MrIWroNFQtD1D1pfmSD',
+  title: 'Scratches e Colagens',
+  description: 'Playlist com Scratches e Colagens por DJ Josafá'
 }, 
 {
-  style: 'tematica',
-  platform: 'spotify',
-  url: 'https://open.spotify.com/playlist/6Iq164mxV2MtCGT7eV1FSh',
-  title: '80 Nomes de Menina',
-  description: 'Em 1989 surgia um dos primeiros raps nacionais, "Nomes de Meninas", batalha de rima onde o desafio era rimar 8 nomes de meninas...'
+  style: 'remix',
+  platform: 'soundcloud',
+  url: 'https://soundcloud.com/vinyla-beast/quarto-de-despejo-leall-vinyla-beast-remix',
+  title: 'Quarto de Despejo - Leall (VINYLA BEAST Remix)',
+  description: 'VINYLA BEAST é um projeto de produções/remix do DJ Josafá! Nesse single, o instrumental foi totalmente feito pelo artista, mantendo a essência e sample do NAS e a pertinente letra do Leal, com um tempero especial na produção por DJ Josafá...'
 },  
 {
-  style: 'tematica',
-  platform: 'spotify',
-  url: 'https://open.spotify.com/playlist/271xSPZVNLhyD7TPoOB5iO',
-  title: 'Pausa no Batente',
-  description: 'Depois de uma semana cansativa, um dia de folga é sempre bem-vindo!! Aperte o play, relaxe, se divirta e recupere suas energias...'
+  style: 'remix',
+  platform: 'soundcloud',
+  url: 'https://soundcloud.com/vinyla-beast/drum-n-bass-pinharistico',
+  title: 'Drum n Bass Pinharistico',
+  description: 'MC Carol de Niterói é importantíssima para o funk, e nesse remix, DJ Josafá (através de seu projeto VINYLA BEAST) aplicou a letra e outros elementos do funk p#t@ria experimentando a criação de bateria no estilo drum n bass'
 },
 {
-  style: 'rap',
-  platform: 'spotify',
-  url: 'https://open.spotify.com/playlist/6L5P5YCUBYZie4Uscql72h',
-  title: 'Passaporte VR',
-  description: 'Clássicos e lançamentos de artistas de Volta Redonda/RJ e região.'
+  style: 'remix',
+  platform: 'soundcloud',
+  url: 'https://soundcloud.com/vinyla-beast/bikila-bass-abebe-vinyla-beast-edit',
+  title: 'Bikila Bass (Abebe) - love & addictions (BK - Amores, Vícios e Obcessões - VINYLA BEAST Edit)',
+  description: 'VINYLA BEAST é um projeto de produções/remix do DJ Josafá! Nesse single, o artista transformou o clássico do Castelos e Ruínas numa versão mete-dança miami bass...'
+},
+{
+  style: 'remix',
+  platform: 'soundcloud',
+  url: 'https://soundcloud.com/vinyla-beast/saudade-daquilo-150bpm-iza-mc-maneirinho-vinyla-beast-remix',
+  title: 'SAUDADE DAQUILO 150BPM - IZA, MC MANEIRINHO [VINYLA BEAST REMIX]',
+  description: 'DJ Josafá (através de seu projeto VINYLA BEAST) reinterpretou a musica Saudade Daquilo, produzindo um beat que traduz muito bem esse hit da IZA, que por sinal é uma das artistas mais versáteis e representativas do Pop mundial!'
+},
+{
+  style: 'remix',
+  platform: 'soundcloud',
+  url: 'https://soundcloud.com/vinyla-beast/vinyla-wave-cassiano-onda-remix-feat-lino-kriss-mano-brown-cassiano-boogie-naipe',
+  title: 'Vinyla Wave (Cassiano - Onda Remix) Feat. Lino Kriss, Mano Brown, Vinyla Beast & Boogie Naipe',
+  description: 'Imagina se o Cassiano tivesse participado do BOOGIE NAIPE? DJ Josafá (através de seu projeto VINYLA BEAST) juntou mestres da música nacional em uma versão que brinca com as músicas ONDA e LA ONDA'
+},   
+{
+  style: 'remix',
+  platform: 'soundcloud',
+  url: 'https://soundcloud.com/vinyla-beast/paunetone-001-feat-raffa-moreira-mc-ml-mc-rf',
+  title: 'PAUNETONE 001 (FEAT. RAFFA MOREIRA, MC ML, MC RF) BY VINYLA BEAST 130BPM',
+  description: 'Nesse single DJ Josafá criou o beat que mistura timbres diferentes de sino com elementos de clássicos natalinos, trazendo também hits atuais como Raffa Moreira, MC Ml e MC RF'
+}, 
+{
+  style: 'remix',
+  platform: 'soundcloud',
+  url: 'https://soundcloud.com/vinyla-beast/a-lenda-do-funk-vinyla-beast-mc-de-leve',
+  title: 'A LENDA DO FUNK MAL FEITO (VINYLA BEAST & MC DE LEVE) 150BPM',
+  description: 'Primeiro remix do DJ Josafá, estreando seu projeto VINYLA BEAST com sample de um clássico do rap e versos do De Leve (a leenda brother) e clássicos do funk também'
 },
     ];
 
@@ -199,7 +224,11 @@
   if (video.platform === 'spotify') {
     const embedUrl = video.url.replace('open.spotify.com', 'open.spotify.com/embed');
     return `<iframe style="border-radius:12px" src="${embedUrl}" width="100%" height="152" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
-  } else {
+  } else if (video.platform === 'soundcloud') {
+  return `<iframe width="100%" height="120" scrolling="no" frameborder="0" allow="autoplay"
+    style="overflow: hidden;"
+    src="https://w.soundcloud.com/player/?url=${encodeURIComponent(video.url)}&color=%23c3c8ce&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=true">
+  </iframe>`;
     return `<p>Plataforma não suportada</p>`;
   }
 }
