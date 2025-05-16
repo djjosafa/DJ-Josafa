@@ -91,12 +91,12 @@
       </p>
       <!-- Imagem à esquerda do filtro -->
       <div class="d-flex justify-content-center align-items-center mb-3">
-        <img src="assets/img/simbcirclar.png" alt="Ícone" style="height: 60px; margin-right: 10px;">
+        <img src="assets/img/simbolocinzaclaro.png" alt="Ícone" style="height: 60px; margin-right: 10px;">
         <!-- Filtro à direita da imagem -->
           <select id="platformFilter" style="background-color: #c3c8ce; color: #30101b; font-family: 'Roboto', sans-serif; border: none; padding: 10px; border-radius: 5px; font-size: 16px;">
           <option value="all">Todas</option>
-          <option value="mixcloud">Mixcloud</option>
-          <option value="soundcloud">Soundcloud</option>
+          <option value="spotify">Spotify</option>
+          <option value="applemusic">Apple Music</option>
           <option value="youtube">Youtube</option>
         </select>
       </div>
@@ -108,17 +108,17 @@
       </p>
       <!-- Imagem à esquerda do filtro -->
       <div class="d-flex justify-content-center align-items-center mb-3">
-        <img src="assets/img/djsfcirclar.png" alt="Ícone" style="height: 60px; margin-right: 10px;">
+        <img src="assets/img/simbololaranja.png" alt="Ícone" style="height: 60px; margin-right: 10px;">
         <!-- Filtro à direita da imagem -->
           <select id="styleFilter" style="background-color: #c3c8ce; color: #30101b; font-family: 'Roboto', sans-serif; border: none; padding: 10px; border-radius: 5px; font-size: 16px;">
           <option value="all">Todos</option>
-          <option value="rap">Rap</option>
-          <option value="house">House</option>
+          <option value="tematica">Temáticas</option>
+          <option value="livros">Livros</option>
           <option value="trap">Trap</option>
           <option value="funk">Funk</option>
           <option value="brasilidades">Brasilidades</option>
-          <option value="vinil">100% Vinil</option>
-          <option value="rnb">R&B, Charme</option>
+          <option value="Rap">Rap</option>
+          <option value="participacoes">Autorais/Feats</option>
         </select>
       </div>
 
@@ -158,168 +158,34 @@
   
   <script>
     const videos = [
-      {
-        style: 'rap',
-        platform: 'youtube',
-        id: 'QhtCLBrmw2o',
-        title: 'DJ Josafá - Rap Set',
-        description: 'Performance de rap ao vivo'
-      },
-     {
-  style: 'rnb',
-  platform: 'soundcloud',
-  url: 'https://soundcloud.com/djjosafa2/dj-josafa-charmzada',
-  title: 'DJ Josafá - Charmzada',
-  description: 'Set de charme / R&B no SoundCloud'
+{
+  style: 'livros',
+  platform: 'spotify',
+  url: 'https://open.spotify.com/playlist/3o4FBrbPUu8SzUEGVAbmM2?si=0OEUU7_ESEGtK2IPk0Kv9Q',
+  title: 'Espírito da Intimidade',
+  description: 'A intimidade, em termos gerais, é uma canção do espírito, que convida duas pessoas a compartilharem seu espírito. É uma canção que ninguém pode resistir. - Sobonfu Somé..Playlist de RnB para coisas leves e momentos íntimos, criada após a leitura do Livro da Sobonfu Somé'
+}, 
+{
+  style: 'tematica',
+  platform: 'spotify',
+  url: 'https://open.spotify.com/playlist/6Iq164mxV2MtCGT7eV1FSh',
+  title: '80 Nomes de Menina',
+  description: 'Em 1989 surgia um dos primeiros raps nacionais, "Nomes de Meninas", batalha de rima onde o desafio era rimar 8 nomes de meninas...'
+},  
+{
+  style: 'tematica',
+  platform: 'spotify',
+  url: 'https://open.spotify.com/playlist/271xSPZVNLhyD7TPoOB5iO',
+  title: 'Pausa no Batente',
+  description: 'Depois de uma semana cansativa, um dia de folga é sempre bem-vindo!! Aperte o play, relaxe, se divirta e recupere suas energias...'
 },
 {
-  style: 'rnb',
-  platform: 'soundcloud',
-  url: 'https://soundcloud.com/djjosafa/lets-make-a-black-baby-mix-by-josa-jay',
-  title: 'Let’s Make a Black Baby',
-  description: 'Set R&B com atmosfera romântica'
+  style: 'rap',
+  platform: 'spotify',
+  url: 'https://open.spotify.com/playlist/6L5P5YCUBYZie4Uscql72h',
+  title: 'Passaporte VR',
+  description: 'Clássicos e lançamentos de artistas de Volta Redonda/RJ e região.'
 },
-{
-  style: 'rnb',
-  platform: 'mixcloud',
-  url: "https://www.mixcloud.com/djjosafa/charmzada-w-dj-josaf%C3%A1/",
-  title: 'Charmzada (Mixcloud)',
-  description: 'Set R&B - Mixcloud'
-},
-{
-  style: 'rnb',
-  platform: 'mixcloud',
-  url: 'https://www.mixcloud.com/djjosafa/lets-make-a-black-baby-mix-by-josa-jay/',
-  title: 'Let’s Make a Black Baby (Mixcloud)',
-  description: 'Set R&B versão Mixcloud'
-},
-{
-  style: 'rnb',
-  platform: 'youtube',
-  id: '2osP6aA5c9w',
-  title: 'Charmzada - YouTube',
-  description: 'Set R&B no YouTube'
-},
-        {
-  title: "Undergroov",
-  url: "https://www.mixcloud.com/djjosafa/undergroov/",
-  platform: "mixcloud",
-  style: 'rap'
-},
-{
-  title: "Undergroov 2",
-  url: "https://www.mixcloud.com/djjosafa/undergroov-2/",
-  platform: "mixcloud",
-  style: 'rap'
-},
-{
-  title: "Boombap - 5min Baile Hot Sauce",
-  id: "n3jEOIwkOx8",
-  platform: "youtube",
-  style: 'rap'
-},
-{
-  title: "Undergroov 1 (SoundCloud)",
-  url: "https://soundcloud.com/djjosafa2/dj-josafa-undergroov-2017",
-  platform: "soundcloud",
-  style: 'rap'
-},
-{
-  title: "Undergroov 2 (SoundCloud)",
-  url: "https://soundcloud.com/djjosafa2/dj-josafa-undergroov-2-2018",
-  platform: "soundcloud",
-  style: 'rap'
-},
-{
-  title: "Black Base 2024",
-  id: "QRGKy-qwywo",
-  platform: "youtube",
-  style: 'rap'
-},
-{
-  title: "Rap Mandagig",
-  url: "https://soundcloud.com/djjosafa-mandagig/rap",
-  platform: "soundcloud",
-  style: 'rap'
-},
-  {
-  title: "House Mandagig",
-  url: "https://soundcloud.com/djjosafa-mandagig/house",
-  platform: "soundcloud",
-  style: 'house'
-},
-{
-  title: "Autônomo Não Tem 13",
-  url: "https://soundcloud.com/vinyla-beast/autonomo-nao-tem-13",
-  platform: "soundcloud",
-  style: 'trap'
-},
-  {
-  title: "Trap Mandagig",
-  url: "https://soundcloud.com/djjosafa-mandagig/tttrap",
-  platform: "soundcloud",
-  style: 'trap'
-},
-{
-  title: "Josapaloosa - Baile do Imbica",
-  url: "https://soundcloud.com/djjosafa/josapaloosa-baile-do-imbica",
-  platform: "soundcloud",
-  style: 'trap'
-},
-{
-  title: "Especial Trap (Vibe 89FM)",
-  url: "https://www.mixcloud.com/djjosafa/dj-josaf%C3%A1-na-r%C3%A1dio-vibe-89fm-v-music-especial-trap/",
-  platform: "mixcloud",
-  style: 'trap'
-},
-{
-  title: "Josapaloosa - Baile do Imbica",
-  id: "bcF_OnMWTLw",
-  platform: "youtube",
-  style: 'trap'
-},
-  {
-  title: "Fuzuê Baile 2019",
-  url: "https://soundcloud.com/djjosafa2/dj-josafa-fuzue-baile-2019-sem-intro",
-  platform: "soundcloud",
-  style: 'funk'
-},
-{
-  title: "Pool Party 18",
-  url: "https://www.mixcloud.com/djjosafa/pool-party-18-w-dj-josaf%C3%A1/",
-  platform: "mixcloud",
-  style: 'funk'
-},
-        {
-  title: "Solas Vinylas (Homenagem ao HD)",
-  url: "https://www.mixcloud.com/djjosafa/solas-vinylas-homenagem-postuma-ao-hd-falecido/",
-  platform: "mixcloud",
-  style: 'vinil'
-},
-     {
-  title: "Sambarock Mandagig",
-  url: "https://soundcloud.com/djjosafa-mandagig/sambarock",
-  platform: "soundcloud",
-  style: 'brasilidades'
-},
-{
-  title: "Ainda Temos Swing 2",
-  url: "https://www.mixcloud.com/djjosafa/dj-josaf%C3%A1-contest-fau-novos-talentos-29012022-palco-principal/",
-  platform: "mixcloud",
-  style: 'brasilidades'
-},
-{
-  title: "Ainda Temos Swing",
-  url: "https://www.mixcloud.com/djjosafa/ainda-temos-swing/",
-  platform: "mixcloud",
-  style: 'brasilidades'
-},
-{
-  title: "AINDA TEMOS SWING",
-  id: "EcOtvShF-tA",
-  platform: "youtube",
-  style: 'brasilidades'
-},   
     ];
 
   const styleSelect = document.getElementById('styleFilter');
@@ -330,19 +196,13 @@
   platformSelect.addEventListener('change', renderVideos);
 
   function getEmbed(video) {
-    if (video.platform === 'youtube') {
-      return `<iframe src="https://www.youtube.com/embed/${video.id}" title="${video.title}" allowfullscreen></iframe>`;
-   } else if (video.platform === 'soundcloud') {
-  return `<iframe width="100%" height="120" scrolling="no" frameborder="0" allow="autoplay"
-    style="overflow: hidden;"
-    src="https://w.soundcloud.com/player/?url=${encodeURIComponent(video.url)}&color=%23c3c8ce&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=true">
-  </iframe>`;
-    } else if (video.platform === 'mixcloud') {
-      return `<iframe width="100%" height="120" frameborder="0" src="https://www.mixcloud.com/widget/iframe/?feed=${encodeURIComponent(video.url)}&hide_cover=1&light=1" allow="autoplay"></iframe>`;
-    } else {
-      return `<p>Plataforma não suportada</p>`;
-    }
+  if (video.platform === 'spotify') {
+    const embedUrl = video.url.replace('open.spotify.com', 'open.spotify.com/embed');
+    return `<iframe style="border-radius:12px" src="${embedUrl}" width="100%" height="152" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
+  } else {
+    return `<p>Plataforma não suportada</p>`;
   }
+}
 
   function renderVideos() {
     const selectedStyle = styleSelect.value;
