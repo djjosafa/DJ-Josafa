@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>DJ Josafá | Site Oficial</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <!-- gif que aparece no desktop -->
+               <span class="d-block d-lg-none">&reg;</span>
+               <span class="d-none d-lg-block">
+                   <img class="img-fluid img-profile mx-auto mb-2" src="assets/img/caricatura.gif" alt="Imagem de Perfil" style="border: none; box-shadow: none;" />
+               </span>
+            </a>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#shows">Agenda</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#shop">Loja</a></li>
+                    <!-- Aperte o Play! -->
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="playDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Aperte o Play!
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="playDropdown">
+                        <li><a class="dropdown-item js-scroll-trigger" href="sets.html">Sets</a></li>
+                        <li><a class="dropdown-item js-scroll-trigger" href="videos.html">Vídeos</a></li>
+                        <li><a class="dropdown-item js-scroll-trigger" href="musicas.html">Músicas</a></li>
+                        <li><a class="dropdown-item js-scroll-trigger" href="#playlist">Playlist</a></li>
+                        <li><a class="dropdown-item js-scroll-trigger" href="#live">Live</a></li>
+                     </ul>
+                   </li>
+                <!-- Formatos -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="formatDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Formatos
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="formatDropdown">
+                        <li><a class="dropdown-item js-scroll-trigger" href="#education">Oficinas</a></li>
+                    </ul>
+                </li>
+                <!-- Conhecimento -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="knowledgeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Conhecimento
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="knowledgeDropdown">               
+                        <li><a class="dropdown-item js-scroll-trigger" href="#blog">Resenhas Culturais</a></li>
+                        <li><a class="dropdown-item js-scroll-trigger" href="#clipping">Entrevistas</a></li>
+                        <li><a class="dropdown-item js-scroll-trigger" href="#about">Biografia</a></li>
+                    </ul>
+                </li>
+
+                <!-- Fale Conosco -->
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#talk">Fale Conosco</a>
+                </li>
+            </ul>
+            </div>
+        </nav>
+<!-- Page Content -->
+<div class="container-fluid p-0" style="background-color: #011c26; font-family: 'Roboto', sans-serif;">
+  <section class="resume-section pt-3" id="videos">
+    <div class="resume-section-content text-center">
+
+      <!-- Título SETS -->
+      <h2 style="color: #d87653; font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 3rem; margin-top: 0;">
+        MÚSICAS
+      </h2>
+
+      <!-- Escolha uma plataforma -->
+      <div class="mb-3">
+        <!-- Subtítulo do filtro -->
+      <p style="font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 22px; font-weight: bold; color: #c3c8ce; margin-bottom: 10px;">
+        Selecione uma plataforma
+      </p>
+      <!-- Imagem à esquerda do filtro -->
+      <div class="d-flex justify-content-center align-items-center mb-3">
+        <img src="assets/img/simbolocinzaclaro.png" alt="Ícone" style="height: 60px; margin-right: 10px;">
+        <!-- Filtro à direita da imagem -->
+          <select id="platformFilter" style="background-color: #c3c8ce; color: #30101b; font-family: 'Roboto', sans-serif; border: none; padding: 10px; border-radius: 5px; font-size: 16px;">
+          <option value="all">Todas</option>
+          <option value="spotify">Spotify</option>
+          <option value="soundcloud">Soundcloud</option>
+          <option value="youtube">Youtube</option>
+        </select>
+      </div>
+          <!-- Escolha um estilo (Agora abaixo do título Vídeos) -->
+      <div class="mb-3">
+        <!-- Subtítulo do filtro -->
+      <p style="font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 22px; font-weight: bold; color: #c3c8ce; margin-bottom: 10px;">
+        Selecione um modelo
+      </p>
+      <!-- Imagem à esquerda do filtro -->
+      <div class="d-flex justify-content-center align-items-center mb-3">
+        <img src="assets/img/simbololaranja.png" alt="Ícone" style="height: 60px; margin-right: 10px;">
+        <!-- Filtro à direita da imagem -->
+          <select id="styleFilter" style="background-color: #c3c8ce; color: #30101b; font-family: 'Roboto', sans-serif; border: none; padding: 10px; border-radius: 5px; font-size: 16px;">
+          <option value="all">Todos</option>
+          <option value="scratch">Scratches</option>
+          <option value="albuns">Albuns</option>
+          <option value="remix">Remix (VINYLA BEAST)</option>
+          <option value="single">Single</option>
+        </select>
+      </div>
+
+      <!-- Carrossel de vídeos -->
+      <div id="videoCarousel" class="carousel slide w-100" data-bs-ride="carousel" data-bs-interval="15000" style="max-width: 90%; margin: 0 auto;">
+        <div class="carousel-inner" id="carouselItems">
+          <!-- Os vídeos são inseridos via JS -->
+        </div>
+      </div>
+
+<!-- Descrição do vídeo e setas de navegação abaixo -->
+<div class="d-flex justify-content-between align-items-center mt-3 mb-3 video-navigation" style="position: relative; width: 90%; margin: 0 auto;">
+  <!-- Botão anterior à esquerda da descrição -->
+  <button class="carousel-control-prev" type="button"
+    data-bs-target="#videoCarousel" data-bs-slide="prev"
+    style="background-color: #d87653; border: none; border-radius: 50%; width: 40px; height: 40px; position: absolute; left: 0;">
+    <span style="color: #011c26; font-size: 24px;">‹</span>
+  </button>
+
+  <!-- Descrição do vídeo (centralizada entre as setas) -->
+  <p id="videoDescription" class="text-center" style="color: #c3c8ce; font-family: 'Roboto'; font-size: 1rem; flex-grow: 1;">
+    <!-- Aqui vai a descrição dinâmica do vídeo -->
+  </p>
+
+  <!-- Botão próximo à direita da descrição -->
+  <button class="carousel-control-next" type="button"
+    data-bs-target="#videoCarousel" data-bs-slide="next"
+    style="background-color: #d87653; border: none; border-radius: 50%; width: 40px; height: 40px; position: absolute; right: 0;">
+    <span style="color: #011c26; font-size: 24px;">›</span>
+  </button>
+</div>
+
+</style>
+        
+  <!-- Bootstrap core JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    const videos = [
+{
+  style: 'scratch',
+  platform: 'spotify',
+  url: 'https://open.spotify.com/playlist/4b2MrIWroNFQtD1D1pfmSD',
+  title: 'Scratches e Colagens',
+  description: 'Playlist com Scratches e Colagens por DJ Josafá'
+}, 
+{
+  style: 'remix',
+  platform: 'soundcloud',
+  url: 'https://soundcloud.com/vinyla-beast/quarto-de-despejo-leall-vinyla-beast-remix',
+  title: 'Quarto de Despejo - Leall (VINYLA BEAST Remix)',
+  description: 'VINYLA BEAST é um projeto de produções/remix do DJ Josafá! Nesse single, o instrumental foi totalmente feito pelo artista, mantendo a essência e sample do NAS e a pertinente letra do Leal, com um tempero especial na produção por DJ Josafá...'
+},  
+{
+  style: 'remix',
+  platform: 'soundcloud',
+  url: 'https://soundcloud.com/vinyla-beast/drum-n-bass-pinharistico',
+  title: 'Drum n Bass Pinharistico',
+  description: 'MC Carol de Niterói é importantíssima para o funk, e nesse remix, DJ Josafá (através de seu projeto VINYLA BEAST) aplicou a letra e outros elementos do funk p#t@ria experimentando a criação de bateria no estilo drum n bass'
+},
+{
+  style: 'remix',
+  platform: 'soundcloud',
+  url: 'https://soundcloud.com/vinyla-beast/bikila-bass-abebe-vinyla-beast-edit',
+  title: 'Bikila Bass (Abebe) - love & addictions (BK - Amores, Vícios e Obcessões - VINYLA BEAST Edit)',
+  description: 'VINYLA BEAST é um projeto de produções/remix do DJ Josafá! Nesse single, o artista transformou o clássico do Castelos e Ruínas numa versão mete-dança miami bass...'
+},
+{
+  style: 'remix',
+  platform: 'soundcloud',
+  url: 'https://soundcloud.com/vinyla-beast/saudade-daquilo-150bpm-iza-mc-maneirinho-vinyla-beast-remix',
+  title: 'SAUDADE DAQUILO 150BPM - IZA, MC MANEIRINHO [VINYLA BEAST REMIX]',
+  description: 'DJ Josafá (através de seu projeto VINYLA BEAST) reinterpretou a musica Saudade Daquilo, produzindo um beat que traduz muito bem esse hit da IZA, que por sinal é uma das artistas mais versáteis e representativas do Pop mundial!'
+},
+{
+  style: 'remix',
+  platform: 'soundcloud',
+  url: 'https://soundcloud.com/vinyla-beast/vinyla-wave-cassiano-onda-remix-feat-lino-kriss-mano-brown-cassiano-boogie-naipe',
+  title: 'Vinyla Wave (Cassiano - Onda Remix) Feat. Lino Kriss, Mano Brown, Vinyla Beast & Boogie Naipe',
+  description: 'Imagina se o Cassiano tivesse participado do BOOGIE NAIPE? DJ Josafá (através de seu projeto VINYLA BEAST) juntou mestres da música nacional em uma versão que brinca com as músicas ONDA e LA ONDA'
+},   
+{
+  style: 'remix',
+  platform: 'soundcloud',
+  url: 'https://soundcloud.com/vinyla-beast/paunetone-001-feat-raffa-moreira-mc-ml-mc-rf',
+  title: 'PAUNETONE 001 (FEAT. RAFFA MOREIRA, MC ML, MC RF) BY VINYLA BEAST 130BPM',
+  description: 'Nesse single DJ Josafá criou o beat que mistura timbres diferentes de sino com elementos de clássicos natalinos, trazendo também hits atuais como Raffa Moreira, MC Ml e MC RF'
+}, 
+{
+  style: 'remix',
+  platform: 'soundcloud',
+  url: 'https://soundcloud.com/vinyla-beast/a-lenda-do-funk-vinyla-beast-mc-de-leve',
+  title: 'A LENDA DO FUNK MAL FEITO (VINYLA BEAST & MC DE LEVE) 150BPM',
+  description: 'Primeiro remix do DJ Josafá, estreando seu projeto VINYLA BEAST com sample de um clássico do rap e versos do De Leve (a leenda brother) e clássicos do funk também'
+},
+{
+  style: 'albuns',
+  platform: 'spotify',
+  url: 'https://open.spotify.com/album/6MVa1geSUU7QjURTswkQhO',
+  title: 'REVERSE - REVERSE (2020)',
+  description: 'Durante a pandemia DJ Josafá se juntou com Ramiro Mart e Pirra para criar um álbum que une a essência do BOOM BAP com diversas referências do SKATE! Com scratches e colagens na maioria das faixas, o álbum tem 12 faixas e conta com a participação de De Leve, Nill e beats de Lossio, Pancho, Lvks, etc...No YouTube o álbum conta com visualiser de best tricks de vários skatistas da região sul-fluminense!'
+},
+    ];
+
+  const styleSelect = document.getElementById('styleFilter');
+  const platformSelect = document.getElementById('platformFilter');
+  const carouselContainer = document.getElementById('carouselItems');
+
+  styleSelect.addEventListener('change', renderVideos);
+  platformSelect.addEventListener('change', renderVideos);
+
+  function getEmbed(video) {
+  if (video.platform === 'spotify') {
+    const embedUrl = video.url.replace('open.spotify.com', 'open.spotify.com/embed');
+    return `<iframe style="border-radius:12px" src="${embedUrl}" width="100%" height="152" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
+  } else if (video.platform === 'soundcloud') {
+  return `<iframe width="100%" height="120" scrolling="no" frameborder="0" allow="autoplay"
+    style="overflow: hidden;"
+    src="https://w.soundcloud.com/player/?url=${encodeURIComponent(video.url)}&color=%23c3c8ce&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=true">
+  </iframe>`;
+    return `<p>Plataforma não suportada</p>`;
+  }
+}
+
+  function renderVideos() {
+    const selectedStyle = styleSelect.value;
+    const selectedPlatform = platformSelect.value;
+
+    const filtered = videos.filter(video => {
+      const matchStyle = selectedStyle === 'all' || video.style === selectedStyle;
+      const matchPlatform = selectedPlatform === 'all' || video.platform === selectedPlatform;
+      return matchStyle && matchPlatform;
+    });
+
+    carouselContainer.innerHTML = '';
+
+    if (filtered.length === 0) {
+      carouselContainer.innerHTML = `<div class="carousel-item active"><p class="text-center">Nenhum vídeo encontrado.</p></div>`;
+      return;
+    }
+
+    filtered.forEach((video, index) => {
+      const active = index === 0 ? 'active' : '';
+      const embed = getEmbed(video);
+
+      const item = `
+        <div class="carousel-item ${active}">
+          <div class="ratio ratio-16x9">
+            ${embed}
+          </div>
+          <div style="margin-top: 20px; color: #c3c8ce;">
+            <h5 style="color: #c3c8ce;">${video.title}</h5>
+            <p style="color: #c3c8ce;">${video.description}</p>
+          </div>
+        </div>
+      `;
+
+      carouselContainer.innerHTML += item;
+    });
+  }
+
+  renderVideos();
+</script>
