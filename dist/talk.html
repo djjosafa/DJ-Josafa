@@ -175,22 +175,109 @@
   <hr class="form-line">
 </form>
 
-<!-- FORMULÁRIO: CURTI UM SET AO VIVO -->
-<form id="form-set-ao-vivo" action="https://formspree.io/f/meognvaz" method="POST" style="display: none;" class="form-container">
+      <!-- Linha divisória reduzida -->
+  <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin-top: 0.15rem;">
+</div>
+
+<!-- Mensagem de agradecimento -->
+<div id="agradecimento" style="display: none; color: #c3c8ce; font-size: 1rem; font-family: 'Neptune', sans-serif; margin-top: 1rem; text-align: center;">
+  Muito obrigado pelo seu retorno!
+</div>
+
+<!-- Script para toggle com transição suave -->
+<script>
+  function toggleForm(id) {
+    const form = document.getElementById(id);
+    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    form.style.display = form.style.display === 'block' ? 'none' : 'block';
+  }
+
+  // Impede múltiplos envios
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("form-contratante");
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form)
+        }).then(response => {
+          form.style.display = "none";
+          document.getElementById("agradecimento").style.display = "block";
+          localStorage.setItem("formEnviado", "true");
+        });
+      });
+
+      if (localStorage.getItem("formEnviado") === "true") {
+        form.style.display = "none";
+        document.getElementById("agradecimento").style.display = "block";
+      }
+    }
+  });
+</script>
+
+<!-- Dropdown estilizado -->
+<div class="d-flex justify-content-center flex-column align-items-center gap-3">
+
+<!-- BOTÃO: CURTI UM SET -->
+<button class="btn-servico" onclick="toggleForm('form-contratante')">
+  CURTI UM SET AO VIVO <span style="font-size: 1.4rem;">&#9660;</span>
+</button>
+
+<!-- Estilo do botão e hover -->
+<style>
+  .btn-servico {
+    background: linear-gradient(to right, rgba(124, 119, 115, 0.25), rgba(124, 119, 115, 0.8), rgba(124, 119, 115, 0.25));
+    border: none;
+    color: #d87653;
+    font-family: 'Neptune', sans-serif;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 10px 24px;
+    transition: color 0.3s ease;
+  }
+
+  .btn-servico:hover {
+    color: #c3c8ce;
+  }
+
+  .form-container {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .form-line {
+    border: none;
+    height: 1px;
+    background-color: #7c7773;
+    opacity: 0.4;
+    width: 100%;
+    margin: 0.8rem 0;
+  }
+</style>
+
+<!-- FORMULÁRIO: FAN -->
+<form id="form-fan" action="https://formspree.io/f/meognvaz" method="POST" style="display: none;" class="form-container">
+
+  <hr class="form-line">
 
   <div class="mb-3 text-start">
-    <label class="form-label">Nome</label>
-    <input type="text" class="form-control" name="nome_set">
+    <label for="nome" class="form-label">Nome (opcional)</label>
+    <input type="text" class="form-control" name="nome" id="nome">
   </div>
 
   <div class="mb-3 text-start">
-    <label class="form-label">Evento + Data</label>
-    <input type="text" class="form-control" name="evento_data" required>
+    <label for="evento" class="form-label">Evento + Data</label>
+    <input type="text" class="form-control" name="evento" id="evento" required>
   </div>
 
   <div class="mb-3 text-start">
-    <label class="form-label">Qual seu feedback? (diferencial, qualidades, defeitos, etc)</label>
-    <textarea class="form-control" name="feedback_set" rows="4" required></textarea>
+    <label for="feedback" class="form-label">Qual seu feedback? (diferencial, qualidades, defeitos, etc)</label>
+    <textarea class="form-control" name="feedback" id="feedback" rows="4" required></textarea>
   </div>
 
   <div class="text-center">
@@ -199,23 +286,109 @@
 
   <hr class="form-line">
 </form>
+  <!-- Linha divisória reduzida -->
+  <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin-top: 0.15rem;">
+</div>
 
-<!-- FORMULÁRIO: FIZ UM ORÇAMENTO -->
-<form id="form-orcamento" style="display: none;" class="form-container">
+<!-- Mensagem de agradecimento -->
+<div id="agradecimento" style="display: none; color: #c3c8ce; font-size: 1rem; font-family: 'Neptune', sans-serif; margin-top: 1rem; text-align: center;">
+  Muito obrigado pelo seu retorno!
+</div>
+
+<!-- Script para toggle com transição suave -->
+<script>
+  function toggleForm(id) {
+    const form = document.getElementById(id);
+    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    form.style.display = form.style.display === 'block' ? 'none' : 'block';
+  }
+
+  // Impede múltiplos envios
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("form-contratante");
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form)
+        }).then(response => {
+          form.style.display = "none";
+          document.getElementById("agradecimento").style.display = "block";
+          localStorage.setItem("formEnviado", "true");
+        });
+      });
+
+      if (localStorage.getItem("formEnviado") === "true") {
+        form.style.display = "none";
+        document.getElementById("agradecimento").style.display = "block";
+      }
+    }
+  });
+</script>
+
+<!-- Dropdown estilizado -->
+<div class="d-flex justify-content-center flex-column align-items-center gap-3">
+
+<!-- BOTÃO: ORCAMENTO -->
+<button class="btn-servico" onclick="toggleForm('form-contratante')">
+  FIZ UM ORÇAMENTO <span style="font-size: 1.4rem;">&#9660;</span>
+</button>
+
+<!-- Estilo do botão e hover -->
+<style>
+  .btn-servico {
+    background: linear-gradient(to right, rgba(124, 119, 115, 0.25), rgba(124, 119, 115, 0.8), rgba(124, 119, 115, 0.25));
+    border: none;
+    color: #d87653;
+    font-family: 'Neptune', sans-serif;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 10px 24px;
+    transition: color 0.3s ease;
+  }
+
+  .btn-servico:hover {
+    color: #c3c8ce;
+  }
+
+  .form-container {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .form-line {
+    border: none;
+    height: 1px;
+    background-color: #7c7773;
+    opacity: 0.4;
+    width: 100%;
+    margin: 0.8rem 0;
+  }
+</style>
+
+<!-- FORMULÁRIO: FAN -->
+<form id="form-fan" action="https://formspree.io/f/xdkgbyzo" method="POST" style="display: none;" class="form-container">
+
+  <hr class="form-line">
 
   <div class="mb-3 text-start">
-    <label class="form-label">Qual o evento?</label>
-    <input type="text" class="form-control" name="evento_orc" required>
+    <label for="nome" class="form-label">Qual o evento?</label>
+    <input type="text" class="form-control" name="nome" id="nome">
   </div>
 
   <div class="mb-3 text-start">
-    <label class="form-label">O que influenciou na sua escolha? (Por que não contratou?)</label>
-    <textarea class="form-control" name="motivo_nao" rows="3" required></textarea>
+    <label for="evento" class="form-label">O que influenciou na sua escolha? (Por que não contratou?)</label>
+    <input type="text" class="form-control" name="evento" id="evento" required>
   </div>
 
   <div class="mb-3 text-start">
-    <label class="form-label">Como foi seu atendimento?</label>
-    <textarea class="form-control" name="atendimento" rows="3" required></textarea>
+    <label for="feedback" class="form-label">Como foi seu atendimento?</label>
+    <textarea class="form-control" name="feedback" id="feedback" rows="4" required></textarea>
   </div>
 
   <div class="text-center">
@@ -223,12 +396,53 @@
   </div>
 
   <hr class="form-line">
-</form>
+</form>   
+  <!-- Linha divisória reduzida -->
+  <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin-top: 0.15rem;">
+</div>
+
+<!-- Mensagem de agradecimento -->
+<div id="agradecimento" style="display: none; color: #c3c8ce; font-size: 1rem; font-family: 'Neptune', sans-serif; margin-top: 1rem; text-align: center;">
+  Muito obrigado pelo seu retorno!
+</div>
+
+<!-- Script para toggle com transição suave -->
+<script>
+  function toggleForm(id) {
+    const form = document.getElementById(id);
+    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    form.style.display = form.style.display === 'block' ? 'none' : 'block';
+  }
+
+  // Impede múltiplos envios
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("form-contratante");
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form)
+        }).then(response => {
+          form.style.display = "none";
+          document.getElementById("agradecimento").style.display = "block";
+          localStorage.setItem("formEnviado", "true");
+        });
+      });
+
+      if (localStorage.getItem("formEnviado") === "true") {
+        form.style.display = "none";
+        document.getElementById("agradecimento").style.display = "block";
+      }
+    }
+  });
+</script>
 
 <!-- Toggle aprimorado -->
 <script>
   function toggleForm(id) {
-    const allForms = ['form-contratante', 'form-set-ao-vivo', 'form-orcamento'];
+    const allForms = ['form-contratante', 'form-fan', 'form-orcamento'];
     allForms.forEach(formId => {
       const form = document.getElementById(formId);
       if (formId === id) {
