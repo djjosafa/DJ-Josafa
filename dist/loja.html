@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>DJ Josafá | Site Oficial</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <!-- gif que aparece no desktop -->
+               <span class="d-block d-lg-none">&reg;</span>
+               <span class="d-none d-lg-block">
+                   <img class="img-fluid img-profile mx-auto mb-2" src="assets/img/caricatura.gif" alt="Imagem de Perfil" style="border: none; box-shadow: none;" />
+               </span>
+            </a>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="agenda.html">Agenda</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#shop">Loja</a></li>
+                    <!-- Aperte o Play! -->
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="playDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Aperte o Play!
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="playDropdown">
+                        <li><a class="dropdown-item js-scroll-trigger" href="sets.html">Sets</a></li>
+                        <li><a class="dropdown-item js-scroll-trigger" href="videos.html">Vídeos</a></li>
+                        <li><a class="dropdown-item js-scroll-trigger" href="musicas.html">Músicas</a></li>
+                        <li><a class="dropdown-item js-scroll-trigger" href="playlists.html">Playlist</a></li>
+                        <li><a class="dropdown-item js-scroll-trigger" href="live.html">Live</a></li>
+                     </ul>
+                   </li>
+                <!-- Formatos -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="formatDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Formatos
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="formatDropdown">
+                        <li><a class="dropdown-item js-scroll-trigger" href="#education">Oficinas</a></li>
+                    </ul>
+                </li>
+                <!-- Conhecimento -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="knowledgeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Conhecimento
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="knowledgeDropdown">               
+                        <li><a class="dropdown-item js-scroll-trigger" href="#blog">JosaBlog</a></li>
+                        <li><a class="dropdown-item js-scroll-trigger" href="#clipping">Entrevistas</a></li>
+                        <li><a class="dropdown-item js-scroll-trigger" href="#about">Biografia</a></li>
+                    </ul>
+                </li>
+
+                <!-- Fale Conosco -->
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#talk">Fale Conosco</a>
+                </li>
+            </ul>
+            </div>
+        </nav>
+<!-- Page Content -->
+<div class="container-fluid p-0" style="background-color: #011c26; font-family: 'Roboto', sans-serif;">
+  <section class="resume-section pt-3" id="videos">
+    <div class="resume-section-content text-center">
+
+      <!-- Título SETS -->
+      <h2 style="color: #d87653; font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 3rem; margin-top: 0;">
+        PLAYLISTS
+      </h2>
+
+      <!-- Escolha uma plataforma -->
+      <div class="mb-3">
+        <!-- Subtítulo do filtro -->
+      <p style="font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 22px; font-weight: bold; color: #c3c8ce; margin-bottom: 10px;">
+        Selecione uma plataforma
+      </p>
+      <!-- Imagem à esquerda do filtro -->
+      <div class="d-flex justify-content-center align-items-center mb-3">
+        <img src="assets/img/simbolocinzaclaro.png" alt="Ícone" style="height: 60px; margin-right: 10px;">
+        <!-- Filtro à direita da imagem -->
+          <select id="platformFilter" style="background-color: #c3c8ce; color: #30101b; font-family: 'Roboto', sans-serif; border: none; padding: 10px; border-radius: 5px; font-size: 16px;">
+          <option value="all">Todas</option>
+          <option value="spotify">Spotify</option>
+          <option value="applemusic">Apple Music</option>
+          <option value="youtube">Youtube</option>
+        </select>
+      </div>
+          <!-- Escolha um estilo (Agora abaixo do título Vídeos) -->
+      <div class="mb-3">
+        <!-- Subtítulo do filtro -->
+      <p style="font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 22px; font-weight: bold; color: #c3c8ce; margin-bottom: 10px;">
+        Selecione um estilo
+      </p>
+      <!-- Imagem à esquerda do filtro -->
+      <div class="d-flex justify-content-center align-items-center mb-3">
+        <img src="assets/img/simbololaranja.png" alt="Ícone" style="height: 60px; margin-right: 10px;">
+        <!-- Filtro à direita da imagem -->
+          <select id="styleFilter" style="background-color: #c3c8ce; color: #30101b; font-family: 'Roboto', sans-serif; border: none; padding: 10px; border-radius: 5px; font-size: 16px;">
+          <option value="all">Todos</option>
+          <option value="tematica">Temáticas</option>
+          <option value="livros">Livros</option>
+          <option value="trap">Trap</option>
+          <option value="funk">Funk</option>
+          <option value="brasilidades">Brasilidades</option>
+          <option value="Rap">Rap</option>
+          <option value="participacoes">Autorais/Feats</option>
+        </select>
+      </div>
+
+      <!-- Carrossel de vídeos -->
+      <div id="videoCarousel" class="carousel slide w-100" data-bs-ride="carousel" data-bs-interval="15000" style="max-width: 90%; margin: 0 auto;">
+        <div class="carousel-inner" id="carouselItems">
+          <!-- Os vídeos são inseridos via JS -->
+        </div>
+      </div>
+
+<!-- Descrição do vídeo e setas de navegação abaixo -->
+<div class="d-flex justify-content-between align-items-center mt-3 mb-3 video-navigation" style="position: relative; width: 90%; margin: 0 auto;">
+  <!-- Botão anterior à esquerda da descrição -->
+  <button class="carousel-control-prev" type="button"
+    data-bs-target="#videoCarousel" data-bs-slide="prev"
+    style="background-color: #d87653; border: none; border-radius: 50%; width: 40px; height: 40px; position: absolute; left: 0;">
+    <span style="color: #011c26; font-size: 24px;">‹</span>
+  </button>
+
+  <!-- Descrição do vídeo (centralizada entre as setas) -->
+  <p id="videoDescription" class="text-center" style="color: #c3c8ce; font-family: 'Roboto'; font-size: 1rem; flex-grow: 1;">
+    <!-- Aqui vai a descrição dinâmica do vídeo -->
+  </p>
+
+  <!-- Botão próximo à direita da descrição -->
+  <button class="carousel-control-next" type="button"
+    data-bs-target="#videoCarousel" data-bs-slide="next"
+    style="background-color: #d87653; border: none; border-radius: 50%; width: 40px; height: 40px; position: absolute; right: 0;">
+    <span style="color: #011c26; font-size: 24px;">›</span>
+  </button>
+</div>
+
+</style>
+        
+  <!-- Bootstrap core JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    const videos = [
+{
+  style: 'livros',
+  platform: 'spotify',
+  url: 'https://open.spotify.com/playlist/3o4FBrbPUu8SzUEGVAbmM2?si=0OEUU7_ESEGtK2IPk0Kv9Q',
+  title: 'Espírito da Intimidade',
+  description: 'A intimidade, em termos gerais, é uma canção do espírito, que convida duas pessoas a compartilharem seu espírito. É uma canção que ninguém pode resistir. - Sobonfu Somé..Playlist de RnB para coisas leves e momentos íntimos, criada após a leitura do Livro da Sobonfu Somé'
+}, 
+{
+  style: 'tematica',
+  platform: 'spotify',
+  url: 'https://open.spotify.com/playlist/6Iq164mxV2MtCGT7eV1FSh',
+  title: '80 Nomes de Menina',
+  description: 'Em 1989 surgia um dos primeiros raps nacionais, "Nomes de Meninas", batalha de rima onde o desafio era rimar 8 nomes de meninas...'
+},  
+{
+  style: 'tematica',
+  platform: 'spotify',
+  url: 'https://open.spotify.com/playlist/271xSPZVNLhyD7TPoOB5iO',
+  title: 'Pausa no Batente',
+  description: 'Depois de uma semana cansativa, um dia de folga é sempre bem-vindo!! Aperte o play, relaxe, se divirta e recupere suas energias...'
+},
+{
+  style: 'rap',
+  platform: 'spotify',
+  url: 'https://open.spotify.com/playlist/6L5P5YCUBYZie4Uscql72h',
+  title: 'Passaporte VR',
+  description: 'Clássicos e lançamentos de artistas de Volta Redonda/RJ e região.'
+},
+    ];
+
+  const styleSelect = document.getElementById('styleFilter');
+  const platformSelect = document.getElementById('platformFilter');
+  const carouselContainer = document.getElementById('carouselItems');
+
+  styleSelect.addEventListener('change', renderVideos);
+  platformSelect.addEventListener('change', renderVideos);
+
+  function getEmbed(video) {
+  if (video.platform === 'spotify') {
+    const embedUrl = video.url.replace('open.spotify.com', 'open.spotify.com/embed');
+    return `<iframe style="border-radius:12px" src="${embedUrl}" width="100%" height="152" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
+  } else {
+    return `<p>Plataforma não suportada</p>`;
+  }
+}
+
+  function renderVideos() {
+    const selectedStyle = styleSelect.value;
+    const selectedPlatform = platformSelect.value;
+
+    const filtered = videos.filter(video => {
+      const matchStyle = selectedStyle === 'all' || video.style === selectedStyle;
+      const matchPlatform = selectedPlatform === 'all' || video.platform === selectedPlatform;
+      return matchStyle && matchPlatform;
+    });
+
+    carouselContainer.innerHTML = '';
+
+    if (filtered.length === 0) {
+      carouselContainer.innerHTML = `<div class="carousel-item active"><p class="text-center">Nenhum vídeo encontrado.</p></div>`;
+      return;
+    }
+
+    filtered.forEach((video, index) => {
+      const active = index === 0 ? 'active' : '';
+      const embed = getEmbed(video);
+
+      const item = `
+        <div class="carousel-item ${active}">
+          <div class="ratio ratio-16x9">
+            ${embed}
+          </div>
+          <div style="margin-top: 20px; color: #c3c8ce;">
+            <h5 style="color: #c3c8ce;">${video.title}</h5>
+            <p style="color: #c3c8ce;">${video.description}</p>
+          </div>
+        </div>
+      `;
+
+      carouselContainer.innerHTML += item;
+    });
+  }
+
+  renderVideos();
+</script>
+    </section>
+<div style="text-align: center; font-size: 0.9rem; color: #7c7773; padding: 1rem 0;">
+© 2025 DJ Josafá  &reg; — Todos os direitos reservados. Lei 9.610/98.
+    </div>
+</body>
+</html>
