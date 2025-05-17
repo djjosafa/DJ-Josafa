@@ -103,110 +103,144 @@
 <!-- Dropdown estilizado -->
 <div class="d-flex justify-content-center flex-column align-items-center gap-3">
 
-  <!-- BOTÃO: CONTRATEI UM SERVIÇO -->
-  <button class="btn-servico" onclick="toggleForm('form-contratante')" style="
-    background: none;
-    border: 2px solid transparent;
+<!-- BOTÃO: CONTRATEI UM SERVIÇO -->
+<button class="btn-servico" onclick="toggleForm('form-contratante')">
+  CONTRATEI UM SERVIÇO <span style="font-size: 1.4rem;">&#9660;</span>
+</button>
+
+<!-- Estilo do botão e hover -->
+<style>
+  .btn-servico {
+    background: linear-gradient(to right, rgba(124, 119, 115, 0.25), rgba(124, 119, 115, 0.8), rgba(124, 119, 115, 0.25));
+    border: none;
     color: #d87653;
     font-family: 'Neptune', sans-serif;
     font-size: 2.2rem;
     text-transform: uppercase;
-    text-align: center;
     cursor: pointer;
-    padding: 10px 20px;
-    transition: all 0.3s ease;
-    margin-bottom: 0.4rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  ">
-    CONTRATEI UM SERVIÇO <span style="font-size: 1.8rem;">▾</span>
-  </button>
+    padding: 10px 24px;
+    transition: color 0.3s ease;
+  }
 
-  <style>
-    .btn-servico:hover {
-      color: #7c7773 !important;
-    }
-  </style>
+  .btn-servico:hover {
+    color: #c3c8ce;
+  }
 
-  <!-- FORMULÁRIO: CONTRATANTE -->
-  <form id="form-contratante" action="https://formspree.io/f/mnndwobj" method="POST" style="
-    display: none;
+  .form-container {
     font-family: 'Roboto', sans-serif;
     color: #fff;
     max-width: 600px;
     width: 100%;
-    border: 1px solid rgba(124, 119, 115, 0.5);
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    background-color: transparent;
-  ">
-
-    <div class="mb-3 text-start">
-      <label for="nome" class="form-label" style="color: #c3c8ce;">Nome (opcional)</label>
-      <input type="text" class="form-control" name="nome" id="nome" style="background: transparent; color: #fff; border-color: #7c7773;">
-    </div>
-
-    <div class="mb-3 text-start">
-      <label for="evento" class="form-label" style="color: #c3c8ce;">Evento</label>
-      <input type="text" class="form-control" name="evento" id="evento" required style="background: transparent; color: #fff; border-color: #7c7773;">
-    </div>
-
-    <div class="mb-3 text-start">
-      <label for="feedback" class="form-label" style="color: #c3c8ce;">Deixe um feedback sobre o serviço</label>
-      <textarea class="form-control" name="feedback" id="feedback" rows="4" required style="background: transparent; color: #fff; border-color: #7c7773;"></textarea>
-    </div>
-
-    <div class="mb-3 text-start">
-      <label for="codigo" class="form-label" style="color: #c3c8ce;">Insira aqui o código de cliente recebido</label>
-      <input type="text" class="form-control" name="codigo" id="codigo" required style="background: transparent; color: #fff; border-color: #7c7773;">
-    </div>
-
-    <div class="text-center">
-      <button type="submit" class="btn btn-outline-light">Enviar</button>
-    </div>
-  </form>
-
-  <!-- Linha divisória reduzida -->
-  <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin-top: 0.08rem;">
-</div>
-
-<!-- Mensagem de agradecimento -->
-<div id="agradecimento" style="display: none; color: #c3c8ce; font-size: 1rem; font-family: 'Neptune', sans-serif; margin-top: 1rem; text-align: center;">
-  Muito obrigado pelo seu retorno!
-</div>
-
-<!-- Script para toggle com transição suave -->
-<script>
-  function toggleForm(id) {
-    const form = document.getElementById(id);
-    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    form.style.display = form.style.display === 'block' ? 'none' : 'block';
   }
 
-  // Impede múltiplos envios
-  document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("form-contratante");
-    if (form) {
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
+  .form-line {
+    border: none;
+    height: 1px;
+    background-color: #7c7773;
+    opacity: 0.4;
+    width: 100%;
+    margin: 0.8rem 0;
+  }
+</style>
 
-        fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form)
-        }).then(response => {
-          form.style.display = "none";
-          document.getElementById("agradecimento").style.display = "block";
-          localStorage.setItem("formEnviado", "true");
-        });
-      });
+<!-- FORMULÁRIO: CONTRATANTE -->
+<form id="form-contratante" action="https://formspree.io/f/mnndwobj" method="POST" style="display: none;" class="form-container">
 
-      if (localStorage.getItem("formEnviado") === "true") {
-        form.style.display = "none";
-        document.getElementById("agradecimento").style.display = "block";
+  <hr class="form-line">
+
+  <div class="mb-3 text-start">
+    <label for="nome" class="form-label">Nome (opcional)</label>
+    <input type="text" class="form-control" name="nome" id="nome">
+  </div>
+
+  <div class="mb-3 text-start">
+    <label for="evento" class="form-label">Evento</label>
+    <input type="text" class="form-control" name="evento" id="evento" required>
+  </div>
+
+  <div class="mb-3 text-start">
+    <label for="feedback" class="form-label">Deixe um feedback sobre o serviço (pontos positivos e/ou negativos, etc)</label>
+    <textarea class="form-control" name="feedback" id="feedback" rows="4" required></textarea>
+  </div>
+
+  <div class="mb-3 text-start">
+    <label for="codigo" class="form-label">Insira aqui o código de cliente recebido</label>
+    <input type="text" class="form-control" name="codigo" id="codigo" required>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-outline-light">Enviar</button>
+  </div>
+
+  <hr class="form-line">
+</form>
+
+<!-- FORMULÁRIO: CURTI UM SET AO VIVO -->
+<form id="form-set-ao-vivo" style="display: none;" class="form-container">
+
+  <div class="mb-3 text-start">
+    <label class="form-label">Nome</label>
+    <input type="text" class="form-control" name="nome_set">
+  </div>
+
+  <div class="mb-3 text-start">
+    <label class="form-label">Evento + Data</label>
+    <input type="text" class="form-control" name="evento_data" required>
+  </div>
+
+  <div class="mb-3 text-start">
+    <label class="form-label">Qual seu feedback? (diferencial, qualidades, defeitos, etc)</label>
+    <textarea class="form-control" name="feedback_set" rows="4" required></textarea>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-outline-light">Enviar</button>
+  </div>
+
+  <hr class="form-line">
+</form>
+
+<!-- FORMULÁRIO: FIZ UM ORÇAMENTO -->
+<form id="form-orcamento" style="display: none;" class="form-container">
+
+  <div class="mb-3 text-start">
+    <label class="form-label">Qual o evento?</label>
+    <input type="text" class="form-control" name="evento_orc" required>
+  </div>
+
+  <div class="mb-3 text-start">
+    <label class="form-label">O que influenciou na sua escolha? (Por que não contratou?)</label>
+    <textarea class="form-control" name="motivo_nao" rows="3" required></textarea>
+  </div>
+
+  <div class="mb-3 text-start">
+    <label class="form-label">Como foi seu atendimento?</label>
+    <textarea class="form-control" name="atendimento" rows="3" required></textarea>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-outline-light">Enviar</button>
+  </div>
+
+  <hr class="form-line">
+</form>
+
+<!-- Toggle aprimorado -->
+<script>
+  function toggleForm(id) {
+    const allForms = ['form-contratante', 'form-set-ao-vivo', 'form-orcamento'];
+    allForms.forEach(formId => {
+      const form = document.getElementById(formId);
+      if (formId === id) {
+        form.style.display = form.style.display === 'block' ? 'none' : 'block';
+      } else {
+        form.style.display = 'none';
       }
-    }
-  });
+    });
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  }
 </script>
 
 <!-- Rodapé restaurado -->
