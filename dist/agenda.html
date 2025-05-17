@@ -135,7 +135,27 @@
     </tbody>
   </table>
 </div>
-
+<!-- Formulário de interesse -->
+<div class="container mb-4" style="max-width: 600px;">
+  <h3 class="mb-3" style="color: #7c7773; font-family: 'Neptune', sans-serif;">
+    Onde você quer ver o DJ Josafá? (evento e/ou cidade)
+  </h3>
+  <form action="https://formspree.io/f/xrbqjald" method="POST">
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nome" name="nome">
+    </div>
+    <div class="mb-3">
+      <label for="cidade" class="form-label">Cidade ou Evento</label>
+      <input type="text" class="form-control" id="cidade" name="cidade">
+    </div>
+    <div class="mb-3">
+      <label for="contato" class="form-label">Contato (e-mail ou WhatsApp)</label>
+      <input type="text" class="form-control" id="contato" name="contato" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+</div>
 <!-- Container do bloco de contato -->
 <div class="d-flex justify-content-center align-items-center flex-wrap" style="gap: 10px; flex-wrap: wrap; margin-top: 30px;">
 
