@@ -81,7 +81,7 @@
     <div class="resume-section-content text-center">
 
 <!-- Título AGENDA -->
-<h2 style="color: #f7d9c4; font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 3rem; margin: 0 0 16px 0;">
+<h2 style="color: #d87653; font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 3rem; margin: 0 0 16px 0;">
   FALA COMIGO!
 </h2>
 
@@ -90,6 +90,7 @@
   Se você chegou até aqui, muito obrigado!
 </p>
 
+<!-- Texto explicativo -->
 <div style="color: #c3c8ce; font-size: 0.9rem; font-family: 'Roboto', sans-serif; text-align: justify; max-width: 700px; margin: 0 auto; line-height: 1.4;">
   <p style="margin: 0.3rem 0;">
     O seu feedback é muito importante para que eu consiga avaliar meu desempenho e melhorar a experiência de quem se conecta comigo!
@@ -122,38 +123,50 @@
     padding: 10px 20px;
     transition: all 0.3s ease;
     margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   ">
-    CONTRATEI UM SERVIÇO
+    CONTRATEI UM SERVIÇO <span style="font-size: 1.8rem;">▾</span>
   </button>
 
   <style>
     .btn-servico:hover {
-      border-color: #d87653;
-      color: #7c7773;
+      color: #7c7773 !important;
     }
   </style>
 
   <!-- FORMULÁRIO: CONTRATANTE -->
-  <form id="form-contratante" action="https://formspree.io/f/mnndwobj" method="POST" style="display: none; font-family: 'Roboto', sans-serif; color: #fff; max-width: 600px; width: 100%;">
-    
+  <form id="form-contratante" action="https://formspree.io/f/mnndwobj" method="POST" style="
+    display: none;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    max-width: 600px;
+    width: 100%;
+    border: 1px solid rgba(124, 119, 115, 0.5);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: transparent;
+  ">
+
     <div class="mb-3 text-start">
-      <label for="nome" class="form-label">Nome (opcional)</label>
-      <input type="text" class="form-control" name="nome" id="nome">
+      <label for="nome" class="form-label" style="color: #c3c8ce;">Nome (opcional)</label>
+      <input type="text" class="form-control" name="nome" id="nome" style="background: transparent; color: #fff; border-color: #7c7773;">
     </div>
 
     <div class="mb-3 text-start">
-      <label for="evento" class="form-label">Evento</label>
-      <input type="text" class="form-control" name="evento" id="evento" required>
+      <label for="evento" class="form-label" style="color: #c3c8ce;">Evento</label>
+      <input type="text" class="form-control" name="evento" id="evento" required style="background: transparent; color: #fff; border-color: #7c7773;">
     </div>
 
     <div class="mb-3 text-start">
-      <label for="feedback" class="form-label">Deixe um feedback sobre o serviço</label>
-      <textarea class="form-control" name="feedback" id="feedback" rows="4" required></textarea>
+      <label for="feedback" class="form-label" style="color: #c3c8ce;">Deixe um feedback sobre o serviço</label>
+      <textarea class="form-control" name="feedback" id="feedback" rows="4" required style="background: transparent; color: #fff; border-color: #7c7773;"></textarea>
     </div>
 
     <div class="mb-3 text-start">
-      <label for="codigo" class="form-label">Insira aqui o código de cliente recebido</label>
-      <input type="text" class="form-control" name="codigo" id="codigo" required>
+      <label for="codigo" class="form-label" style="color: #c3c8ce;">Insira aqui o código de cliente recebido</label>
+      <input type="text" class="form-control" name="codigo" id="codigo" required style="background: transparent; color: #fff; border-color: #7c7773;">
     </div>
 
     <div class="text-center">
@@ -161,8 +174,8 @@
     </div>
   </form>
 
-  <!-- Linha divisória -->
-  <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin-top: 0.3rem;">
+  <!-- Linha divisória reduzida -->
+  <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin-top: 0.15rem;">
 </div>
 
 <!-- Mensagem de agradecimento -->
@@ -185,7 +198,6 @@
       form.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        // Envia os dados
         fetch(form.action, {
           method: 'POST',
           body: new FormData(form)
@@ -196,7 +208,6 @@
         });
       });
 
-      // Checa se o form já foi enviado
       if (localStorage.getItem("formEnviado") === "true") {
         form.style.display = "none";
         document.getElementById("agradecimento").style.display = "block";
