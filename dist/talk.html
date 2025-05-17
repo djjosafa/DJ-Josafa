@@ -80,39 +80,39 @@
   <section class="resume-section pt-3" id="videos">
     <div class="resume-section-content text-center">
 
-      <!-- Título AGENDA -->
-     <h2 style="color: #d87653; font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 3rem; margin: 0 0 16px 0;">
-        FALA COMIGO!
-      </h2>
-                    
-  <!-- Frase introdutória -->
-<p style="color: #c3c8ce; font-size: 1.1rem; font-family: 'Neptune', sans-serif; text-transform: uppercase; margin-top: 0;">
-    Se você chegou até aqui, muito obrigado!
-  </p>
-<div style="color: #c3c8ce; font-size: 0.9rem; font-family: 'Roboto', sans-serif; text-align: justify; max-width: 700px; margin: 0 auto;">
+<!-- Título AGENDA -->
+<h2 style="color: #d87653; font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 3rem; margin: 0 0 16px 0;">
+  FALA COMIGO!
+</h2>
 
+<!-- Frase introdutória -->
+<p style="color: #c3c8ce; font-size: 1.1rem; font-family: 'Neptune', sans-serif; text-transform: uppercase; margin-top: 0;">
+  Se você chegou até aqui, muito obrigado!
+</p>
+
+<!-- Texto explicativo -->
+<div style="color: #c3c8ce; font-size: 0.9rem; font-family: 'Roboto', sans-serif; text-align: justify; max-width: 700px; margin: 0 auto;">
   <p style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
     O seu feedback é muito importante para que eu consiga avaliar meu desempenho e melhorar a experiência de quem se conecta comigo!
   </p>
-
   <p style="margin-bottom: 0.5rem;">
     Você já curtiu um set ao vivo? Contratou para algum evento? Fez orçamento recentemente?
   </p>
-
   <p style="margin-bottom: 0;">
     Escolha a opção abaixo e mande seu feedback. Quero te ouvir — de verdade!
   </p>
-
 </div>
 
+<!-- Observação -->
 <p class="text-center mt-4" style="color: #7c7773; font-size: 0.9rem;">
   Esse espaço é para quem teve contato direto com nosso trabalho. Por favor, contribua com responsabilidade.
 </p>
-<!-- Dropdown estilizado -->
+
+<!-- BLOCO INTERATIVO -->
 <div class="d-flex justify-content-center flex-column align-items-center gap-3">
 
-  <!-- BOTÃO: CONTRATEI UM SERVIÇO -->
-  <button class="btn-servico" onclick="toggleForm('form-contratante')" style="
+  <!-- BOTÃO -->
+  <button id="btn-servico" class="btn-servico" onclick="toggleForm('form-contratante')" style="
     background: none;
     border: 2px solid transparent;
     color: #d87653;
@@ -123,65 +123,72 @@
     cursor: pointer;
     padding: 10px 20px;
     transition: all 0.3s ease;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.2rem;
   ">
     CONTRATEI UM SERVIÇO
   </button>
 
   <style>
     .btn-servico:hover {
+      color: #ffffff;
+      background-color: #d87653;
       border-color: #d87653;
-      color: #7c7773;
     }
   </style>
 
-  <!-- FORMULÁRIO: CONTRATANTE -->
+  <!-- FORMULÁRIO -->
   <form id="form-contratante" action="https://formspree.io/f/mnndwobj" method="POST" style="display: none; font-family: 'Roboto', sans-serif; color: #fff; max-width: 600px; width: 100%;">
-    
     <div class="mb-3 text-start">
       <label for="nome" class="form-label">Nome (opcional)</label>
       <input type="text" class="form-control" name="nome" id="nome">
     </div>
-
     <div class="mb-3 text-start">
       <label for="evento" class="form-label">Evento</label>
       <input type="text" class="form-control" name="evento" id="evento" required>
     </div>
-
     <div class="mb-3 text-start">
       <label for="feedback" class="form-label">Deixe um feedback sobre o serviço (pontos positivos e/ou negativos, etc)</label>
       <textarea class="form-control" name="feedback" id="feedback" rows="4" required></textarea>
     </div>
-
     <div class="mb-3 text-start">
       <label for="codigo" class="form-label">Insira aqui o código de cliente recebido</label>
       <input type="text" class="form-control" name="codigo" id="codigo" required>
     </div>
-
     <div class="text-center">
       <button type="submit" class="btn btn-outline-light">Enviar</button>
     </div>
   </form>
 
-  <!-- Linha divisória com espaço reduzido -->
-  <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin-top: 0.4rem;">
+  <!-- MENSAGEM DE AGRADECIMENTO -->
+  <p id="agradecimento" style="display: none; color: #d87653; font-family: 'Roboto', sans-serif; font-size: 1rem; text-align: center; margin-top: 1rem;">
+    Muito obrigado pelo seu feedback! 🙏
+  </p>
+
+  <!-- LINHA -->
+  <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin-top: 0;">
 </div>
 
-<!-- Script para toggle -->
+<!-- SCRIPT -->
 <script>
   function toggleForm(id) {
     const form = document.getElementById(id);
+    const agradecimento = document.getElementById('agradecimento');
+    const btn = document.getElementById('btn-servico');
+
     if (form.style.display === 'none' || form.style.display === '') {
       form.style.display = 'block';
+      form.scrollIntoView({ behavior: 'smooth' });
     } else {
       form.style.display = 'none';
     }
   }
+
+  document.getElementById('form-contratante').addEventListener('submit', function (e) {
+    e.preventDefault(); // para testar sem envio real
+    this.style.display = 'none';
+    document.getElementById('agradecimento').style.display = 'block';
+    document.getElementById('btn-servico').disabled = true;
+    document.getElementById('btn-servico').style.opacity = '0.4';
+    document.getElementById('btn-servico').style.cursor = 'default';
+  });
 </script>
-<div style="text-align: center; font-size: 0.9rem; color: #7c7773; padding: 1rem 0;">
-© 2025 DJ Josafá  &reg; — Todos os direitos reservados. Lei 9.610/98.
-    </div>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
