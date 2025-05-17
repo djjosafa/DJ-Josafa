@@ -97,7 +97,7 @@
 <div class="d-flex justify-content-center flex-column align-items-center gap-3">
 
   <!-- BOTÃO: CONTRATEI UM SERVIÇO -->
-  <button id="btn-servico" onclick="toggleForm('form-contratante')" style="
+  <button class="btn-servico" onclick="toggleForm('form-contratante')" style="
     background: none;
     border: 2px solid transparent;
     color: #d87653;
@@ -108,12 +108,13 @@
     cursor: pointer;
     padding: 10px 20px;
     transition: all 0.3s ease;
+    margin-bottom: 1rem;
   ">
     CONTRATEI UM SERVIÇO
   </button>
 
   <style>
-    #btn-servico:hover {
+    .btn-servico:hover {
       border-color: #d87653;
       color: #7c7773;
     }
@@ -147,8 +148,8 @@
     </div>
   </form>
 
-  <!-- Linha divisória visível -->
-  <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin: 2rem 0;">
+  <!-- Linha divisória com espaço reduzido -->
+  <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin-top: 1rem;">
 </div>
 
 <!-- Aviso final -->
@@ -156,8 +157,17 @@
   Esse espaço é para quem teve contato direto com nosso trabalho. Por favor, contribua com responsabilidade.
 </p>
 
-        </div>
-    </section>
+<!-- Script para toggle -->
+<script>
+  function toggleForm(id) {
+    const form = document.getElementById(id);
+    if (form.style.display === 'none' || form.style.display === '') {
+      form.style.display = 'block';
+    } else {
+      form.style.display = 'none';
+    }
+  }
+</script>
 <div style="text-align: center; font-size: 0.9rem; color: #7c7773; padding: 1rem 0;">
 © 2025 DJ Josafá  &reg; — Todos os direitos reservados. Lei 9.610/98.
     </div>
