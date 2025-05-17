@@ -60,7 +60,7 @@
                         Conhecimento
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="knowledgeDropdown">               
-                        <li><a class="dropdown-item js-scroll-trigger" href="#blog">Resenhas Culturais</a></li>
+                        <li><a class="dropdown-item js-scroll-trigger" href="#blog">JosaBlog</a></li>
                         <li><a class="dropdown-item js-scroll-trigger" href="#clipping">Entrevistas</a></li>
                         <li><a class="dropdown-item js-scroll-trigger" href="#about">Biografia</a></li>
                     </ul>
@@ -86,82 +86,81 @@
       </h2>
                     
  <!-- Seção Fale Conosco -->
-<section class="container py-5">
-
-  <!-- Texto de introdução -->
-  <div class="text-center mb-5" style="font-family: 'Roboto', sans-serif;">
+<section id="fale-conosco" class="text-center py-5" style="background-color: #000;">
+  <!-- Frase introdutória -->
+  <p style="color: #c3c8ce; font-size: 0.9rem; font-family: 'Roboto', sans-serif; margin-bottom: 0.5rem;">
     <h2 class="mb-4">Se você chegou até aqui, muito obrigado!!</h2>
-    <p style="max-width: 700px; margin: auto;">
-      Essa é a parte mais importante do site, onde eu compreendo melhor o seu lado e melhoro o meu trabalho e também a sua experiência!
+    <p style="color: #c3c8ce; font-family: 'Roboto', sans-serif; font-size: 1rem; margin-bottom: 2rem;">
+      O seu feedback é muito importante para que eu consiga avaliar meu desempenho e melhorar a experiência de quem se conecta comigo!
     </p>
-    <p style="max-width: 700px; margin: auto;">
-      Você já curtiu um set ao vivo? É fã do nosso trabalho? Contratou para algum evento? Fez orçamento recentemente?
+    <p style="color: #c3c8ce; font-family: 'Roboto', sans-serif; font-size: 1rem; margin-bottom: 2rem;">
+      Você já curtiu um set ao vivo? Contratou para algum evento? Fez orçamento recentemente?
     </p>
-    <p style="max-width: 700px; margin: auto; font-weight: bold;">
+    <p style="color: #c3c8ce; font-family: 'Roboto', sans-serif; font-size: 1rem; margin-bottom: 2rem;">
       Escolha a opção abaixo e mande seu feedback. Quero te ouvir — de verdade!
     </p>
   </div>
 
-  <!-- Agrupamento Contratante -->
-  <div class="mb-4">
 
-    <!-- Botão para mostrar/ocultar formulário -->
-    <button class="btn btn-outline-dark d-flex align-items-center gap-2" style="font-family: 'Roboto', sans-serif;" onclick="toggleForm('form-contratante')">
-      Contratei um Serviço
-      <span style="transform: rotate(90deg); font-size: 1.2rem;">&#x25B6;</span> <!-- setinha para baixo -->
+  <!-- Dropdown estilizado -->
+  <div class="d-flex justify-content-center flex-column align-items-center gap-3">
+
+    <!-- BOTÃO: CONTRATEI UM SERVIÇO -->
+    <button class="btn" onclick="toggleForm('form-contratante')" style="
+      background: none;
+      border: none;
+      color: #7c7773;
+      font-family: 'Neptune', sans-serif;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      text-align: center;
+      cursor: pointer;
+      padding: 10px;
+      transition: color 0.3s ease;
+    ">
+      CONTRATEI UM SERVIÇO ⬇
     </button>
 
-    <!-- Linha divisória -->
-    <hr style="border-top: 1px solid #7c7773; opacity: 0.4;" class="my-3">
-
-    <!-- Formulário escondido -->
-    <form id="form-contratante" action="https://formspree.io/f/mnndwobj" method="POST" style="display: none; font-family: 'Roboto', sans-serif;">
+    <!-- FORMULÁRIO: CONTRATANTE -->
+    <form id="form-contratante" action="https://formspree.io/f/mnndwobj" method="POST" style="display: none; font-family: 'Roboto', sans-serif; color: #fff; max-width: 600px; width: 100%;">
       
-      <div class="mb-3">
+      <div class="mb-3 text-start">
         <label for="nome" class="form-label">Nome (opcional)</label>
         <input type="text" class="form-control" name="nome" id="nome">
       </div>
 
-      <div class="mb-3">
+      <div class="mb-3 text-start">
         <label for="evento" class="form-label">Evento</label>
         <input type="text" class="form-control" name="evento" id="evento" required>
       </div>
 
-      <div class="mb-3">
+      <div class="mb-3 text-start">
         <label for="feedback" class="form-label">Deixe um feedback sobre o serviço (pontos positivos e/ou negativos, etc)</label>
         <textarea class="form-control" name="feedback" id="feedback" rows="4" required></textarea>
       </div>
 
-      <div class="mb-3">
+      <div class="mb-3 text-start">
         <label for="codigo" class="form-label">Insira aqui o código de cliente recebido</label>
         <input type="text" class="form-control" name="codigo" id="codigo" required>
       </div>
 
-      <button type="submit" class="btn btn-dark">Enviar</button>
+      <div class="text-center">
+        <button type="submit" class="btn btn-outline-light">Enviar</button>
+      </div>
     </form>
+
   </div>
 
   <!-- Aviso final -->
   <p class="text-center mt-4" style="font-style: italic; color: #7c7773; font-size: 0.9rem;">
     Esse espaço é para quem teve contato direto com nosso trabalho. Por favor, contribua com responsabilidade.
   </p>
-
 </section>
 
 <!-- Script para toggle -->
 <script>
   function toggleForm(id) {
     const form = document.getElementById(id);
-    const visible = form.style.display === 'block';
-    form.style.display = visible ? 'none' : 'block';
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
   }
 </script>
-</div>
-    </section>
-<div style="text-align: center; font-size: 0.9rem; color: #7c7773; padding: 1rem 0;">
-© 2025 DJ Josafá  &reg; — Todos os direitos reservados. Lei 9.610/98.
-    </div>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
