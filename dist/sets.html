@@ -39,9 +39,9 @@
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="playDropdown">
                         <li><a class="dropdown-item js-scroll-trigger" href="sets.html">Sets</a></li>
-                        <li><a class="dropdown-item js-scroll-trigger" href="videos.html">Vídeos</a></li>
                         <li><a class="dropdown-item js-scroll-trigger" href="musicas.html">Músicas</a></li>
                         <li><a class="dropdown-item js-scroll-trigger" href="playlists.html">Playlist</a></li>
+                        <li><a class="dropdown-item js-scroll-trigger" href="videos.html">Vídeos</a></li>
                         <li><a class="dropdown-item js-scroll-trigger" href="live.html">Live</a></li>
                      </ul>
                    </li>
@@ -51,7 +51,7 @@
                         Formatos
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="formatDropdown">
-                        <li><a class="dropdown-item js-scroll-trigger" href="#education">Oficinas</a></li>
+                        <li><a class="dropdown-item js-scroll-trigger" href="oficina.html">Oficinas</a></li>
                     </ul>
                 </li>
                 <!-- Conhecimento -->
@@ -60,15 +60,15 @@
                         Conhecimento
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="knowledgeDropdown">               
-                        <li><a class="dropdown-item js-scroll-trigger" href="#blog">JosaBlog</a></li>
-                        <li><a class="dropdown-item js-scroll-trigger" href="#clipping">Entrevistas</a></li>
-                        <li><a class="dropdown-item js-scroll-trigger" href="#about">Biografia</a></li>
+                        <li><a class="dropdown-item js-scroll-trigger" href="https://josablogdj.wordpress.com/">JosaBlog</a></li>
+                        <li><a class="dropdown-item js-scroll-trigger" href="clipping.html">Entrevistas</a></li>
+                        <li><a class="dropdown-item js-scroll-trigger" href="biografia.html">Biografia</a></li>
                     </ul>
                 </li>
 
                 <!-- Fale Conosco -->
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#talk">Fale Conosco</a>
+                    <a class="nav-link js-scroll-trigger" href="talk.html">Fale Conosco</a>
                 </li>
             </ul>
             </div>
@@ -158,12 +158,48 @@
   
   <script>
     const videos = [
-     {
+{
   style: 'rnb',
   platform: 'soundcloud',
   url: 'https://soundcloud.com/djjosafa2/dj-josafa-charmzada',
   title: 'DJ Josafá - Charmzada',
   description: 'Set de charme / R&B no SoundCloud'
+},
+{
+  title: "Josapaloosa - Baile do Imbica",
+  id: "bcF_OnMWTLw",
+  platform: "youtube",
+  style: 'trap'
+},
+{
+  title: "House 15min",
+  url: "https://soundcloud.com/djjosafa-mandagig/house",
+  platform: "soundcloud",
+  style: 'house'
+},
+{
+  title: "Fuzuê Baile 2019",
+  url: "https://soundcloud.com/djjosafa2/dj-josafa-fuzue-baile-2019-sem-intro",
+  platform: "soundcloud",
+  style: 'funk'
+},
+{
+  title: "Pool Party +18",
+  url: "https://www.mixcloud.com/djjosafa/pool-party-18-w-dj-josaf%C3%A1/",
+  platform: "mixcloud",
+  style: 'funk'
+},
+{
+  title: "Ainda Temos Swing 2",
+  url: "https://www.mixcloud.com/djjosafa/dj-josaf%C3%A1-contest-fau-novos-talentos-29012022-palco-principal/",
+  platform: "mixcloud",
+  style: 'brasilidades'
+},
+{
+  title: "Autônomo Não Tem 13º",
+  url: "https://soundcloud.com/vinyla-beast/autonomo-nao-tem-13",
+  platform: "soundcloud",
+  style: 'trap'
 },
 {
   style: 'rnb',
@@ -193,7 +229,7 @@
   title: 'Charmzada - YouTube',
   description: 'Set R&B no YouTube'
 },
-        {
+{
   title: "Undergroov",
   url: "https://www.mixcloud.com/djjosafa/undergroov/",
   platform: "mixcloud",
@@ -211,13 +247,13 @@
   platform: "youtube",
   style: 'rap'
 },
-              {
+{
         style: 'rap',
         platform: 'youtube',
         id: 'QhtCLBrmw2o',
         title: 'DJ Josafá - Rap Set',
         description: 'Performance de rap ao vivo'
-      },
+},
 {
   title: "Undergroov 1 (SoundCloud)",
   url: "https://soundcloud.com/djjosafa2/dj-josafa-undergroov-2017",
@@ -237,25 +273,13 @@
   style: 'rap'
 },
 {
-  title: "Rap Mandagig",
+  title: "Rap 15min",
   url: "https://soundcloud.com/djjosafa-mandagig/rap",
   platform: "soundcloud",
   style: 'rap'
 },
-  {
-  title: "House Mandagig",
-  url: "https://soundcloud.com/djjosafa-mandagig/house",
-  platform: "soundcloud",
-  style: 'house'
-},
 {
-  title: "Autônomo Não Tem 13",
-  url: "https://soundcloud.com/vinyla-beast/autonomo-nao-tem-13",
-  platform: "soundcloud",
-  style: 'trap'
-},
-  {
-  title: "Trap Mandagig",
+  title: "Trap 15min",
   url: "https://soundcloud.com/djjosafa-mandagig/tttrap",
   platform: "soundcloud",
   style: 'trap'
@@ -273,24 +297,6 @@
   style: 'trap'
 },
 {
-  title: "Josapaloosa - Baile do Imbica",
-  id: "bcF_OnMWTLw",
-  platform: "youtube",
-  style: 'trap'
-},
-  {
-  title: "Fuzuê Baile 2019",
-  url: "https://soundcloud.com/djjosafa2/dj-josafa-fuzue-baile-2019-sem-intro",
-  platform: "soundcloud",
-  style: 'funk'
-},
-{
-  title: "Pool Party 18",
-  url: "https://www.mixcloud.com/djjosafa/pool-party-18-w-dj-josaf%C3%A1/",
-  platform: "mixcloud",
-  style: 'funk'
-},
-        {
   title: "Solas Vinylas (Homenagem ao HD)",
   url: "https://www.mixcloud.com/djjosafa/solas-vinylas-homenagem-postuma-ao-hd-falecido/",
   platform: "mixcloud",
@@ -300,12 +306,6 @@
   title: "Sambarock Mandagig",
   url: "https://soundcloud.com/djjosafa-mandagig/sambarock",
   platform: "soundcloud",
-  style: 'brasilidades'
-},
-{
-  title: "Ainda Temos Swing 2",
-  url: "https://www.mixcloud.com/djjosafa/dj-josaf%C3%A1-contest-fau-novos-talentos-29012022-palco-principal/",
-  platform: "mixcloud",
   style: 'brasilidades'
 },
 {
