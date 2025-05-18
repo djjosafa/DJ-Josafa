@@ -80,27 +80,31 @@
 
       <!-- Título principal -->
       <h2 style="color: #d87653; font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 2.5rem; margin-top: 0; margin-bottom: 3rem;">
-        BIOGRAFIA
+    MÚSICO ACOMPANHANTE
       </h2>
 
 <div style="margin-top: 6rem;"></div>
     <!-- Bloco 1 -->
- <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin: 2.0rem 0;">
-    <div class="bio-section">
-      <h4 class="bio-toggle" style="cursor: pointer; color: #7c7773; font-weight: 500; margin-top: 2rem;">
-        Início da Trajetória
-      </h4>
-      <div class="bio-content" style="display: none; margin-top: 1rem; color: #ccc; line-height: 1.6;">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo vitae turpis dapibus tincidunt. Curabitur eget dolor id nulla fermentum malesuada.
-      </div>
-    </div>
+<hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin: 2.0rem 0;">
+<div class="bio-section">
+  <h4 class="bio-toggle" style="cursor: pointer; color: #7c7773; font-weight: 500; margin-top: 2rem;">
+    DJ é Músico!
+  </h4>
+  <div class="bio-content" style="display: block; margin-top: 1rem; color: #ccc; line-height: 1.6;">
+    <p>Apresentações ao vivo com músico acompanhante são uma forma versátil e eficaz de enriquecer shows, tanto de artistas solo quanto de bandas completas. DJ Josafá atua nesse formato oferecendo uma condução musical precisa, alinhada ao repertório e à proposta de cada projeto.</p>
+
+    <p>Com mais de 13 anos de experiência, Josafá entrega performance consistente, domínio técnico (scratches, mpc e etc), leitura de palco e capacidade de adaptação a diferentes linguagens musicais.</p>
+
+    <p>Além das participações por demanda, realiza apresentações regulares com a artista Ju Dorotea e com a Banda Caroço, integrando a dinâmica musical dos projetos de forma coesa e criativa.</p>
+  </div>
+</div>
 
     <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin: 2.0rem 0;">
 
     <!-- Bloco 2 -->
     <div class="bio-section">
       <h4 class="bio-toggle" style="cursor: pointer; color: #7c7773; font-weight: 500;">
-        Experiências Artísticas
+        Ju Dorotea
       </h4>
       <div class="bio-content" style="display: none; margin-top: 1rem; color: #ccc; line-height: 1.6;">
         Fusce cursus, metus eget tincidunt suscipit, nisl purus fermentum urna, vel tincidunt justo tellus ac justo. Proin in tellus non arcu sollicitudin faucibus.
@@ -112,7 +116,7 @@
     <!-- Bloco 3 -->
     <div class="bio-section">
       <h4 class="bio-toggle" style="cursor: pointer; color: #7c7773; font-weight: 500;">
-        Caminhos Atuais
+        Banda Caroço
       </h4>
       <div class="bio-content" style="display: none; margin-top: 1rem; color: #ccc; line-height: 1.6;">
         Atualmente, a artista desenvolve oficinas, performances e atuações ligadas à cultura urbana e à educação, com foco em processos colaborativos e arte acessível.
@@ -146,5 +150,20 @@
     </div>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const toggle = document.querySelector(".bio-toggle");
+    const content = document.querySelector(".bio-content");
+
+    toggle.addEventListener("click", function() {
+      if (content.style.display === "none") {
+        content.style.display = "block";
+      } else {
+        content.style.display = "none";
+      }
+    });
+  });
+</script>
+    
 </body>
 </html>
