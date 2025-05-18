@@ -78,62 +78,134 @@
   <section class="resume-section pt-3" id="videos">
     <div class="resume-section-content text-center">
 
-      <!-- Título SETS -->
+      <!-- Título -->
       <h2 style="color: #d87653; font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 3rem; margin-top: 0;">
         CLIPPING
       </h2>
-    
-<!-- Carrossel -->
-<div style="max-width: 800px; margin: 0 auto; overflow: hidden; position: relative;">
 
-  <div id="carousel" style="white-space: nowrap; transition: transform 0.5s ease;">
-    
-    <!-- Vídeo YouTube -->
-    <div style="display: inline-block; width: 100%;">
-      <iframe width="100%" height="400" src="https://www.youtube.com/watch?v=6q8lSY_VZEk" 
-        frameborder="0" allowfullscreen></iframe>
+      <!-- Carrossel -->
+      <div id="videoCarousel" class="carousel slide w-100" data-bs-ride="carousel" data-bs-interval="15000" style="max-width: 90%; margin: 0 auto;">
+        <div class="carousel-inner" id="carouselItems">
+          <!-- Conteúdo inserido via JS -->
+        </div>
+      </div>
+
+      <!-- Navegação + descrição -->
+      <div class="d-flex justify-content-between align-items-center mt-3 mb-3 video-navigation" style="position: relative; width: 90%; margin: 0 auto;">
+        <!-- Botão anterior -->
+        <button class="carousel-control-prev" type="button"
+          data-bs-target="#videoCarousel" data-bs-slide="prev"
+          style="background-color: #d87653; border: none; border-radius: 50%; width: 40px; height: 40px; position: absolute; left: 0;">
+          <span style="color: #011c26; font-size: 24px;">‹</span>
+        </button>
+
+        <!-- Descrição dinâmica -->
+        <p id="videoDescription" class="text-center" style="color: #c3c8ce; font-family: 'Roboto'; font-size: 1rem; flex-grow: 1; padding: 0 50px;">
+          <!-- Conteúdo via JS -->
+        </p>
+
+        <!-- Botão próximo -->
+        <button class="carousel-control-next" type="button"
+          data-bs-target="#videoCarousel" data-bs-slide="next"
+          style="background-color: #d87653; border: none; border-radius: 50%; width: 40px; height: 40px; position: absolute; right: 0;">
+          <span style="color: #011c26; font-size: 24px;">›</span>
+        </button>
+      </div>
+
     </div>
+  </section>
 
-    <!-- Matéria Jornal (embed com iframe) -->
-    <div style="display: inline-block; width: 100%;">
-      <iframe src="https://portalrnd.com.br/ju-dorotea-em-seu-ep-de-estreia-sincronia/" 
-        width="100%" height="400" style="border:none;"></iframe>
-    </div>
-
-    <!-- Outra opção: link com imagem -->
-    <div style="display: inline-block; width: 100%; text-align: center;">
-      <a href="https://lupadobem.com/coluna-da-neuza/pesquisa-os-bastidores-do-hip-hop-vai-mapear-bastidores-da-cena/"_blank">
-        <img src="assets/img/bastidores.png" alt="Matéria de jornal" style="max-width: 100%; height: auto;">
-        <p style="color: #7c7773; font-family: 'Roboto', sans-serif;">📰 Ver matéria completa</p>
-      </a>
-    </div>
-
+  <!-- Rodapé -->
+  <div style="text-align: center; font-size: 0.9rem; color: #7c7773; padding: 1rem 0;">
+    © 2025 DJ Josafá &reg; — Todos os direitos reservados. Lei 9.610/98.
   </div>
-
-  <!-- Botões -->
-  <button onclick="prevSlide()" style="position: absolute; top: 50%; left: 0;">◀</button>
-  <button onclick="nextSlide()" style="position: absolute; top: 50%; right: 0;">▶</button>
-
 </div>
 
+<!-- Bootstrap core JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
-  let index = 0;
-  function showSlide(i) {
-    const carousel = document.getElementById('carousel');
-    index += i;
-    const total = carousel.children.length;
-    if (index >= total) index = 0;
-    if (index < 0) index = total - 1;
-    carousel.style.transform = `translateX(-${index * 100}%)`;
+  const videos = [
+    {
+      type: 'youtube',
+      id: '6q8lSY_VZEk',
+      title: 'DJ Josafá no SABAHCAST',
+      description: 'Entrevista do DJ Josafá no Podcast que discute sobre os bastidores da cultura de rua. Um papo sincero sobre direitos autorais, samples, vivência de produção cultural, desafios do corre de DJ independente e muito mais...confira!'
+    },
+    {
+      type: 'iframe',
+      src: 'https://portalrnd.com.br/ju-dorotea-em-seu-ep-de-estreia-sincronia/',
+      title: 'Portal RND – Ju Dorotéa e o EP Sincronia',
+      description: 'Matéria no Portal RND sobre o EP de estreia de Ju Dorotéa, com destaque para a produção e conexões na cena.'
+    },
+    {
+      type: 'link',
+      href: 'https://lupadobem.com/coluna-da-neuza/pesquisa-os-bastidores-do-hip-hop-vai-mapear-bastidores-da-cena/',
+      img: 'assets/img/bastidores.png',
+      title: 'Lupa do Bem — Pesquisa sobre bastidores do Hip-Hop',
+      description: 'A Lupa do Bem publicou uma matéria sobre a pesquisa que mapeia os bastidores da cena hip-hop. Clique para ler.'
+    }
+  ];
+
+  const carouselContainer = document.getElementById('carouselItems');
+  const descriptionElement = document.getElementById('videoDescription');
+
+  function renderVideos() {
+    carouselContainer.innerHTML = '';
+    videos.forEach((video, index) => {
+      const active = index === 0 ? 'active' : '';
+      let content = '';
+
+      if (video.type === 'youtube') {
+        content = `
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/${video.id}" title="${video.title}" allowfullscreen></iframe>
+          </div>
+        `;
+      } else if (video.type === 'iframe') {
+        content = `
+          <div class="ratio ratio-16x9">
+            <iframe src="${video.src}" title="${video.title}" style="border: none;" allowfullscreen></iframe>
+          </div>
+        `;
+      } else if (video.type === 'link') {
+        content = `
+          <div class="text-center">
+            <a href="${video.href}" target="_blank">
+              <img src="${video.img}" alt="${video.title}" style="max-width: 100%; height: auto; border-radius: 10px;" />
+              <p style="color: #c3c8ce; margin-top: 10px;">📰 Ver matéria completa</p>
+            </a>
+          </div>
+        `;
+      }
+
+      const item = `
+        <div class="carousel-item ${active}" data-description="${video.description}">
+          ${content}
+        </div>
+      `;
+
+      carouselContainer.innerHTML += item;
+    });
+
+    updateDescription(); // Exibe a descrição inicial
   }
-  function nextSlide() { showSlide(1); }
-  function prevSlide() { showSlide(-1); }
+
+  function updateDescription() {
+    const activeItem = document.querySelector('#carouselItems .carousel-item.active');
+    const desc = activeItem?.getAttribute('data-description') || '';
+    descriptionElement.textContent = desc;
+  }
+
+  const carouselElement = document.getElementById('videoCarousel');
+  carouselElement.addEventListener('slid.bs.carousel', updateDescription);
+
+  renderVideos();
 </script>
-        
+              </div>
+    </section>
 <div style="text-align: center; font-size: 0.9rem; color: #7c7773; padding: 1rem 0;">
 © 2025 DJ Josafá  &reg; — Todos os direitos reservados. Lei 9.610/98.
     </div>
-<!-- Bootstrap core JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
