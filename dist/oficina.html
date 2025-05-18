@@ -83,6 +83,22 @@
         Oficinas
       </h2>
 
+<section id="portfolio" class="py-5" style="background-color: #011c26;">
+  <style>
+    .carousel-img {
+      max-width: 60%;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-img {
+        max-width: 90%;
+      }
+    }
+  </style>
+
+  <div class="container text-center">
+
     <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="15000">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -114,17 +130,20 @@
         </div>
       </div>
 
-      <!-- Botões personalizados -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
-        <span class="custom-carousel-arrow">
-          ‹
-        </span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
-        <span class="custom-carousel-arrow">
-          ›
-        </span>
-      </button>
+      <!-- Botões navegação — modelo igual ao do entrevistas.html -->
+      <div class="d-flex justify-content-between align-items-center mt-3 mb-5 video-navigation" style="position: relative; width: 90%; margin: 0 auto;">
+        <button class="carousel-control-prev" type="button"
+          data-bs-target="#portfolioCarousel" data-bs-slide="prev"
+          style="background-color: #d87653; border: none; border-radius: 50%; width: 40px; height: 40px; position: absolute; left: 0;">
+          <span style="color: #011c26; font-size: 24px;">‹</span>
+        </button>
+
+        <button class="carousel-control-next" type="button"
+          data-bs-target="#portfolioCarousel" data-bs-slide="next"
+          style="background-color: #d87653; border: none; border-radius: 50%; width: 40px; height: 40px; position: absolute; right: 0;">
+          <span style="color: #011c26; font-size: 24px;">›</span>
+        </button>
+      </div>
     </div>
   </div>
 </section>
