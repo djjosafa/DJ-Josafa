@@ -415,17 +415,17 @@ function getEmbed(video) {
   } else {
     return `<p>Plataforma não suportada</p>`;
   }
-}};
+}
 
   function renderVideos() {
     const selectedStyle = styleSelect.value;
     const selectedPlatform = platformSelect.value;
 
-    const filtered = videos.filter(video => {
-      const matchStyle = selectedStyle === 'all' || video.style === selectedStyle;
-      const matchPlatform = selectedPlatform === 'all' || video.platform === selectedPlatform;
-      return matchStyle && matchPlatform;
-    }
+const filtered = videos.filter(video => {
+  const matchStyle = selectedStyle === 'all' || video.style === selectedStyle;
+  const matchPlatform = selectedPlatform === 'all' || video.platform === selectedPlatform;
+  return matchStyle && matchPlatform;
+});
 
     carouselContainer.innerHTML = '';
 
