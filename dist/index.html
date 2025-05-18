@@ -14,7 +14,55 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-</head>
+<style>
+  @media (min-width: 992px) {
+    .dropdown-side {
+      position: relative;
+    }
+
+    .dropdown-side .dropdown-menu {
+      top: 0;
+      left: 100%;
+      display: none;
+      position: absolute;
+      margin-left: 0.2rem;
+      z-index: 1000;
+    }
+
+    .dropdown-side.open .dropdown-menu {
+      display: block;
+    }
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (window.innerWidth >= 992) {
+      const dropdowns = document.querySelectorAll(".dropdown-side");
+
+      dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector("a.nav-link");
+
+        toggle.addEventListener("click", function (e) {
+          e.preventDefault();
+          // Fecha os outros
+          dropdowns.forEach(d => {
+            if (d !== dropdown) d.classList.remove("open");
+          });
+          // Alterna o atual
+          dropdown.classList.toggle("open");
+        });
+      });
+
+      // Fecha ao clicar fora
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest('.dropdown-side')) {
+          dropdowns.forEach(d => d.classList.remove("open"));
+        }
+      });
+    }
+  });
+</script>
+    </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg fixed-top" id="sideNav">
@@ -36,7 +84,7 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="agenda.html">Agenda</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="loja.html">Loja</a></li>
                     <!-- Aperte o Play! -->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown dropdown-side">
                       <a class="nav-link dropdown-toggle" href="#" id="playDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Aperte o Play!
                       </a>
@@ -49,7 +97,7 @@
                      </ul>
                    </li>
                 <!-- Formatos -->
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown dropdown-side">
                     <a class="nav-link dropdown-toggle" href="#" id="formatDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Formatos
                     </a>
@@ -62,7 +110,7 @@
                     </ul>
                 </li>
                 <!-- Conhecimento -->
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown dropdown-side">
                     <a class="nav-link dropdown-toggle" href="#" id="knowledgeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Conhecimento
                     </a>
