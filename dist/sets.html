@@ -154,6 +154,7 @@
           <option value="mixcloud">Mixcloud</option>
           <option value="soundcloud">Soundcloud</option>
           <option value="youtube">Youtube</option>
+          <option value="vimeo">TBT RITMADO</option>
         </select>
       </div>
           <!-- Escolha um estilo (Agora abaixo do título Vídeos) -->
@@ -265,6 +266,13 @@
   description: 'Set R&B com atmosfera romântica'
 },
 {
+  style: 'funk',
+  platform: 'vimeo',
+  id: '639795570',
+  title: 'TBT RITMADO: Episódio 06 (FUNK)',
+  description: 'Último episódio da primeira temporada do TBT RITMADO. No ritmo acelerado lembrando da avalanche do 7x1...Confira a série completa na seção VIDEOS aqui do site.'
+      },
+{
   style: 'rnb',
   platform: 'mixcloud',
   url: "https://www.mixcloud.com/djjosafa/charmzada-w-dj-josaf%C3%A1/",
@@ -279,18 +287,25 @@
   description: 'Set R&B versão Mixcloud'
 },
 {
+  title: "Undergroov",
+  url: "https://www.mixcloud.com/djjosafa/undergroov/",
+  platform: "mixcloud",
+  style: 'rap'
+},
+{
   style: 'rnb',
   platform: 'youtube',
   id: '2osP6aA5c9w',
   title: 'Charmzada - YouTube',
   description: 'Set R&B no YouTube'
 },
-{
-  title: "Undergroov",
-  url: "https://www.mixcloud.com/djjosafa/undergroov/",
-  platform: "mixcloud",
-  style: 'rap'
-},
+    {
+  style: 'funk',
+  platform: 'vimeo',
+  id: '635721921',
+  title: 'TBT RITMADO: Episódio 04 (TRAPFUNK)',
+  description: 'Lembra da nuvem de gafanhotos que rolou durante a pandemia? Que fase!! Período neurótico!! Nesse quarto episódio da série TBT RITMADO eu fiz uma sequência de TRAP/FUNK'
+      },
 {
   title: "Undergroov 2",
   url: "https://www.mixcloud.com/djjosafa/undergroov-2/",
@@ -385,20 +400,22 @@
   styleSelect.addEventListener('change', renderVideos);
   platformSelect.addEventListener('change', renderVideos);
 
-  function getEmbed(video) {
-    if (video.platform === 'youtube') {
-      return `<iframe src="https://www.youtube.com/embed/${video.id}" title="${video.title}" allowfullscreen></iframe>`;
-   } else if (video.platform === 'soundcloud') {
-  return `<iframe width="100%" height="120" scrolling="no" frameborder="0" allow="autoplay"
-    style="overflow: hidden;"
-    src="https://w.soundcloud.com/player/?url=${encodeURIComponent(video.url)}&color=%23c3c8ce&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=true">
-  </iframe>`;
-    } else if (video.platform === 'mixcloud') {
-      return `<iframe width="100%" height="120" frameborder="0" src="https://www.mixcloud.com/widget/iframe/?feed=${encodeURIComponent(video.url)}&hide_cover=1&light=1" allow="autoplay"></iframe>`;
-    } else {
-      return `<p>Plataforma não suportada</p>`;
-    }
+function getEmbed(video) {
+  if (video.platform === 'youtube') {
+    return `<iframe src="https://www.youtube.com/embed/${video.id}" title="${video.title}" allowfullscreen></iframe>`;
+  } else if (video.platform === 'vimeo') {
+    return `<iframe src="https://player.vimeo.com/video/${video.id}" title="${video.title}" allowfullscreen frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="width: 100%; height: 100%;"></iframe>`;
+  } else if (video.platform === 'soundcloud') {
+    return `<iframe width="100%" height="120" scrolling="no" frameborder="0" allow="autoplay"
+      style="overflow: hidden;"
+      src="https://w.soundcloud.com/player/?url=${encodeURIComponent(video.url)}&color=%23c3c8ce&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=true">
+    </iframe>`;
+  } else if (video.platform === 'mixcloud') {
+    return `<iframe width="100%" height="120" frameborder="0" src="https://www.mixcloud.com/widget/iframe/?feed=${encodeURIComponent(video.url)}&hide_cover=1&light=1" allow="autoplay"></iframe>`;
+  } else {
+    return `<p>Plataforma não suportada</p>`;
   }
+}}
 
   function renderVideos() {
     const selectedStyle = styleSelect.value;
