@@ -80,37 +80,55 @@
 
       <!-- Título SETS -->
       <h2 style="color: #d87653; font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 3rem; margin-top: 0;">
-        LOJA
+        CLIPPING
       </h2>
     
-    <p style="color: #7c7773; font-size: 1rem; margin-bottom: 2rem;">
-      Em breve novidades!
-    </p>
+<!-- Carrossel -->
+<div style="max-width: 800px; margin: 0 auto; overflow: hidden; position: relative;">
 
-<div class="d-flex justify-content-center flex-wrap" style="gap: 30px;">
+  <div id="carousel" style="white-space: nowrap; transition: transform 0.5s ease;">
+    
+    <!-- Vídeo YouTube -->
+    <div style="display: inline-block; width: 100%;">
+      <iframe width="100%" height="400" src="https://www.youtube.com/embed/SEU_VIDEO" 
+        frameborder="0" allowfullscreen></iframe>
+    </div>
 
-  <!-- BEATSTARS -->
-  <a href="https://www.beatstars.com/vinylabeast" target="_blank" 
-     class="btn roboto" 
-     style="min-width: 200px; font-size: 1.2rem; border: 2px solid #7c7773; background-color: #000; color: #7c7773;">
-    🎧 Comprar Beats (BeatStars)
-  </a>
+    <!-- Matéria Jornal (embed com iframe) -->
+    <div style="display: inline-block; width: 100%;">
+      <iframe src="https://www.materia-do-jornal.com" 
+        width="100%" height="400" style="border:none;"></iframe>
+    </div>
 
-  <!-- BANDCAMP -->
-  <a href="https://vinylabeast.bandcamp.com/" target="_blank" 
-     class="btn roboto" 
-     style="min-width: 200px; font-size: 1.2rem; border: 2px solid #7c7773; background-color: #000; color: #7c7773;">
-    💿 Support Produções (Bandcamp)
-  </a>
+    <!-- Outra opção: link com imagem -->
+    <div style="display: inline-block; width: 100%; text-align: center;">
+      <a href="https://www.link-da-materia.com" target="_blank">
+        <img src="capa-da-materia.jpg" alt="Matéria de jornal" style="max-width: 100%; height: auto;">
+        <p style="color: #7c7773; font-family: 'Roboto', sans-serif;">📰 Ver matéria completa</p>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Botões -->
+  <button onclick="prevSlide()" style="position: absolute; top: 50%; left: 0;">◀</button>
+  <button onclick="nextSlide()" style="position: absolute; top: 50%; right: 0;">▶</button>
 
 </div>
-<div style="text-align: center; margin: 2rem auto;">
-  <a href="https://apoia.se/djjosafa" target="_blank" 
-     class="btn roboto" 
-     style="min-width: 200px; font-size: 1.2rem; border: 3px solid #7c7773; background-color: #d87653; color: #011c26;">
-    ✊🏾 Incentive o corre através do Apoie.se
-  </a>
-</div>
+
+<script>
+  let index = 0;
+  function showSlide(i) {
+    const carousel = document.getElementById('carousel');
+    index += i;
+    const total = carousel.children.length;
+    if (index >= total) index = 0;
+    if (index < 0) index = total - 1;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  }
+  function nextSlide() { showSlide(1); }
+  function prevSlide() { showSlide(-1); }
+</script>
         
 <div style="text-align: center; font-size: 0.9rem; color: #7c7773; padding: 1rem 0;">
 © 2025 DJ Josafá  &reg; — Todos os direitos reservados. Lei 9.610/98.
