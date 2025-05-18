@@ -425,7 +425,7 @@ function getEmbed(video) {
       const matchStyle = selectedStyle === 'all' || video.style === selectedStyle;
       const matchPlatform = selectedPlatform === 'all' || video.platform === selectedPlatform;
       return matchStyle && matchPlatform;
-    });
+    }
 
     carouselContainer.innerHTML = '';
 
