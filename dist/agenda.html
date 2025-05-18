@@ -194,22 +194,55 @@
   <h3 class="mb-3" style="color: #7c7773; font-family: 'Roboto', sans-serif; font-size: 1.1rem; margin-top: 1rem;">
     Indica aí: qual cidade ou evento quer ver na agenda?
   </h3>
-  <form action="https://formspree.io/f/xrbqjald" method="POST">
+
+  <!-- Bloco para mostrar mensagem depois -->
+  <div id="agradecimento" style="display: none; font-family: 'Roboto', sans-serif; color: #4caf50; font-size: 1rem; text-align: center; margin-top: 1.5rem;">
+    Muito obrigado por fazer parte dessa história! Se um dia eu tocar lá, você vai ser a primeira pessoa a saber! 🎧
+  </div>
+
+  <!-- Formulário -->
+  <form id="form-interesse" action="https://formspree.io/f/xrbqjald" method="POST">
     <div class="mb-2">
       <label for="nome" class="form-label" style="font-family: 'Roboto', sans-serif; font-size: 0.95rem;">Seu nome (opcional)</label>
       <input type="text" class="form-control" id="nome" name="nome" style="height: 2.2rem; font-size: 0.9rem;">
     </div>
     <div class="mb-2">
       <label for="cidade" class="form-label" style="font-family: 'Roboto', sans-serif; font-size: 0.95rem;">Evento e/ou Cidade</label>
-      <input type="text" class="form-control" id="cidade" name="cidade" style="height: 2.2rem; font-size: 0.9rem;">
+      <input type="text" class="form-control" id="cidade" name="cidade ou evento" style="height: 2.2rem; font-size: 0.9rem;">
     </div>
     <div class="mb-3">
       <label for="contato" class="form-label" style="font-family: 'Roboto', sans-serif; font-size: 0.95rem;">Contato (E-mail ou WhatsApp) (opcional, mas posso te avisar quando rolar!)</label>
-      <input type="text" class="form-control" id="contato" name="contato" required style="height: 2.2rem; font-size: 0.9rem;">
+      <input type="text" class="form-control" id="contato" name="contato" style="height: 2.2rem; font-size: 0.9rem;">
     </div>
     <button type="submit" class="btn btn-primary btn-sm" style="font-family: 'Roboto', sans-serif;">Enviar</button>
   </form>
 </div>
+
+<!-- Mensagem de confirmação inline -->
+<script>
+  const form = document.getElementById("form-interesse");
+  const agradecimento = document.getElementById("agradecimento");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      form.style.display = "none";
+      agradecimento.style.display = "block";
+    } else {
+      alert("Ocorreu um erro. Tente novamente.");
+    }
+  });
+</script>
  <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin: 2.0rem 0;">
 <!-- Container do bloco de contato -->
 <div class="d-flex justify-content-center align-items-center flex-wrap" style="gap: 10px; flex-wrap: wrap; margin-top: 30px;">
