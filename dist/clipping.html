@@ -78,33 +78,32 @@
   <section class="resume-section pt-3" id="videos">
     <div class="resume-section-content text-center">
 
-      <!-- Título -->
-      <h2 style="color: #d87653; font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 3rem; margin-top: 0;">
+      <!-- Título principal -->
+      <h2 style="color: #d87653; font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 3rem; margin-top: 0; margin-bottom: 3rem;">
         CLIPPING
       </h2>
 
       <!-- Carrossel -->
       <div id="videoCarousel" class="carousel slide w-100" data-bs-ride="carousel" data-bs-interval="15000" style="max-width: 90%; margin: 0 auto;">
         <div class="carousel-inner" id="carouselItems">
-          <!-- Conteúdo inserido via JS -->
+          <!-- Conteúdo JS aqui -->
         </div>
       </div>
 
-      <!-- Navegação + descrição -->
-      <div class="d-flex justify-content-between align-items-center mt-3 mb-3 video-navigation" style="position: relative; width: 90%; margin: 0 auto;">
-        <!-- Botão anterior -->
+      <!-- Título + descrição do conteúdo -->
+      <div class="mt-4 mb-5" style="width: 90%; margin: 0 auto;">
+        <h4 id="videoTitle" style="color: #ffffff; font-size: 1.3rem; margin-bottom: 0.5rem;"></h4>
+        <p id="videoDescription" class="text-center" style="color: #c3c8ce; font-size: 1rem;"></p>
+      </div>
+
+      <!-- Botões navegação -->
+      <div class="d-flex justify-content-between align-items-center mb-5 video-navigation" style="position: relative; width: 90%; margin: 0 auto;">
         <button class="carousel-control-prev" type="button"
           data-bs-target="#videoCarousel" data-bs-slide="prev"
           style="background-color: #d87653; border: none; border-radius: 50%; width: 40px; height: 40px; position: absolute; left: 0;">
           <span style="color: #011c26; font-size: 24px;">‹</span>
         </button>
 
-        <!-- Descrição dinâmica -->
-        <p id="videoDescription" class="text-center" style="color: #c3c8ce; font-family: 'Roboto'; font-size: 1rem; flex-grow: 1; padding: 0 50px;">
-          <!-- Conteúdo via JS -->
-        </p>
-
-        <!-- Botão próximo -->
         <button class="carousel-control-next" type="button"
           data-bs-target="#videoCarousel" data-bs-slide="next"
           style="background-color: #d87653; border: none; border-radius: 50%; width: 40px; height: 40px; position: absolute; right: 0;">
@@ -121,7 +120,7 @@
   </div>
 </div>
 
-<!-- Bootstrap core JS -->
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
@@ -149,6 +148,7 @@
 
   const carouselContainer = document.getElementById('carouselItems');
   const descriptionElement = document.getElementById('videoDescription');
+  const titleElement = document.getElementById('videoTitle');
 
   function renderVideos() {
     carouselContainer.innerHTML = '';
@@ -180,7 +180,7 @@
       }
 
       const item = `
-        <div class="carousel-item ${active}" data-description="${video.description}">
+        <div class="carousel-item ${active}" data-title="${video.title}" data-description="${video.description}">
           ${content}
         </div>
       `;
@@ -188,13 +188,15 @@
       carouselContainer.innerHTML += item;
     });
 
-    updateDescription(); // Exibe a descrição inicial
+    updateDescription(); // Exibe o primeiro título/descrição
   }
 
   function updateDescription() {
     const activeItem = document.querySelector('#carouselItems .carousel-item.active');
     const desc = activeItem?.getAttribute('data-description') || '';
+    const title = activeItem?.getAttribute('data-title') || '';
     descriptionElement.textContent = desc;
+    titleElement.textContent = title;
   }
 
   const carouselElement = document.getElementById('videoCarousel');
