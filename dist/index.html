@@ -130,10 +130,29 @@
 <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin: 2.0rem 0;">
 
 <div class="testimonials-section" style="margin-bottom: 2rem;">
-  <h4 class="bio-toggle" style="cursor: pointer; color: #7c7773; font-weight: 500; font-size: 2rem; margin-top: 2rem;">
-   MAIS QUE SOM > MEMÓRIAS! 
+  <h4 class="bio-toggle" style="cursor: pointer; color: #7c7773; font-weight: 500; font-size: 1rem; margin-top: 2rem;">
+   MAIS QUE SOM: MEMÓRIAS! 
   </h4>
-                    
+  <div class="testimonial-carousel" style="max-width: 600px; margin: 0 auto; text-align: center;">
+  <div class="testimonial-slide" style="display: block;">
+    <p style="font-style: italic; color: #c3c8ce;">"A apresentação do DJ Josafá foi impecável. Energia, sensibilidade e repertório no ponto."</p>
+    <p style="font-weight: bold; margin-top: 0.5rem;">Marina Figueiredo — Curadora Cultural</p>
+  </div>
+  <div class="testimonial-slide" style="display: none;">
+    <p style="font-style: italic; color: #c3c8ce;">"Transformou o evento em uma experiência real. Leitura de ambiente absurda!"</p>
+    <p style="font-weight: bold; margin-top: 0.5rem;">Rogério Almeida — Produtor de Eventos</p>
+  </div>
+  <div class="testimonial-slide" style="display: none;">
+    <p style="font-style: italic; color: #c3c8ce;">"Uma conexão autêntica entre música e público. Foi além do esperado."</p>
+    <p style="font-weight: bold; margin-top: 0.5rem;">Tainá Souza — Diretora de Projetos</p>
+  </div>
+
+  <!-- Botões de navegação -->
+  <div style="margin-top: 1rem;">
+    <button onclick="plusTestimonial(-1)" style="background: none; border: none; font-size: 1.5rem; color: #7c7773; cursor: pointer;">‹</button>
+    <button onclick="plusTestimonial(1)" style="background: none; border: none; font-size: 1.5rem; color: #7c7773; cursor: pointer;">›</button>
+  </div>
+</div>                  
 <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin: 2.0rem 0;">
     </section>
 <div style="text-align: center; font-size: 0.9rem; color: #7c7773; padding: 1rem 0;">
@@ -152,7 +171,27 @@
     });
   });
 </script>
+<script>
+  let testimonialIndex = 0;
+  const slides = document.getElementsByClassName("testimonial-slide");
 
+  function showTestimonial(index) {
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slides[index].style.display = "block";
+  }
+
+  function plusTestimonial(n) {
+    testimonialIndex += n;
+    if (testimonialIndex >= slides.length) testimonialIndex = 0;
+    if (testimonialIndex < 0) testimonialIndex = slides.length - 1;
+    showTestimonial(testimonialIndex);
+  }
+
+  // Exibe o primeiro depoimento
+  showTestimonial(testimonialIndex);
+</script>
 <!-- Hover RELEASE -->
 <style>
   .bio-toggle:hover {
