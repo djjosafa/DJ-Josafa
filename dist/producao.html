@@ -146,10 +146,10 @@
   <h4 class="bio-toggle">
     VINYLA BEAST (REMIX, EDIT, ETC)
   </h4>
-  
+
   <div class="bio-content">
     <img src="assets/img/viny.png" alt="Descrição da imagem" class="bio-image" />
-    
+
     <div class="bio-text">
       <p>Vinyla Beast é um projeto criado por DJ Josafá, quando começou na produção musical...</p>
       <p>No projeto a ideia é revisitar algumas músicas que talvez não tenham grande alcance...</p>
@@ -176,9 +176,25 @@
 
     <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin: 2.0rem 0;">
 <style>
+  .bio-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+  }
+
+  .bio-toggle {
+    cursor: pointer;
+    color: #7c7773;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
   .bio-content {
     display: none;
-    margin: 1rem 0;
+    margin: 0 auto;
     color: #ccc;
     line-height: 1.6;
     max-width: 800px;
@@ -186,6 +202,8 @@
     gap: 1.5rem;
     flex-direction: row;
     align-items: flex-start;
+    justify-content: center;
+    width: 100%;
   }
 
   .bio-content.active {
@@ -193,7 +211,7 @@
   }
 
   .bio-image {
-    width: 180px;
+    width: 220px;
     height: auto;
     object-fit: cover;
     border-radius: 8px;
@@ -208,12 +226,17 @@
   @media (max-width: 768px) {
     .bio-content {
       flex-direction: column;
+      text-align: center;
     }
 
     .bio-image {
       width: 100%;
       max-width: 300px;
-      margin: 0 auto;
+      margin: 0 auto 1rem;
+    }
+
+    .bio-text {
+      text-align: left;
     }
   }
 </style>
