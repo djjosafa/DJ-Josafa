@@ -299,10 +299,11 @@
       }
 
 filtered.forEach((video, index) => {
-const isVimeo = video.platform === 'vimeo';
-const embedUrl = video.platform === 'youtube'
-  ? `https://www.youtube.com/embed/${video.id}`
-  : `https://player.vimeo.com/video/${video.id}`;
+  const active = index === 0 ? 'active' : '';
+  const isVimeo = video.platform === 'vimeo';
+  const embedUrl = video.platform === 'youtube'
+    ? `https://www.youtube.com/embed/${video.id}`
+    : `https://player.vimeo.com/video/${video.id}`;
 
 const item = `
   <div class="carousel-item ${active}">
