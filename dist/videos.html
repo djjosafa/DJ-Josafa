@@ -197,7 +197,31 @@
     }
   }
 </style>
-        
+<style>
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* Ajuste apenas para celular */
+  @media (max-width: 768px) {
+    .video-wrapper.vimeo-mobile {
+      position: relative;
+      height: 400px;
+      padding-bottom: 0;
+    }
+  }
+</style>      
   <!-- Bootstrap core JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   
