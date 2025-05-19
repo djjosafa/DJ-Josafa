@@ -452,68 +452,83 @@
 },   
     ];
 
-  const styleSelect = document.getElementById('styleFilter');
-  const platformSelect = document.getElementById('platformFilter');
-  const carouselContainer = document.getElementById('carouselItems');
+const carouselItemsContainer = document.getElementById('carouselItems');
+const platformFilter = document.getElementById('platformFilter');
+const styleFilter = document.getElementById('styleFilter');
 
-  styleSelect.addEventListener('change', renderVideos);
-  platformSelect.addEventListener('change', renderVideos);
-
-function getEmbed(video) {
-  if (video.platform === 'youtube') {
-    return `<iframe src="https://www.youtube.com/embed/${video.id}" title="${video.title}" allowfullscreen></iframe>`;
-  } else if (video.platform === 'vimeo') {
-    return `<iframe src="https://player.vimeo.com/video/${video.id}" title="${video.title}" allowfullscreen frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="width: 100%; height: 100%;"></iframe>`;
-  } else if (video.platform === 'soundcloud') {
-    return `<iframe width="100%" height="120" scrolling="no" frameborder="0" allow="autoplay"
-      style="overflow: hidden;"
-      src="https://w.soundcloud.com/player/?url=${encodeURIComponent(video.url)}&color=%23c3c8ce&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=true">
-    </iframe>`;
-  } else if (video.platform === 'mixcloud') {
-    return `<iframe width="100%" height="120" frameborder="0" src="https://www.mixcloud.com/widget/iframe/?feed=${encodeURIComponent(video.url)}&hide_cover=1&light=1" allow="autoplay"></iframe>`;
-  } else {
-    return `<p>Plataforma não suportada</p>`;
+function getEmbedCode(video) {
+  // Retorna o embed de acordo com a plataforma
+  switch (video.platform) {
+    case 'youtube':
+      return `<div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/${video.id}" allowfullscreen></iframe>
+              </div>`;
+    case 'vimeo':
+      return `<div class="video-wrapper">
+                <iframe src="https://player.vimeo.com/video/${video.id}" allowfullscreen></iframe>
+              </div>`;
+    case 'soundcloud':
+      // Para SoundCloud, usa o widget padrão, cuidado com URL
+      return `<div class="video-wrapper">
+                <iframe scrolling="no" frameborder="no" allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=${encodeURIComponent(video.url)}&color=%23d87653&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+              </div>`;
+    case 'mixcloud':
+      // Para Mixcloud também usa iframe embed, ajuste se quiser
+      return `<div class="video-wrapper">
+                <iframe src="https://www.mixcloud.com/widget/iframe/?feed=${encodeURIComponent(video.url)}&hide_cover=1&light=1" frameborder="0" allow="autoplay"></iframe>
+              </div>`;
+    default:
+      return '<p>Plataforma não suportada</p>';
   }
 }
 
-  function renderVideos() {
-    const selectedStyle = styleSelect.value;
-    const selectedPlatform = platformSelect.value;
+function renderVideos() {
+  const selectedPlatform = platformFilter.value;
+  const selectedStyle = styleFilter.value;
 
-const filtered = videos.filter(video => {
-  const matchStyle = selectedStyle === 'all' || video.style === selectedStyle;
-  const matchPlatform = selectedPlatform === 'all' || video.platform === selectedPlatform;
-  return matchStyle && matchPlatform;
-});
+  const filteredVideos = videos.filter(v => {
+    return (selectedPlatform === 'all' || v.platform === selectedPlatform) &&
+           (selectedStyle === 'all' || v.style === selectedStyle);
+  });
 
-    carouselContainer.innerHTML = '';
-
-    if (filtered.length === 0) {
-      carouselContainer.innerHTML = `<div class="carousel-item active"><p class="text-center">Nenhum vídeo encontrado.</p></div>`;
-      return;
-    }
-
-    filtered.forEach((video, index) => {
-      const active = index === 0 ? 'active' : '';
-      const embed = getEmbed(video);
-
-const item = `
-  <div class="carousel-item ${active}">
-    <div class="video-wrapper">
-      ${embed}
-    </div>
-    <div style="margin-top: 20px; color: #c3c8ce;">
-      <h5 style="color: #c3c8ce;">${video.title}</h5>
-      <p style="color: #c3c8ce;">${video.description}</p>
-    </div>
-  </div>
-`;
-
-      carouselContainer.innerHTML += item;
-    });
+  if (filteredVideos.length === 0) {
+    carouselItemsContainer.innerHTML = `<div class="carousel-item active"><p style="color:#c3c8ce;">Nenhum vídeo encontrado para os filtros selecionados.</p></div>`;
+    return;
   }
 
-  renderVideos();
+  const itemsHtml = filteredVideos.map((video, index) => {
+    return `
+      <div class="carousel-item${index === 0 ? ' active' : ''}">
+        ${getEmbedCode(video)}
+        <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.5); border-radius: 5px;">
+          <h5>${video.title}</h5>
+          <p>${video.description || ''}</p>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  carouselItemsContainer.innerHTML = itemsHtml;
+  // Atualiza descrição do vídeo fora do carrossel, se quiser
+  updateVideoDescription(filteredVideos[0]);
+}
+
+function updateVideoDescription(video) {
+  const desc = document.getElementById('videoDescription');
+  if (video) {
+    desc.textContent = video.description || video.title || '';
+  } else {
+    desc.textContent = '';
+  }
+}
+
+// Re-renderiza ao mudar filtro
+platformFilter.addEventListener('change', renderVideos);
+styleFilter.addEventListener('change', renderVideos);
+
+// Inicializa ao carregar
+renderVideos();
 </script>
     </section>
 <div style="text-align: center; font-size: 0.9rem; color: #7c7773; padding: 1rem 0;">
