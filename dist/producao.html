@@ -142,39 +142,23 @@
 
 <div style="margin-top: 6rem;"></div>
     <!-- Bloco 1 -->
- <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin: 2.0rem 0;">
-    <div class="bio-section">
-     <h4 class="bio-toggle" style="cursor: pointer; color: #7c7773; font-weight: 500;">
-        VINYLA BEAST (REMIX, EDIT, ETC)
-      </h4>
-<div class="bio-content" id="bioContent" style="
-  display: none;
-  margin: 1rem;
-  color: #ccc;
-  line-height: 1.6;
-  text-align: left;
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  max-width: 800px;
-">
-
-  <!-- IMAGEM À ESQUERDA -->
-  <img src="assets/img/viny.png" alt="Descrição da imagem" style="
-    width: 180px;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-    flex-shrink: 0;
-  " />
-
-  <div style="flex: 1;">
-    <p>Vinyla Beast é um projeto criado por DJ Josafá, quando começou na produção musical. O personagem e o nome remetem ao ácaro, monstro que corrói os discos de vinil parados, esquecidos ou mal cuidados.</p>
-    <p> No projeto a idéia é revisitar algumas músicas que talvez não tenham grande alcance na mídia (apesar de merecerem), aplicando no remix produções de beats autorais.</p>
-    <p>Terceiro parágrafo, mantendo o espaçamento e a largura controlada.</p>
-    <p>Você pode encontrar as produções aqui no site na seção APERTE O PLAY> MÚSICAS> REMIX.</p>
-    <p>Também pode apoiar o projeto no Bandcamp: https://vinylabeast.bandcamp.com/</p>
+<div class="bio-section">
+  <h4 class="bio-toggle">
+    VINYLA BEAST (REMIX, EDIT, ETC)
+  </h4>
+  
+  <div class="bio-content">
+    <img src="assets/img/viny.png" alt="Descrição da imagem" class="bio-image" />
+    
+    <div class="bio-text">
+      <p>Vinyla Beast é um projeto criado por DJ Josafá, quando começou na produção musical...</p>
+      <p>No projeto a ideia é revisitar algumas músicas que talvez não tenham grande alcance...</p>
+      <p>Terceiro parágrafo, mantendo o espaçamento e a largura controlada.</p>
+      <p>Você pode encontrar as produções aqui no site na seção APERTE O PLAY > MÚSICAS > REMIX.</p>
+      <p>Também pode apoiar o projeto no Bandcamp: https://vinylabeast.bandcamp.com/</p>
+    </div>
   </div>
+</div>
 
 </div>
 
@@ -191,7 +175,48 @@
     </div>
 
     <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin: 2.0rem 0;">
+<style>
+  .bio-content {
+    display: none;
+    margin: 1rem 0;
+    color: #ccc;
+    line-height: 1.6;
+    max-width: 800px;
+    display: none;
+    gap: 1.5rem;
+    flex-direction: row;
+    align-items: flex-start;
+  }
 
+  .bio-content.active {
+    display: flex;
+  }
+
+  .bio-image {
+    width: 180px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .bio-text {
+    flex: 1;
+    text-align: left;
+  }
+
+  @media (max-width: 768px) {
+    .bio-content {
+      flex-direction: column;
+    }
+
+    .bio-image {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
+</style>
 </section>
 
 <!-- JavaScript para toggle -->
@@ -199,11 +224,7 @@
   document.querySelectorAll('.bio-toggle').forEach(toggle => {
     toggle.addEventListener('click', () => {
       const content = toggle.nextElementSibling;
-      if (content.style.display === 'flex') {
-        content.style.display = 'none';
-      } else {
-        content.style.display = 'flex';
-      }
+      content.classList.toggle('active');
     });
   });
 </script>
