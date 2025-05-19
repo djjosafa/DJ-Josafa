@@ -299,22 +299,22 @@
       }
 
 filtered.forEach((video, index) => {
-  const active = index === 0 ? 'active' : '';
-  const embedUrl = video.platform === 'youtube'
-    ? `https://www.youtube.com/embed/${video.id}`
-    : `https://player.vimeo.com/video/${video.id}`;
+const isVimeo = video.platform === 'vimeo';
+const embedUrl = video.platform === 'youtube'
+  ? `https://www.youtube.com/embed/${video.id}`
+  : `https://player.vimeo.com/video/${video.id}`;
 
-  const item = `
-    <div class="carousel-item ${active}">
-      <div class="ratio ratio-16x9">
-        <iframe src="${embedUrl}" title="${video.title}" allowfullscreen></iframe>
-      </div>
-      <div style="margin-top: 20px; color: #c3c8ce;">
-        <h5 style="color: #c3c8ce;">${video.title}</h5>
-        <p style="color: #c3c8ce;">${video.description}</p>
-      </div>
+const item = `
+  <div class="carousel-item ${active}">
+    <div class="video-wrapper${isVimeo ? ' vimeo-mobile' : ''}">
+      <iframe src="${embedUrl}" title="${video.title}" allowfullscreen></iframe>
     </div>
-  `;
+    <div style="margin-top: 20px; color: #c3c8ce;">
+      <h5 style="color: #c3c8ce;">${video.title}</h5>
+      <p style="color: #c3c8ce;">${video.description}</p>
+    </div>
+  </div>
+`;
 
   carouselContainer.innerHTML += item;
 });
