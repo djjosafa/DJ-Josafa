@@ -147,7 +147,7 @@
       <h4 class="bio-toggle" style="cursor: pointer; color: #7c7773; font-weight: 500; margin-top: 2rem;">
         VINYLA BEAST (REMIX, EDIT, ETC)
       </h4>
-<div class="bio-content" style="
+<div class="bio-content" id="bioContent" style="
   display: none;
   margin: 1rem;
   color: #ccc;
@@ -161,8 +161,9 @@
 
   <!-- IMAGEM À ESQUERDA -->
   <img src="assets/img/viny.png" alt="Descrição da imagem" style="
-    width: 150px;
-    height: auto;
+    width: 180px;
+    height: 100%;
+    object-fit: cover;
     border-radius: 8px;
     flex-shrink: 0;
   " />
@@ -198,7 +199,11 @@
   document.querySelectorAll('.bio-toggle').forEach(toggle => {
     toggle.addEventListener('click', () => {
       const content = toggle.nextElementSibling;
-      content.style.display = content.style.display === 'none' ? 'block' : 'none';
+      if (content.style.display === 'flex') {
+        content.style.display = 'none';
+      } else {
+        content.style.display = 'flex';
+      }
     });
   });
 </script>
