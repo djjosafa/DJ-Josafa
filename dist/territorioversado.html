@@ -188,11 +188,19 @@
           <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin: 2.0rem 0;">
   </div>
 </section>
-
+<!-- JavaScript para toggle -->
+<script>
+  document.querySelectorAll('.bio-toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const content = toggle.nextElementSibling;
+      content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    });
+  });
+</script>
 <div style="text-align: center; font-size: 0.9rem; color: #7c7773; padding: 1rem 0;">
 © 2025 DJ Josafá  &reg; — Todos os direitos reservados. Lei 9.610/98.
     </div>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>    
+</html>
