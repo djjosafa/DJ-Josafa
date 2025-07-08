@@ -216,10 +216,21 @@
   document.querySelectorAll('.bio-toggle').forEach(toggle => {
     toggle.addEventListener('click', () => {
       const content = toggle.nextElementSibling;
-      content.style.display = content.style.display === 'none' ? 'block' : 'none';
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      toggle.classList.toggle('active', !isVisible);
     });
   });
 </script>
+    <style>
+  .bio-toggle:hover {
+    color: #c3c8ce; /* cor ao passar o mouse */
+  }
+
+  .bio-toggle.active {
+    color: #d87653; /* cor ao clicar (ativa) */
+  }
+</style>
 <div style="text-align: center; font-size: 0.9rem; color: #7c7773; padding: 1rem 0;">
 © 2025 DJ Josafá  &reg; — Todos os direitos reservados. Lei 9.610/98.
     </div>
