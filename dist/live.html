@@ -131,7 +131,7 @@
             </ul>
             </div>
         </nav>
-        <!-- Page Content-->
+<!-- Page Content-->
 <div class="container-fluid p-0" style="background-color: #011c26; font-family: 'Roboto', sans-serif;">
   <section class="resume-section pt-3" id="videos">
     <div class="resume-section-content text-center">
@@ -140,76 +140,31 @@
       <h2 style="color: #d87653; font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 3rem; margin-top: 0;">
         LIVE
       </h2>
-<div id="liveStatus" style="text-align: center; color: #c3c8ce; padding: 40px 0;">
-  <p>Carregando status da live...</p>
+
+      <div style="margin-top: 20px;">
+        <iframe
+          src="https://player.twitch.tv/?channel=djjosafa&parent=djjosafa.com.br"
+          height="400"
+          width="100%"
+          frameborder="0"
+          allowfullscreen="true"
+          scrolling="no"
+          allow="autoplay">
+        </iframe>
+      </div>
+
+      <p style="color:#c3c8ce; margin-top: 10px;">
+        <a href="https://twitch.tv/djjosafa" target="_blank" style="color:#00ff99;">Acompanhe no Twitch</a>
+      </p>
+
+    </div>
+  </section>
+
+  <div style="text-align: center; font-size: 0.9rem; color: #7c7773; padding: 1rem 0;">
+    © 2025 DJ Josafá  &reg; — Todos os direitos reservados. Lei 9.610/98.
+  </div>
+
+  <!-- Bootstrap core JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </div>
 
-<script>
-  const clientId = 'i443e0w1wul5gqdcvxw8gi78cytcjz';
-  const accessToken = 'f9xglpvwh43yjasgu2trwisbutyzol';
-  const username = 'djjosafa'; // sem o "twitch.tv/", só o nome
-
-  async function checkLiveStatus() {
-    try {
-      // Buscar ID do usuário
-      const userResponse = await fetch(`https://api.twitch.tv/helix/users?login=${username}`, {
-        headers: {
-          'Client-ID': clientId,
-          'Authorization': `Bearer ${accessToken}`
-        }
-      });
-      const userData = await userResponse.json();
-      const userId = userData.data[0]?.id;
-
-      if (!userId) throw new Error("Usuário não encontrado");
-
-      // Checar se está ao vivo
-      const streamResponse = await fetch(`https://api.twitch.tv/helix/streams?user_id=${userId}`, {
-        headers: {
-          'Client-ID': clientId,
-          'Authorization': `Bearer ${accessToken}`
-        }
-      });
-
-      const streamData = await streamResponse.json();
-      const container = document.getElementById('liveStatus');
-
-      if (streamData.data && streamData.data.length > 0) {
-        // Está ao vivo
-        container.innerHTML = `
-          <h3 style="color: #00ff99;">🔴 Ao Vivo Agora</h3>
-          <div style="margin-top: 20px;">
-            <iframe
-              src="https://player.twitch.tv/?channel=${username}&parent=djjosafa.com.br"
-              height="400"
-              width="100%"
-              frameborder="0"
-              allowfullscreen="true"
-              scrolling="no"
-              allow="autoplay">
-            </iframe>
-          </div>
-        `;
-      } else {
-        // Offline
-        container.innerHTML = `
-          <h3 style="color: #c3c8ce;">⏹️ Live Offline</h3>
-          <p>Siga o canal para ser notificado quando começar:</p>
-          <a href="https://twitch.tv/${username}" target="_blank" style="color:#00ff99;">twitch.tv/${username}</a>
-        `;
-      }
-    } catch (err) {
-      document.getElementById('liveStatus').innerHTML = `<p style="color:red;">Erro ao carregar status da live.</p>`;
-      console.error(err);
-    }
-  }
-
-  checkLiveStatus();
-</script>
-
-    </section>
-<div style="text-align: center; font-size: 0.9rem; color: #7c7773; padding: 1rem 0;">
-© 2025 DJ Josafá  &reg; — Todos os direitos reservados. Lei 9.610/98.
-    </div>
-<!-- Bootstrap core JS (inclui Popper para funcionamento do menu) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
