@@ -205,36 +205,60 @@
 
     <div style="width:100%;">
 
-      <div id="videoCarousel"
-           class="carousel slide"
-           data-bs-ride="false"
-           style="max-width:900px;margin:auto;">
+<div id="videoCarousel"
+     class="carousel slide"
+     data-bs-ride="false"
+     data-bs-interval="false"
+     style="max-width:900px;margin:auto;">
 
-        <div class="carousel-inner" id="carouselItems"></div>
+  <div class="carousel-inner" id="carouselItems">
+  </div>
 
-      </div>
+  <!-- SETA ESQUERDA -->
+  <button class="carousel-control-prev"
+          type="button"
+          data-bs-target="#videoCarousel"
+          data-bs-slide="prev">
 
-      <div class="d-flex justify-content-between align-items-center mt-3">
+    <span style="
+      background:#d87653;
+      color:#011c26;
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+    ">
+      ‹
+    </span>
 
-        <button class="carousel-control-prev position-relative"
-                type="button"
-                data-bs-target="#videoCarousel"
-                data-bs-slide="prev"
-                style="background:#d87653;border:none;border-radius:50%;width:40px;height:40px;opacity:1;">
+  </button>
 
-          <span style="font-size:24px;color:#011c26;">‹</span>
+  <!-- SETA DIREITA -->
+  <button class="carousel-control-next"
+          type="button"
+          data-bs-target="#videoCarousel"
+          data-bs-slide="next">
 
-        </button>
+    <span style="
+      background:#d87653;
+      color:#011c26;
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+    ">
+      ›
+    </span>
 
-        <button class="carousel-control-next position-relative"
-                type="button"
-                data-bs-target="#videoCarousel"
-                data-bs-slide="next"
-                style="background:#d87653;border:none;border-radius:50%;width:40px;height:40px;opacity:1;">
+  </button>
 
-          <span style="font-size:24px;color:#011c26;">›</span>
-
-        </button>
+</div>
 
       </div>
 
@@ -377,18 +401,16 @@ return `<p>Plataforma não suportada</p>`;
 
 function renderVideos(){
 
-const carousel = document.getElementById('carouselItems');
+const carousel = document.querySelector('#videoCarousel');
 
-carousel.innerHTML='';
-
-videos.forEach((video,index)=>{
-
-const active = index===0 ? 'active' : '';
-
-carousel.innerHTML += `
-
-<div class="carousel-item ${active}">
-
+bootstrap.Carousel.getOrCreateInstance(
+  carousel,
+  {
+    interval:false,
+    wrap:true,
+    touch:true
+  }
+);
 <div>
 
 ${getEmbed(video)}
