@@ -368,8 +368,71 @@ description:'Poesia, afrobeats e adinkras.'
 {
 platform:'soundcloud',
 url:'https://soundcloud.com/vinyla-beast/quarto-de-despejo-leall-vinyla-beast-remix',
-title:'Quarto de Despejo',
-description:'VINYLA BEAST é um projeto de produções/remix.'
+title:'Quarto de Despejo - Leall (VINYLA BEAST Remix)',
+description:'VINYLA BEAST é um projeto de produções/remix do DJ Josafá! Nesse single, o instrumental foi totalmente feito pelo artista, mantendo a essência e sample do NAS e a pertinente letra do Leal.'
+},
+
+{
+platform:'soundcloud',
+url:'https://soundcloud.com/vinyla-beast/vinyla-wave-cassiano-onda-remix-feat-lino-kriss-mano-brown-cassiano-boogie-naipe',
+title:'Vinyla Wave',
+description:'Cassiano + Mano Brown + Boogie Naipe reinterpretados por VINYLA BEAST.'
+},
+
+{
+platform:'soundcloud',
+url:'https://soundcloud.com/vinyla-beast/notopodnv',
+title:'Raffa Moreira - No Topo Dnv (VINYLA BEAST Remix)',
+description:'Remix com instrumental autoral.'
+},
+
+{
+platform:'bandcamp',
+url:'https://djjosafa.bandcamp.com/track/melodia-nyansapo',
+title:'Melodia Nyansapo',
+description:'This here, is time to be smart!'
+},
+
+{
+platform:'youtube',
+id:'MnMZt_No1ls',
+title:'Aquecimento do Voltaço',
+description:'Voltmix de Volta Redonda'
+},
+
+{
+platform:'soundcloud',
+url:'https://soundcloud.com/vinyla-beast/drum-n-bass-pinharistico',
+title:'Drum n Bass Pinharistico',
+description:'MC Carol reinterpretada em Drum n Bass.'
+},
+
+{
+platform:'soundcloud',
+url:'https://soundcloud.com/vinyla-beast/bikila-bass-abebe-vinyla-beast-edit',
+title:'Bikila Bass',
+description:'Versão Miami Bass inspirada em Castelos e Ruínas.'
+},
+
+{
+platform:'soundcloud',
+url:'https://soundcloud.com/vinyla-beast/saudade-daquilo-150bpm-iza-mc-maneirinho-vinyla-beast-remix',
+title:'SAUDADE DAQUILO 150BPM',
+description:'Remix de IZA e MC Maneirinho.'
+},
+
+{
+platform:'soundcloud',
+url:'https://soundcloud.com/vinyla-beast/paunetone-001-feat-raffa-moreira-mc-ml-mc-rf',
+title:'PAUNETONE 001',
+description:'Mistura de elementos natalinos e trap/funk.'
+},
+
+{
+platform:'soundcloud',
+url:'https://soundcloud.com/vinyla-beast/a-lenda-do-funk-vinyla-beast-mc-de-leve',
+title:'A LENDA DO FUNK MAL FEITO',
+description:'Primeiro remix do projeto VINYLA BEAST.'
 }
 
 ];
@@ -402,13 +465,23 @@ src="https://w.soundcloud.com/player/?url=${encodeURIComponent(video.url)}&visua
 
 }
 
-return `<p>Plataforma não suportada</p>`;
+if(video.platform==='bandcamp'){
+
+return `
+<iframe
+style="border:0;width:100%;height:120px;"
+src="https://bandcamp.com/EmbeddedPlayer/track=0/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/">
+</iframe>
+`;
+
+}
 
 }
 
 function renderVideos(){
 
-const container=document.getElementById('carouselItems');
+const container =
+document.getElementById('carouselItems');
 
 container.innerHTML='';
 
@@ -426,47 +499,76 @@ ${getEmbed(video)}
 
 });
 
-document.getElementById('videoTitle').innerText =
-videos[0].title;
+updateText(0);
 
-document.getElementById('videoDescription').innerText =
-videos[0].description;
+}
+
+function updateText(i){
+
+document.getElementById(
+'videoTitle'
+).innerText=
+videos[i].title;
+
+document.getElementById(
+'videoDescription'
+).innerText=
+videos[i].description;
 
 }
 
 renderVideos();
 
-document.querySelectorAll('.bio-toggle').forEach(toggle=>{
+document.querySelectorAll(
+'.bio-toggle'
+).forEach(toggle=>{
 
-toggle.addEventListener('click',()=>{
+toggle.addEventListener(
+'click',
+()=>{
 
-toggle.nextElementSibling.classList.toggle('active');
+toggle.nextElementSibling
+.classList.toggle('active');
 
 });
 
 });
 
-const carouselElement =
-document.getElementById('videoCarousel');
+const carouselElement=
+document.getElementById(
+'videoCarousel'
+);
 
-const carousel =
-new bootstrap.Carousel(carouselElement,{
-interval:false
-});
+const carousel=
+new bootstrap.Carousel(
+carouselElement,
+{
+interval:false,
+wrap:true
+}
+);
+
+document.querySelector(
+'.carousel-control-prev-custom'
+).onclick=()=>{
+
+carousel.prev();
+
+};
+
+document.querySelector(
+'.carousel-control-next-custom'
+).onclick=()=>{
+
+carousel.next();
+
+};
 
 carouselElement.addEventListener(
 'slid.bs.carousel',
-function(e){
+e=>{
 
-document.getElementById(
-'videoTitle'
-).innerText=
-videos[e.to].title;
-
-document.getElementById(
-'videoDescription'
-).innerText=
-videos[e.to].description;
+updateText(e.to);
 
 });
 
