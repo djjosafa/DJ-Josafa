@@ -541,27 +541,39 @@ videos[i].description;
 
 renderVideos();
 
-document.querySelectorAll(
+let carousel = null;
+
+document
+.querySelectorAll(
 '.bio-toggle'
-).forEach(toggle=>{
+)
+.forEach(toggle=>{
 
 toggle.addEventListener(
 'click',
 ()=>{
 
-toggle.nextElementSibling
-.classList.toggle('active');
+const content =
+toggle.nextElementSibling;
 
-});
+content.classList.toggle(
+'active'
+);
 
-});
+if(
+toggle.innerText
+.trim()==='OUÇA'
+&& carousel===null
+){
+
+setTimeout(()=>{
 
 const carouselElement =
 document.getElementById(
 'videoCarousel'
 );
 
-const carousel =
+carousel =
 new bootstrap.Carousel(
 carouselElement,
 {
@@ -572,23 +584,28 @@ touch:true
 }
 );
 
-document.querySelector(
+document
+.querySelector(
 '.carousel-control-prev-custom'
 )
-.addEventListener(
-'click',
-()=>carousel.prev()
-);
+.onclick=()=>{
 
-document.querySelector(
+carousel.prev();
+
+};
+
+document
+.querySelector(
 '.carousel-control-next-custom'
 )
-.addEventListener(
-'click',
-()=>carousel.next()
-);
+.onclick=()=>{
 
-carouselElement.addEventListener(
+carousel.next();
+
+};
+
+carouselElement
+.addEventListener(
 'slid.bs.carousel',
 e=>{
 
@@ -596,4 +613,11 @@ updateText(e.to);
 
 });
 
+},100);
+
+}
+
+});
+
+});
 </script>
