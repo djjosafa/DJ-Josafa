@@ -205,54 +205,66 @@
 
     <div style="width:100%;max-width:900px;margin:auto;">
 
-      <!-- CARROSSEL -->
-      <div id="videoCarousel"
-           class="carousel slide"
-           data-bs-ride="false"
-           data-bs-interval="false">
+<!-- CARROSSEL -->
+<div id="videoCarousel"
+     class="carousel slide"
+     data-bs-ride="false"
+     data-bs-interval="false">
 
-        <div class="carousel-inner" id="carouselItems">
-        </div>
-
-      </div>
-
-      <!-- ÁREA INFERIOR -->
-      <div class="video-info">
-
-        <!-- SETA ESQUERDA -->
-        <button class="carousel-control-prev-custom"
-                type="button"
-                data-bs-target="#videoCarousel"
-                data-bs-slide="prev">
-
-          ‹
-
-        </button>
-
-        <!-- TEXTO -->
-        <div class="video-text">
-
-          <h5 id="videoTitle"></h5>
-
-          <p id="videoDescription"></p>
-
-        </div>
-
-        <!-- SETA DIREITA -->
-        <button class="carousel-control-next-custom"
-                type="button"
-                data-bs-target="#videoCarousel"
-                data-bs-slide="next">
-
-          ›
-
-        </button>
-
-      </div>
-
-    </div>
-
+  <div class="carousel-inner" id="carouselItems">
   </div>
+
+</div>
+
+<!-- TÍTULO + DESCRIÇÃO -->
+<div style="
+margin-top:20px;
+text-align:center;
+padding:0 1rem;
+">
+
+<h5 id="videoTitle"
+style="
+color:#c3c8ce;
+margin-bottom:10px;
+">
+</h5>
+
+<p id="videoDescription"
+style="
+color:#c3c8ce;
+">
+</p>
+
+</div>
+
+<!-- ÁREA INFERIOR -->
+<div class="video-info">
+
+  <!-- SETA ESQUERDA -->
+  <button class="carousel-control-prev-custom"
+          type="button">
+
+    ‹
+
+  </button>
+
+  <!-- ESPAÇO CENTRAL -->
+  <div style="flex:1;"></div>
+
+  <!-- SETA DIREITA -->
+  <button class="carousel-control-next-custom"
+          type="button">
+
+    ›
+
+  </button>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
@@ -481,7 +493,9 @@ src="https://bandcamp.com/EmbeddedPlayer/track=0/size=large/bgcol=ffffff/linkcol
 function renderVideos(){
 
 const container =
-document.getElementById('carouselItems');
+document.getElementById(
+'carouselItems'
+);
 
 container.innerHTML='';
 
@@ -491,7 +505,15 @@ container.innerHTML += `
 
 <div class="carousel-item ${index===0?'active':''}">
 
+<div style="
+width:100%;
+max-width:900px;
+margin:auto;
+">
+
 ${getEmbed(video)}
+
+</div>
 
 </div>
 
@@ -534,35 +556,37 @@ toggle.nextElementSibling
 
 });
 
-const carouselElement=
+const carouselElement =
 document.getElementById(
 'videoCarousel'
 );
 
-const carousel=
+const carousel =
 new bootstrap.Carousel(
 carouselElement,
 {
 interval:false,
-wrap:true
+ride:false,
+wrap:true,
+touch:true
 }
 );
 
 document.querySelector(
 '.carousel-control-prev-custom'
-).onclick=()=>{
-
-carousel.prev();
-
-};
+)
+.addEventListener(
+'click',
+()=>carousel.prev()
+);
 
 document.querySelector(
 '.carousel-control-next-custom'
-).onclick=()=>{
-
-carousel.next();
-
-};
+)
+.addEventListener(
+'click',
+()=>carousel.next()
+);
 
 carouselElement.addEventListener(
 'slid.bs.carousel',
