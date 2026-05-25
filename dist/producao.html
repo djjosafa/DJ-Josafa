@@ -152,248 +152,252 @@
   <section class="resume-section pt-3" id="videos">
     <div class="resume-section-content d-flex flex-column align-items-center text-center">
 
-      <!-- Título principal -->
-      <h2 style="color: #d87653; font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 2.5rem; margin-top: 0; margin-bottom: 4rem;">
-        PRODUÇÕES (BEATS, REMIX, ETC)
-      </h2>
+<!-- Título principal -->
+<h2 style="color: #d87653; font-family: 'Neptune', sans-serif; text-transform: uppercase; font-size: 2.5rem; margin-top: 0; margin-bottom: 4rem;">
+  PRODUÇÕES (BEATS, REMIX, ETC)
+</h2>
 
-      <!-- Bloco 1 -->
-    <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin: 2.0rem 0;">
-      <div class="bio-section" style="margin-bottom: 0;">
-        <h4 class="bio-toggle">
-          VINYLA BEAST (REMIX, EDIT, ETC)
-        </h4>
+<hr style="border:none;height:1px;background:#7c7773;opacity:.4;width:100%;margin:2rem 0;">
 
-        <div class="bio-content">
-          <img src="assets/img/viny.png" alt="Descrição da imagem" class="bio-image" />
+<!-- BLOCO 1 -->
+<div class="bio-section">
 
-          <div class="bio-text">
-            <p>Vinyla Beast é um projeto criado por DJ Josafá, quando começou na produção musical. No projeto a ideia é revisitar algumas músicas que (talvez) não tenham o alcance merecido.</p>
-            <p>Você pode encontrar as produções aqui no site na seção APERTE O PLAY > MÚSICAS > REMIX.</p>
-            <p>Também pode apoiar o projeto no Bandcamp: https://vinylabeast.bandcamp.com/</p>
-          </div>
-        </div>
-      </div>
+  <h4 class="bio-toggle">
+    VINYLA BEAST (REMIX, EDIT, ETC)
+  </h4>
 
-      <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin: 1rem 0;">
+  <div class="bio-content">
 
-      <!-- Bloco 2 -->
-      <div class="bio-section" style="margin-bottom: 0; margin-top:1;">
-        <h4 class="bio-toggle">
-          OUÇA
-        </h4>
-        <div class="bio-content">
-          <div class="bio-text">
-            <p>      <!-- Carrossel de vídeos -->
-      <div id="videoCarousel" class="carousel slide w-100" data-bs-ride="carousel" data-bs-interval="15000" style="max-width: 90%; margin: 0 auto;">
-        <div class="carousel-inner" id="carouselItems">
-          <!-- Os vídeos são inseridos via JS -->
-        </div>
-      </div>
+    <img src="assets/img/viny.png" class="bio-image">
 
-<!-- Descrição do vídeo e setas de navegação abaixo -->
-<div class="d-flex justify-content-between align-items-center mt-3 mb-3 video-navigation" style="position: relative; width: 90%; margin: 0 auto;">
-  <!-- Botão anterior à esquerda da descrição -->
-  <button class="carousel-control-prev" type="button"
-    data-bs-target="#videoCarousel" data-bs-slide="prev"
-    style="background-color: #d87653; border: none; border-radius: 50%; width: 40px; height: 40px; position: absolute; left: 0;">
-    <span style="color: #011c26; font-size: 24px;">‹</span>
-  </button>
+    <div class="bio-text">
+      <p>
+        Vinyla Beast é um projeto criado por DJ Josafá, quando começou na produção musical.
+        No projeto a ideia é revisitar algumas músicas que (talvez) não tenham o alcance merecido.
+      </p>
 
-  <!-- Descrição do vídeo (centralizada entre as setas) -->
-  <p id="videoDescription" class="text-center" style="color: #c3c8ce; font-family: 'Roboto'; font-size: 1rem; flex-grow: 1;">
-    <!-- Aqui vai a descrição dinâmica do vídeo -->
-  </p>
+      <p>
+        Você pode encontrar as produções aqui no site na seção
+        APERTE O PLAY > MÚSICAS > REMIX.
+      </p>
 
-  <!-- Botão próximo à direita da descrição -->
-  <button class="carousel-control-next" type="button"
-    data-bs-target="#videoCarousel" data-bs-slide="next"
-    style="background-color: #d87653; border: none; border-radius: 50%; width: 40px; height: 40px; position: absolute; right: 0;">
-    <span style="color: #011c26; font-size: 24px;">›</span>
-  </button>
-</div>
+      <p>
+        Também pode apoiar o projeto no Bandcamp:
+        https://vinylabeast.bandcamp.com/
+      </p>
 
-</style>
-        
-  <!-- Bootstrap core JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <script>
-    const videos = [
-
-{
-  url: 'https://youtu.be/biv1-wdlKiQ?si=ZwcwhtPpHO-WuT9m',
-  title: 'TBT RITMADO - Memória Jazzz',
-  description: 'House Music + Jazz + Scratch'
-}, 
-        {
-  url: 'https://youtu.be/0oYUsIhtiMk?si=YWl6MrB2AOO1t-5O',
-  title: 'Love, Life Mmere Danne',
-  description: 'Poesia, afrobeats e adinkras.'
-}, 
-        {
-  url: 'https://soundcloud.com/vinyla-beast/quarto-de-despejo-leall-vinyla-beast-remix',
-  title: 'Quarto de Despejo - Leall (VINYLA BEAST Remix)',
-  description: 'VINYLA BEAST é um projeto de produções/remix do DJ Josafá! Nesse single, o instrumental foi totalmente feito pelo artista, mantendo a essência e sample do NAS e a pertinente letra do Leal, com um tempero especial na produção por DJ Josafá...'
-},  
-        {
-   url: 'https://soundcloud.com/vinyla-beast/vinyla-wave-cassiano-onda-remix-feat-lino-kriss-mano-brown-cassiano-boogie-naipe',
-  title: 'Vinyla Wave (Cassiano - Onda Remix) Feat. Lino Kriss, Mano Brown, Vinyla Beast & Boogie Naipe',
-  description: 'Imagina se o Cassiano tivesse participado do BOOGIE NAIPE? DJ Josafá (através de seu projeto VINYLA BEAST) juntou mestres da música nacional em uma versão que brinca com as músicas ONDA e LA ONDA'
-},  
-        {
-    url: 'https://soundcloud.com/vinyla-beast/notopodnv',
-  title: 'Raffa Moreira - No Topo Dnv (VINYLA BEAST Remix)',
-  description: 'VINYLA BEAST é um projeto de produções/remix do DJ Josafá! Nesse single, o instrumental foi totalmente feito pelo artista.'
-}, 
-             {
-    url: 'https://djjosafa.bandcamp.com/track/melodia-nyansapo',
-  title: 'Melodia Nyansapo',
-  description: 'This here, is time tobe smart! (and to intensify the struggle...)'
-}, 
-        {
-  url: 'https://youtu.be/MnMZt_No1ls?si=Ts0aSqfgqmjgokqT',
-  title: 'Aquecimento do Voltaço',
-  description: 'Voltmix de Volta Redonda'
-}, 
-{
-   url: 'https://soundcloud.com/vinyla-beast/drum-n-bass-pinharistico',
-  title: 'Drum n Bass Pinharistico',
-  description: 'MC Carol de Niterói é importantíssima para o funk, e nesse remix, DJ Josafá (através de seu projeto VINYLA BEAST) aplicou a letra e outros elementos do funk p#t@ria experimentando a criação de bateria no estilo drum n bass'
-},
-{
-    url: 'https://soundcloud.com/vinyla-beast/bikila-bass-abebe-vinyla-beast-edit',
-  title: 'Bikila Bass (Abebe) - love & addictions (BK - Amores, Vícios e Obcessões - VINYLA BEAST Edit)',
-  description: 'VINYLA BEAST é um projeto de produções/remix do DJ Josafá! Nesse single, o artista transformou o clássico do Castelos e Ruínas numa versão mete-dança miami bass...'
-},
-{
-    url: 'https://soundcloud.com/vinyla-beast/saudade-daquilo-150bpm-iza-mc-maneirinho-vinyla-beast-remix',
-  title: 'SAUDADE DAQUILO 150BPM - IZA, MC MANEIRINHO [VINYLA BEAST REMIX]',
-  description: 'DJ Josafá (através de seu projeto VINYLA BEAST) reinterpretou a musica Saudade Daquilo, produzindo um beat que traduz muito bem esse hit da IZA, que por sinal é uma das artistas mais versáteis e representativas do Pop mundial!'
-},
-{
-   url: 'https://soundcloud.com/vinyla-beast/paunetone-001-feat-raffa-moreira-mc-ml-mc-rf',
-  title: 'PAUNETONE 001 (FEAT. RAFFA MOREIRA, MC ML, MC RF) BY VINYLA BEAST 130BPM',
-  description: 'Nesse single DJ Josafá criou o beat que mistura timbres diferentes de sino com elementos de clássicos natalinos, trazendo também hits atuais como Raffa Moreira, MC Ml e MC RF'
-}, 
-{
-   url: 'https://soundcloud.com/vinyla-beast/a-lenda-do-funk-vinyla-beast-mc-de-leve',
-  title: 'A LENDA DO FUNK MAL FEITO (VINYLA BEAST & MC DE LEVE) 150BPM',
-  description: 'Primeiro remix do DJ Josafá, estreando seu projeto VINYLA BEAST com sample de um clássico do rap e versos do De Leve (a leenda brother) e clássicos do funk também'
-},
-    ];
-
-  const styleSelect = document.getElementById('styleFilter');
-  const platformSelect = document.getElementById('platformFilter');
-  const carouselContainer = document.getElementById('carouselItems');
-
-  styleSelect.addEventListener('change', renderVideos);
-  platformSelect.addEventListener('change', renderVideos);
-
-  function getEmbed(video) {
-  if (video.platform === 'spotify') {
-    const embedUrl = video.url.replace('open.spotify.com', 'open.spotify.com/embed');
-    return `<iframe style="border-radius:12px" src="${embedUrl}" width="100%" height="152" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
-  } else if (video.platform === 'soundcloud') {
-  return `<iframe width="100%" height="120" scrolling="no" frameborder="0" allow="autoplay"
-    style="overflow: hidden;"
-    src="https://w.soundcloud.com/player/?url=${encodeURIComponent(video.url)}&color=%23c3c8ce&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=true">
-  </iframe>`;
-    return `<p>Plataforma não suportada</p>`;
-  }
-}</p>
-          </div>
-        </div>
-      </div>
-
-      <hr style="border: none; height: 1px; background-color: #7c7773; opacity: 0.4; width: 100%; margin: 1rem 0;">
     </div>
-  </section>
 
-  <!-- Estilos -->
-  <style>
-    .bio-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 3rem;
-      width: 100%;
-      padding: 0 1rem;
-    }
-
-    .bio-toggle {
-      cursor: pointer;
-      color: #7c7773;
-      font-weight: 500;
-      text-align: center;
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
-    }
-
-    .bio-content {
-      display: none;
-      margin-top: 1rem;
-      color: #ccc;
-      line-height: 1.6;
-      max-width: 900px;
-      width: 100%;
-      gap: 1.5rem;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: center;
-    }
-
-    .bio-content.active {
-      display: flex;
-    }
-
-    .bio-image {
-      width: 220px;
-      height: auto;
-      object-fit: cover;
-      border-radius: 8px;
-      flex-shrink: 0;
-    }
-
-    .bio-text {
-      flex: 1;
-      text-align: left;
-    }
-
-    @media (max-width: 768px) {
-      .bio-content {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-      }
-
-      .bio-image {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto 1rem;
-      }
-
-      .bio-text {
-        text-align: left;
-        padding: 0 1rem;
-      }
-    }
-  </style>
-
-  <!-- JavaScript para toggle -->
-  <script>
-    document.querySelectorAll('.bio-toggle').forEach(toggle => {
-      toggle.addEventListener('click', () => {
-        const content = toggle.nextElementSibling;
-        content.classList.toggle('active');
-      });
-    });
-  </script>
-
-  <div style="text-align: center; font-size: 0.9rem; color: #7c7773; padding: 1rem 0;">
-    © 2025 DJ Josafá &reg; — Todos os direitos reservados. Lei 9.610/98.
   </div>
 
-  <!-- Bootstrap core JS-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </div>
+
+<hr style="border:none;height:1px;background:#7c7773;opacity:.4;width:100%;margin:1rem 0;">
+
+<!-- BLOCO 2 -->
+<div class="bio-section">
+
+  <h4 class="bio-toggle">
+    OUÇA
+  </h4>
+
+  <div class="bio-content">
+
+    <div style="width:100%;">
+
+      <div id="videoCarousel"
+           class="carousel slide"
+           data-bs-ride="false"
+           style="max-width:900px;margin:auto;">
+
+        <div class="carousel-inner" id="carouselItems"></div>
+
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center mt-3">
+
+        <button class="carousel-control-prev position-relative"
+                type="button"
+                data-bs-target="#videoCarousel"
+                data-bs-slide="prev"
+                style="background:#d87653;border:none;border-radius:50%;width:40px;height:40px;opacity:1;">
+
+          <span style="font-size:24px;color:#011c26;">‹</span>
+
+        </button>
+
+        <button class="carousel-control-next position-relative"
+                type="button"
+                data-bs-target="#videoCarousel"
+                data-bs-slide="next"
+                style="background:#d87653;border:none;border-radius:50%;width:40px;height:40px;opacity:1;">
+
+          <span style="font-size:24px;color:#011c26;">›</span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<hr style="border:none;height:1px;background:#7c7773;opacity:.4;width:100%;margin:1rem 0;">
+
+<style>
+
+.bio-section{
+display:flex;
+flex-direction:column;
+align-items:center;
+width:100%;
+padding:0 1rem;
+}
+
+.bio-toggle{
+cursor:pointer;
+color:#7c7773;
+font-size:1.3rem;
+margin-bottom:1rem;
+}
+
+.bio-content{
+display:none;
+width:100%;
+max-width:900px;
+gap:1.5rem;
+align-items:flex-start;
+}
+
+.bio-content.active{
+display:flex;
+}
+
+.bio-image{
+width:220px;
+max-width:220px;
+height:auto;
+border-radius:8px;
+flex-shrink:0;
+}
+
+.bio-text{
+flex:1;
+text-align:left;
+color:#ccc;
+line-height:1.7;
+}
+
+.carousel-item iframe{
+width:100%;
+height:500px;
+border:none;
+}
+
+@media(max-width:768px){
+
+.bio-content{
+flex-direction:column;
+}
+
+.bio-image{
+width:180px;
+max-width:180px;
+margin:auto;
+}
+
+.carousel-item iframe{
+height:300px;
+}
+
+}
+
+</style>
+
+<script>
+
+const videos = [
+
+{
+platform:'youtube',
+id:'biv1-wdlKiQ',
+title:'TBT RITMADO - Memória Jazzz'
+},
+
+{
+platform:'youtube',
+id:'0oYUsIhtiMk',
+title:'Love, Life Mmere Danne'
+},
+
+{
+platform:'soundcloud',
+url:'https://soundcloud.com/vinyla-beast/quarto-de-despejo-leall-vinyla-beast-remix'
+}
+
+];
+
+function getEmbed(video){
+
+if(video.platform==='youtube'){
+
+return `
+<iframe
+src="https://www.youtube.com/embed/${video.id}"
+allowfullscreen>
+</iframe>`;
+
+}
+
+if(video.platform==='soundcloud'){
+
+return `
+<iframe
+width="100%"
+height="140"
+src="https://w.soundcloud.com/player/?url=${encodeURIComponent(video.url)}">
+</iframe>`;
+
+}
+
+}
+
+function renderVideos(){
+
+const carousel=document.getElementById('carouselItems');
+
+carousel.innerHTML='';
+
+videos.forEach((video,index)=>{
+
+const active=index===0?'active':'';
+
+carousel.innerHTML += `
+
+<div class="carousel-item ${active}">
+
+${getEmbed(video)}
+
+</div>
+
+`;
+
+});
+
+}
+
+renderVideos();
+
+document.querySelectorAll('.bio-toggle').forEach(toggle=>{
+
+toggle.addEventListener('click',()=>{
+
+toggle.nextElementSibling.classList.toggle('active');
+
+});
+
+});
+
+</script>
