@@ -205,60 +205,57 @@
 
     <div style="width:100%;">
 
-<div id="videoCarousel"
-     class="carousel slide"
-     data-bs-ride="false"
-     data-bs-interval="false"
-     style="max-width:900px;margin:auto;">
+      <div id="videoCarousel"
+           class="carousel slide"
+           data-bs-ride="false"
+           style="max-width:900px;margin:auto;">
 
-  <div class="carousel-inner" id="carouselItems">
-  </div>
+        <div class="carousel-inner" id="carouselItems">
+        </div>
 
-  <!-- SETA ESQUERDA -->
-  <button class="carousel-control-prev"
-          type="button"
-          data-bs-target="#videoCarousel"
-          data-bs-slide="prev">
+        <!-- SETA ESQUERDA -->
+        <button class="carousel-control-prev"
+                type="button"
+                data-bs-target="#videoCarousel"
+                data-bs-slide="prev">
 
-    <span style="
-      background:#d87653;
-      color:#011c26;
-      width:40px;
-      height:40px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:24px;
-    ">
-      ‹
-    </span>
+          <span style="
+            background:#d87653;
+            color:#011c26;
+            width:40px;
+            height:40px;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:24px;
+          ">
+            ‹
+          </span>
 
-  </button>
+        </button>
 
-  <!-- SETA DIREITA -->
-  <button class="carousel-control-next"
-          type="button"
-          data-bs-target="#videoCarousel"
-          data-bs-slide="next">
+        <!-- SETA DIREITA -->
+        <button class="carousel-control-next"
+                type="button"
+                data-bs-target="#videoCarousel"
+                data-bs-slide="next">
 
-    <span style="
-      background:#d87653;
-      color:#011c26;
-      width:40px;
-      height:40px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:24px;
-    ">
-      ›
-    </span>
+          <span style="
+            background:#d87653;
+            color:#011c26;
+            width:40px;
+            height:40px;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:24px;
+          ">
+            ›
+          </span>
 
-  </button>
-
-</div>
+        </button>
 
       </div>
 
@@ -291,27 +288,10 @@ margin-bottom:1rem;
 display:none;
 width:100%;
 max-width:900px;
-gap:1.5rem;
-align-items:flex-start;
 }
 
 .bio-content.active{
-display:flex;
-}
-
-.bio-image{
-width:220px;
-max-width:220px;
-height:auto;
-border-radius:8px;
-flex-shrink:0;
-}
-
-.bio-text{
-flex:1;
-text-align:left;
-color:#ccc;
-line-height:1.7;
+display:block;
 }
 
 .carousel-item iframe{
@@ -321,16 +301,6 @@ border:none;
 }
 
 @media(max-width:768px){
-
-.bio-content{
-flex-direction:column;
-}
-
-.bio-image{
-width:180px;
-max-width:180px;
-margin:auto;
-}
 
 .carousel-item iframe{
 height:300px;
@@ -369,7 +339,7 @@ description:'VINYLA BEAST é um projeto de produções/remix do DJ Josafá.'
 
 function getEmbed(video){
 
-if(video.platform === 'youtube'){
+if(video.platform==='youtube'){
 
 return `
 <iframe
@@ -380,7 +350,7 @@ allowfullscreen>
 
 }
 
-if(video.platform === 'soundcloud'){
+if(video.platform==='soundcloud'){
 
 return `
 <iframe
@@ -401,17 +371,24 @@ return `<p>Plataforma não suportada</p>`;
 
 function renderVideos(){
 
-const carousel = document.querySelector('#videoCarousel');
-
-bootstrap.Carousel.getOrCreateInstance(
-  carousel,
-  {
-    interval:false,
-    wrap:true,
-    touch:true
-  }
+const container =
+document.getElementById(
+'carouselItems'
 );
-<div>
+
+container.innerHTML='';
+
+videos.forEach(
+(video,index)=>{
+
+const active =
+index===0
+?'active'
+:'';
+
+container.innerHTML += `
+
+<div class="carousel-item ${active}">
 
 ${getEmbed(video)}
 
@@ -441,8 +418,6 @@ ${video.description || ''}
 
 </div>
 
-</div>
-
 `;
 
 });
@@ -451,21 +426,40 @@ ${video.description || ''}
 
 renderVideos();
 
-document.querySelectorAll('.bio-toggle').forEach(toggle=>{
+document
+.querySelectorAll(
+'.bio-toggle'
+)
+.forEach(toggle=>{
 
-toggle.addEventListener('click',()=>{
+toggle
+.addEventListener(
+'click',
+()=>{
 
-toggle.nextElementSibling.classList.toggle('active');
+toggle
+.nextElementSibling
+.classList
+.toggle(
+'active'
+);
 
 });
 
 });
 
-const carouselElement = document.getElementById('videoCarousel');
+const carouselElement =
+document.getElementById(
+'videoCarousel'
+);
 
-new bootstrap.Carousel(carouselElement,{
+new bootstrap.Carousel(
+carouselElement,
+{
 interval:false,
-ride:false
-});
+ride:false,
+wrap:true
+}
+);
 
 </script>
